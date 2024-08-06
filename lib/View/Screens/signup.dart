@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
+  @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
@@ -27,67 +28,67 @@ class RegisterPage extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(
+                    const Text(
                       'انشاء حساب',
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 8),
-                    Text(
+                    const SizedBox(height: 8),
+                    const Text(
                       'إنشاء حساب بسرعة',
                       style: TextStyle(fontSize: 16, color: Colors.grey),
                     ),
-                    SizedBox(height: 24),
+                    const SizedBox(height: 24),
                     AppTextFormField(
-                      obscureText:false,
+                      obscureText: false,
                       hintText: 'اسم المستخدم',
                       icon: Icons.person,
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     AppTextFormField(
-                      obscureText:false,
+                      obscureText: false,
                       hintText: 'رقم الهاتف',
                       icon: Icons.phone,
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     AppTextFormField(
-                      obscureText:false,
+                      obscureText: false,
                       hintText: 'البريد الإلكتروني',
                       icon: Icons.email,
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     AppTextFormField(
                       hintText: 'كلمة المرور',
                       icon: Icons.lock,
                       obscureText: true,
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     AppTextFormField(
                       hintText: 'تأكيد كلمة المرور',
                       icon: Icons.lock,
                       obscureText: true,
                     ),
-                    SizedBox(height: 24),
+                    const SizedBox(height: 24),
                     MaterialButton(
                       height: 65.h,
                       minWidth: double.infinity,
                       color: Colors.green,
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         "تسحيل الدخول",
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         TextButton(
                           onPressed: () {},
-                          child: Text('تسجيل',
+                          child: const Text('تسجيل',
                               style: TextStyle(color: Colors.green)),
                         ),
-                        Text('هل لديك حساب بالفعل؟'),
+                        const Text('هل لديك حساب بالفعل؟'),
                       ],
                     ),
                   ],
@@ -107,6 +108,4 @@ class RegisterPage extends StatelessWidget {
           ),
         ));
   }
-
-  
 }

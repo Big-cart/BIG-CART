@@ -6,8 +6,8 @@ class AppTextFormField extends StatelessWidget {
   final String hintText;
   final IconData icon;
   final Icon? suffixIcon;
-  bool obscureText;
-  AppTextFormField({
+  final bool obscureText;
+  const AppTextFormField({
     super.key,
     required this.hintText,
     required this.icon,
@@ -22,7 +22,7 @@ class AppTextFormField extends StatelessWidget {
         filled: true,
         fillColor: Colors.white,
         hintText: hintText,
-        labelStyle: TextStyle(),
+        labelStyle: const TextStyle(),
         hintTextDirection: TextDirection.rtl,
         prefixIcon: Icon(icon),
         suffixIcon: suffixIcon,

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppThemes {
   static ThemeData appLightTheme = ThemeData.light().copyWith(
     inputDecorationTheme: InputDecorationTheme(
-      fillColor: Colors.grey[100],
+      fillColor: Colors.white,
       outlineBorder:
           const BorderSide(style: BorderStyle.solid, color: Colors.black),
       border: OutlineInputBorder(
@@ -14,15 +15,16 @@ class AppThemes {
         ),
       ),
     ),
+    primaryIconTheme: IconThemeData(color: Colors.green),
+    iconButtonTheme: IconButtonThemeData(
+        style:
+            ButtonStyle(foregroundColor: WidgetStatePropertyAll(Colors.green))),
     bottomSheetTheme:
         const BottomSheetThemeData(backgroundColor: Colors.transparent),
     cardColor: Colors.white,
-    primaryTextTheme: TextTheme(),
     textTheme: TextTheme(
-    
       // titleMedium: const TextStyle(color: Colors.black),
       bodyMedium: TextStyle(
-        
         color: Colors.black,
         fontSize: 18.sp,
         fontWeight: FontWeight.w500,
@@ -47,13 +49,13 @@ class AppThemes {
     scaffoldBackgroundColor: Colors.grey[200],
     primaryColor: Colors.white,
     appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.transparent,
       iconTheme: IconThemeData(
-        color: Colors.white,
+        color: Colors.green,
       ),
-      systemOverlayStyle: SystemUiOverlayStyle.light,
+      systemOverlayStyle: SystemUiOverlayStyle.dark,
       actionsIconTheme: IconThemeData(
-        color: Colors.white,
+        color: Colors.green,
       ),
     ),
   );

@@ -8,17 +8,18 @@ class RegisterPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {},
         ),
-        title: Text('مرحباً', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+        title: const Text('مرحباً',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: 200,
               width: double.infinity,
               child: Image.network(
@@ -30,60 +31,62 @@ class RegisterPage extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
-                  Text(
+                  const Text(
                     'انشاء حساب',
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 8),
-                  Text(
+                  const SizedBox(height: 8),
+                  const Text(
                     'إنشاء حساب بسرعة',
                     style: TextStyle(fontSize: 16, color: Colors.grey),
                   ),
-                  SizedBox(height: 24),
+                  const SizedBox(height: 24),
                   _buildTextField(
                     labelText: 'اسم المستخدم',
                     icon: Icons.person,
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   _buildTextField(
                     labelText: 'رقم الهاتف',
                     icon: Icons.phone,
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   _buildTextField(
                     labelText: 'البريد الإلكتروني',
                     icon: Icons.email,
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   _buildTextField(
                     labelText: 'كلمة المرور',
                     icon: Icons.lock,
                     obscureText: true,
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   _buildTextField(
                     labelText: 'تأكيد كلمة المرور',
                     icon: Icons.lock,
                     obscureText: true,
                   ),
-                  SizedBox(height: 24),
+                  const SizedBox(height: 24),
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green,
-                      padding: EdgeInsets.symmetric(horizontal: 50, vertical: 16),
-                      textStyle: TextStyle(fontSize: 16),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 50, vertical: 16),
+                      textStyle: const TextStyle(fontSize: 16),
                     ),
-                    child: Text('تسجيل الدخول'),
+                    child: const Text('تسجيل الدخول'),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('هل لديك حساب بالفعل؟'),
+                      const Text('هل لديك حساب بالفعل؟'),
                       TextButton(
                         onPressed: () {},
-                        child: Text('تسجيل', style: TextStyle(color: Colors.green)),
+                        child: const Text('تسجيل',
+                            style: TextStyle(color: Colors.green)),
                       ),
                     ],
                   ),

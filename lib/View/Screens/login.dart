@@ -26,7 +26,7 @@ class Login extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Align(
+            const Align(
               alignment: Alignment.centerRight,
               child: Text(
                 "سجل الدخول الى حسابك",
@@ -46,7 +46,7 @@ class Login extends StatelessWidget {
               hintText: 'password',
               icon: Icons.lock,
               obscureText: true,
-              suffixIcon: Icon(Icons.remove_red_eye_outlined),
+              suffixIcon: const Icon(Icons.remove_red_eye_outlined),
             ),
             SizedBox(height: 15.h),
             Row(
@@ -58,13 +58,13 @@ class Login extends StatelessWidget {
                       value: false,
                       onChanged: (val) {},
                     ),
-                    Text(
+                    const Text(
                       "ادكرني",
                       style: TextStyle(color: Colors.black45),
                     ),
                   ],
                 ),
-                InkWell(
+                const InkWell(
                   child: Text(
                     "نسيت كلمة المرور",
                     style: TextStyle(color: Colors.blue),
@@ -78,7 +78,7 @@ class Login extends StatelessWidget {
               minWidth: double.infinity,
               color: Colors.green,
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 "تسحيل الدخول",
                 style: TextStyle(color: Colors.white),
               ),
@@ -86,7 +86,7 @@ class Login extends StatelessWidget {
             SizedBox(
               height: 10.h,
             ),
-            Wrap(
+            const Wrap(
               children: [
                 Text(
                   textDirection: TextDirection.rtl,
