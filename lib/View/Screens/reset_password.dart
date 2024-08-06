@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
@@ -72,8 +73,8 @@ class RegisterPage extends StatelessWidget {
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 16),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 24.w, vertical: 16.h),
                       textStyle: const TextStyle(fontSize: 16),
                     ),
                     child: const Text('تسجيل الدخول'),

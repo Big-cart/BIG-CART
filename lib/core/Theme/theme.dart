@@ -15,8 +15,8 @@ class AppThemes {
         ),
       ),
     ),
-    primaryIconTheme: IconThemeData(color: Colors.green),
-    iconButtonTheme: IconButtonThemeData(
+    primaryIconTheme: const IconThemeData(color: Colors.green),
+    iconButtonTheme: const IconButtonThemeData(
         style:
             ButtonStyle(foregroundColor: WidgetStatePropertyAll(Colors.green))),
     bottomSheetTheme:
@@ -33,13 +33,11 @@ class AppThemes {
           fontSize: 16.sp, fontWeight: FontWeight.w400, color: Colors.black45),
       bodyLarge: TextStyle(
         color: Colors.black,
-        fontSize: 22.sp,
+        fontSize: 24.sp,
         fontWeight: FontWeight.bold,
       ),
-      labelMedium: const TextStyle(
-        color: Colors.black,
-      ),
-      titleLarge: const TextStyle(color: Colors.black),
+      labelMedium: TextStyle(color: Colors.white, fontSize: 18.sp),
+      titleLarge: TextStyle(color: Colors.white, fontSize: 26.sp),
       titleSmall: const TextStyle(color: Colors.black),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(

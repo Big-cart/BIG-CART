@@ -1,3 +1,4 @@
+import 'package:big_cart/View/Widgets/search_bar_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,61 +26,76 @@ class Home extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+        padding: EdgeInsets.symmetric(horizontal: 24.0.w),
         child: Column(
           children: [
             // Search Bar
-            Row(
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                    child: const TextField(
-                      decoration: InputDecoration(
-                        hintText: 'ابحث هنا',
-                        border: InputBorder.none,
-                        icon: Icon(Icons.search),
-                      ),
-                    ),
-                  ),
-                ),
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(CupertinoIcons.settings)),
-              ],
-            ),
-            const SizedBox(height: 20.0),
+            SearchBarWidget() ,
+            
+
+            SizedBox(height: 20.0.h),
             // Promotional Banner
             Container(
-              width: MediaQuery.of(context).size.width,
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.only(left: 12.w),
+              height: 200.h,
               decoration: BoxDecoration(
-                color: Colors.green[100],
+                color: Colors.green[300],
                 borderRadius: BorderRadius.circular(20.0),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    'منتجات طازجة',
-                    style: TextStyle(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
+                  Expanded(
+                    child: Stack(
+                      clipBehavior: Clip.antiAlias,
+                      children: [
+                        Positioned(
+                          top: 15.h,
+                          right: -160.w,
+                          child: Container(
+                              height: 190.h,
+                              width: 350.w,
+                              decoration: const BoxDecoration(
+                                  image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      alignment: Alignment.centerRight,
+                                      image: AssetImage(
+                                        "assets/images/cart.png",
+                                      )))),
+                        ),
+                      ],
                     ),
                   ),
-                  const Text('تطلع من المزرعة و تجي لبابك'),
-                  const SizedBox(height: 10.0),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                    child: const Text('اطلب الان',
-                        style: TextStyle(color: Colors.white)),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 0.0.w),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Align(
+                          child: Text(
+                            'منتجات طازجة',
+                            style: Theme.of(context).textTheme.titleLarge,
+                          ),
+                        ),
+                        Text(
+                          'تطلع من المزرعة و تجي لبابك',
+                          style: Theme.of(context).textTheme.labelMedium,
+                        ),
+                        const SizedBox(height: 10.0),
+                        Padding(
+                          padding: EdgeInsets.only(right: 100.0.w),
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                                alignment: Alignment.center,
+                                backgroundColor: Colors.red),
+                            child: const Text('اطلب الان',
+                                style: TextStyle(color: Colors.white)),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),

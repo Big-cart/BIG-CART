@@ -18,11 +18,11 @@ class Login extends StatelessWidget {
       ),
       bottomSheet: Container(
         padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 6.h),
-        height: size.height * 0.52,
+        height: size.height * 0.52.h,
         decoration: BoxDecoration(
             color: Colors.grey[200],
             borderRadius:
-                BorderRadiusDirectional.vertical(top: Radius.circular(16.r))),
+                BorderRadiusDirectional.vertical(top: Radius.circular(24.r))),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -36,17 +36,17 @@ class Login extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-            AppTextFormField(
+            const AppTextFormField(
               hintText: "البريد الالكتروني",
               icon: Icons.mail,
               obscureText: false,
             ),
             SizedBox(height: 15.h),
-            AppTextFormField(
+            const AppTextFormField(
               hintText: 'password',
               icon: Icons.lock,
               obscureText: true,
-              suffixIcon: const Icon(Icons.remove_red_eye_outlined),
+              suffixIcon: Icon(Icons.remove_red_eye_outlined),
             ),
             SizedBox(height: 15.h),
             Row(
@@ -106,7 +106,7 @@ class Login extends StatelessWidget {
       ),
 
       body: Container(
-        height: size.height * 0.55,
+        height: size.height * 0.55.h,
         alignment: Alignment.topCenter,
         decoration: const BoxDecoration(
           image: DecorationImage(
