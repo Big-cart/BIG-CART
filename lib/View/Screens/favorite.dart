@@ -1,5 +1,7 @@
+import 'package:big_cart/View/Widgets/search_bar_widget.dart';
 import 'package:big_cart/core/Widgets/app_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Favorite extends StatelessWidget {
   const Favorite({super.key});
@@ -39,17 +41,41 @@ class Favorite extends StatelessWidget {
           isFavorite: false),
     ];
     return AppScaffold(
-      useAppBar: true,
-      child: GridView.builder(
-        padding: const EdgeInsets.all(10),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          childAspectRatio: 2 / 3,
-        ),
-        itemCount: grapes.length,
-        itemBuilder: (ctx, i) => GrapeItem(grapes[i]),
+      appBar: AppBar(
+        // backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+
+        elevation: 0,
+        // leading: Icon(Icons.menu, color: Colors.green),
+
+        actions: [
+          Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: const CircleAvatar(
+                  child: Icon(Icons.person, color: Colors.red))),
+        ],
+      ),
+      child: Column(
+        children: [
+          const SearchBarWidget(),
+          SizedBox(
+            height: 12.h,
+          ),
+          Expanded(
+            child: GridView.builder(
+              shrinkWrap: true,
+              padding: const EdgeInsets.all(10),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                childAspectRatio: 2 / 3,
+              ),
+              itemCount: grapes.length,
+              itemBuilder: (ctx, i) => GrapeItem(grapes[i]),
+            ),
+          ),
+        ],
       ),
     );
   }

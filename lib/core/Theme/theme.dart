@@ -41,7 +41,6 @@ class AppThemes {
     ),
     //!bottom sheet Theme
 
-
 //cardCOLOR
     cardColor: Colors.white,
 
@@ -69,15 +68,22 @@ class AppThemes {
       backgroundColor: Colors.white,
       selectedItemColor: Colors.grey[300]!,
     ),
+
+    //appBartheme
     appBarTheme: const AppBarTheme(
+      surfaceTintColor: Colors.transparent,
       backgroundColor: Colors.transparent,
       iconTheme: IconThemeData(
         color: Colors.green,
       ),
+      //!appBartheme
+
       systemOverlayStyle: SystemUiOverlayStyle.dark,
+      //actionbuttomtheme
       actionsIconTheme: IconThemeData(
         color: Colors.green,
       ),
+      //!actionbuttomtheme
     ),
   );
 
