@@ -1,5 +1,5 @@
 import 'package:big_cart/View/Widgets/search_bar_widget.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:big_cart/core/constant/app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,7 +9,7 @@ class Search extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(CupertinoIcons.arrow_turn_up_right),
+        leading: const Icon(AppIcons.cupBack),
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.person)),
         ],

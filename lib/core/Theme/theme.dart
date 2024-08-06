@@ -5,6 +5,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppThemes {
   static ThemeData appLightTheme = ThemeData.light().copyWith(
+    //scaffold color
+    scaffoldBackgroundColor: Colors.grey[200],
+    //!scaffold color
+
+//primaryColor
+    primaryColor: Colors.white,
+//!primaryColor
+
+    //input theme
     inputDecorationTheme: InputDecorationTheme(
       fillColor: Colors.white,
       outlineBorder:
@@ -15,13 +24,29 @@ class AppThemes {
         ),
       ),
     ),
+    //!</input theme>
+
+//icontheme
     primaryIconTheme: const IconThemeData(color: Colors.green),
     iconButtonTheme: const IconButtonThemeData(
-        style:
-            ButtonStyle(foregroundColor: WidgetStatePropertyAll(Colors.green))),
-    bottomSheetTheme:
-        const BottomSheetThemeData(backgroundColor: Colors.transparent),
+      style: ButtonStyle(
+        foregroundColor: WidgetStatePropertyAll(Colors.green),
+      ),
+    ),
+    //!icontheme
+
+    //bottom sheet Theme
+    bottomSheetTheme: const BottomSheetThemeData(
+      backgroundColor: Colors.transparent,
+    ),
+    //!bottom sheet Theme
+
+
+//cardCOLOR
     cardColor: Colors.white,
+
+//!cardCOLOR
+
     textTheme: TextTheme(
       // titleMedium: const TextStyle(color: Colors.black),
       bodyMedium: TextStyle(
@@ -44,8 +69,6 @@ class AppThemes {
       backgroundColor: Colors.white,
       selectedItemColor: Colors.grey[300]!,
     ),
-    scaffoldBackgroundColor: Colors.grey[200],
-    primaryColor: Colors.white,
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
       iconTheme: IconThemeData(
