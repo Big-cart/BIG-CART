@@ -1,6 +1,12 @@
+import 'package:big_cart/View/Screens/favorite.dart';
+import 'package:big_cart/View/Screens/home.dart';
 import 'package:big_cart/View/Screens/login.dart';
+import 'package:big_cart/View/Screens/search.dart';
+import 'package:big_cart/View/Screens/signup.dart';
+import 'package:big_cart/core/Theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,18 +24,21 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       // Use builder only if you need to use library outside ScreenUtilInit context
       builder: (_, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'First Method',
-          // You can use the library anywhere in the app even in theme
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
-          ),
-          home: child,
-        );
+        return GetMaterialApp(
+            locale: const Locale('ar'),
+            debugShowCheckedModeBanner: false,
+            title: 'First Method',
+            // You can use the library anywhere in the app even in theme
+            theme: AppThemes.appLightTheme,
+            home:
+                //  Directionality(
+                //   textDirection: TextDirection.rtl,
+                //  child:
+                child
+            //  ),
+            );
       },
-      child: const Login(),
+      child: const Home(),
     );
     // return MaterialApp(
     //   title: 'BIG CART',
