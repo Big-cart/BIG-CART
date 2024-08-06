@@ -1,6 +1,4 @@
 import 'package:big_cart/View/Screens/login.dart';
-import 'package:big_cart/View/Screens/signup.dart';
-import 'package:big_cart/core/Theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,18 +16,20 @@ class MyApp extends StatelessWidget {
       designSize: const Size(430, 932),
       minTextAdapt: true,
       splitScreenMode: true,
-
       // Use builder only if you need to use library outside ScreenUtilInit context
       builder: (_, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'First Method',
           // You can use the library anywhere in the app even in theme
-          theme: AppThemes.appLightTheme,
-          home: Directionality(textDirection: TextDirection.rtl, child: child!),
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+          ),
+          home: child,
         );
       },
-      child: Login(),
+      child: const Login(),
     );
     // return MaterialApp(
     //   title: 'BIG CART',
