@@ -1,3 +1,4 @@
+import 'package:big_cart/View/Widgets/app_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -35,57 +36,40 @@ class Login extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-            TextField(
-              decoration: InputDecoration(
-                hintText: "البريد الالكتروني",
-                hintTextDirection: TextDirection.rtl,
-                suffixIcon: Icon(Icons.mail),
-                fillColor: Colors.white,
-                filled: true,
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(4.r),
-                ),
-              ),
+            AppTextFormField(
+              hintText: "البريد الالكتروني",
+              icon: Icons.mail,
+              obscureText: false,
             ),
             SizedBox(height: 15.h),
-            TextField(
+            AppTextFormField(
+              hintText: 'password',
+              icon: Icons.lock,
               obscureText: true,
-              decoration: InputDecoration(
-                hintText: "Password",
-                hintTextDirection: TextDirection.rtl,
-                suffixIcon: Icon(Icons.lock),
-                prefixIcon: Icon(Icons.remove_red_eye_outlined),
-                fillColor: Colors.white,
-                filled: true,
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(4.r),
-                ),
-              ),
+              suffixIcon: Icon(Icons.remove_red_eye_outlined),
             ),
             SizedBox(height: 15.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                Row(
+                  children: [
+                    Switch(
+                      value: false,
+                      onChanged: (val) {},
+                    ),
+                    Text(
+                      "ادكرني",
+                      style: TextStyle(color: Colors.black45),
+                    ),
+                  ],
+                ),
                 InkWell(
                   child: Text(
                     "نسيت كلمة المرور",
                     style: TextStyle(color: Colors.blue),
                   ),
                 ),
-                Row(
-                  children: [
-                    Text(
-                      "ادكرني",
-                      style: TextStyle(color: Colors.black45),
-                    ),
-                    Switch(
-                      value: false,
-                      onChanged: (val) {},
-                    ),
-                  ],
-                )
               ],
             ),
             SizedBox(height: 15.h),
