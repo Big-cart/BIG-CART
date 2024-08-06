@@ -1,3 +1,5 @@
+import 'package:big_cart/View/Widgets/search_bar_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -7,9 +9,9 @@ class Search extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.arrow_back),
-        actions: const [
-          Icon(Icons.person),
+        leading: const Icon(CupertinoIcons.arrow_turn_up_right),
+        actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Icons.person)),
         ],
       ),
       body: Padding(
@@ -17,23 +19,7 @@ class Search extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                const Icon(Icons.settings),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'ابحث هنا',
-                      prefixIcon: const Icon(Icons.search),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            const SearchBarWidget(),
             SizedBox(height: 50.h),
             Text(
               'سجل البحث',
@@ -41,7 +27,7 @@ class Search extends StatelessWidget {
             ),
             SizedBox(height: 30.h),
             Wrap(
-              spacing: 8,
+              spacing: 16.w,
               children: [
                 'موز',
                 'طماط',
@@ -53,7 +39,8 @@ class Search extends StatelessWidget {
                     (text) => Chip(
                       shape: const LinearBorder(),
                       side: BorderSide.none,
-                      padding: EdgeInsets.symmetric(horizontal: 14.w),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
                       label: Text(
                         text,
                         style: Theme.of(context).textTheme.bodyMedium,
@@ -69,7 +56,7 @@ class Search extends StatelessWidget {
             ),
             SizedBox(height: 30.h),
             Wrap(
-              spacing: 8,
+              spacing: 16.w,
               children: [
                 'بطاط',
                 'افوكادو',
@@ -79,7 +66,8 @@ class Search extends StatelessWidget {
                   .map((text) => Chip(
                       shape: const LinearBorder(),
                       side: BorderSide.none,
-                      padding: EdgeInsets.symmetric(horizontal: 14.w),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
                       label: Text(
                         text,
                         style: Theme.of(context).textTheme.bodyMedium,
