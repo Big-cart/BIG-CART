@@ -1,5 +1,6 @@
 import 'package:big_cart/View/Screens/home.dart';
 import 'package:big_cart/View/Screens/login.dart';
+import 'package:big_cart/View/Screens/search.dart';
 import 'package:big_cart/View/Screens/signup.dart';
 import 'package:big_cart/core/Theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child: Home(),
+      child: const Search(),
     );
     // return MaterialApp(
     //   title: 'BIG CART',

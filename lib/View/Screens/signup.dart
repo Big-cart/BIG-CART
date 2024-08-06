@@ -1,9 +1,10 @@
 import 'package:big_cart/View/Widgets/app_text_form_field.dart';
+import 'package:big_cart/core/constant/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class RegisterPage extends StatelessWidget {
-  const RegisterPage({super.key});
+class Signup extends StatelessWidget {
+  const Signup({super.key});
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -16,79 +17,87 @@ class RegisterPage extends StatelessWidget {
           centerTitle: true,
         ),
         bottomSheet: Container(
-          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 6.h),
-          height: size.height * 0.72,
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+          height: size.height * 0.72.h,
           decoration: BoxDecoration(
               color: Colors.grey[200],
               borderRadius:
-                  BorderRadiusDirectional.vertical(top: Radius.circular(16.r))),
+                  BorderRadiusDirectional.vertical(top: Radius.circular(24.r))),
           child: SingleChildScrollView(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       'انشاء حساب',
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 24.sp, fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(height: 8),
-                    const Text(
+                    SizedBox(height: 8.h),
+                    Text(
                       'إنشاء حساب بسرعة',
-                      style: TextStyle(fontSize: 16, color: Colors.grey),
+                      style: TextStyle(fontSize: 16.sp, color: Colors.grey),
                     ),
-                    const SizedBox(height: 24),
-                    AppTextFormField(
+                    SizedBox(height: 24.h),
+                    const AppTextFormField(
                       obscureText: false,
                       hintText: 'اسم المستخدم',
                       icon: Icons.person,
                     ),
-                    const SizedBox(height: 16),
-                    AppTextFormField(
+                    SizedBox(height: 12.h),
+                    const AppTextFormField(
                       obscureText: false,
                       hintText: 'رقم الهاتف',
                       icon: Icons.phone,
                     ),
-                    const SizedBox(height: 16),
-                    AppTextFormField(
+                    SizedBox(height: 12.h),
+                    const AppTextFormField(
                       obscureText: false,
                       hintText: 'البريد الإلكتروني',
                       icon: Icons.email,
                     ),
-                    const SizedBox(height: 16),
-                    AppTextFormField(
+                    SizedBox(height: 12.h),
+                    const AppTextFormField(
                       hintText: 'كلمة المرور',
                       icon: Icons.lock,
                       obscureText: true,
                     ),
-                    const SizedBox(height: 16),
-                    AppTextFormField(
+                    SizedBox(height: 12.h),
+                    const AppTextFormField(
                       hintText: 'تأكيد كلمة المرور',
                       icon: Icons.lock,
                       obscureText: true,
                     ),
-                    const SizedBox(height: 24),
-                    MaterialButton(
-                      height: 65.h,
-                      minWidth: double.infinity,
-                      color: Colors.green,
-                      onPressed: () {},
-                      child: const Text(
-                        "تسحيل الدخول",
-                        style: TextStyle(color: Colors.white),
+                    SizedBox(height: 16.h),
+                    Container(
+                      padding: const EdgeInsets.all(0),
+                      decoration:
+                          BoxDecoration(gradient: AppColors.buttonColor),
+                      child: MaterialButton(
+                        height: 65.h,
+                        minWidth: double.infinity,
+                        onPressed: () {},
+                        child: const Text(
+                          "تسحيل الدخول",
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    SizedBox(height: 12.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        Text(
+                          'هل لديك حساب بالفعل؟',
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
                         TextButton(
                           onPressed: () {},
-                          child: const Text('تسجيل',
-                              style: TextStyle(color: Colors.green)),
+                          child: Text('تسجيل',
+                              style: Theme.of(context).textTheme.bodyLarge),
                         ),
-                        const Text('هل لديك حساب بالفعل؟'),
                       ],
                     ),
                   ],
@@ -98,11 +107,11 @@ class RegisterPage extends StatelessWidget {
           ),
         ),
         body: Container(
-          height: size.height * 0.55,
+          height: size.height * 0.42.h,
           alignment: Alignment.topCenter,
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/images/shop.jpeg"),
+                image: AssetImage("assets/images/signup.jpeg"),
                 alignment: Alignment.topCenter,
                 fit: BoxFit.cover),
           ),
