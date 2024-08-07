@@ -1,4 +1,9 @@
+import 'package:big_cart/view/Screens/favorite.dart';
+import 'package:big_cart/view/Screens/home.dart';
+import 'package:big_cart/view/Screens/login.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class CardWidget extends StatelessWidget {
   const CardWidget({super.key});
@@ -40,6 +45,7 @@ class CardWidget extends StatelessWidget {
           Center(
             child: ElevatedButton(
               onPressed: () {
+                Get.to(Favorite());
                 // Add your onPressed code here!
               },
               style: ElevatedButton.styleFrom(

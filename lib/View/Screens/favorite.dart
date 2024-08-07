@@ -1,11 +1,15 @@
 import 'package:big_cart/View/Widgets/search_bar_widget.dart';
 import 'package:big_cart/core/Functions/appbar_fun_as_widget.dart';
 import 'package:big_cart/core/Widgets/app_scaffold.dart';
+import 'package:big_cart/view/Screens/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class Favorite extends StatelessWidget {
+  static String routeName = '/favorite';
   const Favorite({super.key});
 
   @override
@@ -104,7 +108,9 @@ class GrapeItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(Home());
+                },
                 icon: const Icon(
                   CupertinoIcons.heart,
                 ),

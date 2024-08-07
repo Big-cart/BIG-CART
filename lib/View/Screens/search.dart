@@ -1,9 +1,14 @@
 import 'package:big_cart/View/Widgets/search_bar_widget.dart';
 import 'package:big_cart/core/constant/app_icons.dart';
+import 'package:big_cart/view/Screens/home.dart';
+import 'package:big_cart/view/Screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class Search extends StatelessWidget {
+  static String routeName = '/profile';
   const Search({super.key});
   @override
   Widget build(BuildContext context) {
@@ -11,7 +16,11 @@ class Search extends StatelessWidget {
       appBar: AppBar(
         leading: const Icon(AppIcons.cupBack),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.person)),
+          IconButton(
+              onPressed: () {
+                Get.to(Home());
+              },
+              icon: const Icon(Icons.person)),
         ],
       ),
       body: Padding(
