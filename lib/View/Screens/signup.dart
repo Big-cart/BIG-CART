@@ -1,5 +1,6 @@
+import 'package:big_cart/View/Widgets/Auth/app_auth_scaffold.dart';
 import 'package:big_cart/View/Widgets/app_text_form_field.dart';
-import 'package:big_cart/core/constant/app_colors.dart';
+import 'package:big_cart/core/Widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -8,16 +9,9 @@ class Signup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Scaffold(
-        extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          title: const Text("مرحبا"),
-          foregroundColor: Colors.white,
-          centerTitle: true,
-        ),
+    return AppAuthScaffold(
         bottomSheet: Container(
-          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
           height: size.height * 0.72.h,
           decoration: BoxDecoration(
               color: Colors.grey[200],
@@ -40,50 +34,46 @@ class Signup extends StatelessWidget {
                       'إنشاء حساب بسرعة',
                       style: TextStyle(fontSize: 16.sp, color: Colors.grey),
                     ),
-                    SizedBox(height: 24.h),
-                    const AppTextFormField(
-                      obscureText: false,
-                      hintText: 'اسم المستخدم',
-                      icon: Icons.person,
-                    ),
                     SizedBox(height: 12.h),
                     const AppTextFormField(
-                      obscureText: false,
-                      hintText: 'رقم الهاتف',
-                      icon: Icons.phone,
-                    ),
+                        obscureText: false,
+                        hintText: 'اسم المستخدم',
+                        icon: Icon(
+                          Icons.person,
+                        )),
                     SizedBox(height: 12.h),
                     const AppTextFormField(
-                      obscureText: false,
-                      hintText: 'البريد الإلكتروني',
-                      icon: Icons.email,
-                    ),
+                        obscureText: false,
+                        hintText: 'رقم الهاتف',
+                        icon: Icon(
+                          Icons.phone,
+                        )),
+                    SizedBox(height: 12.h),
+                    const AppTextFormField(
+                        obscureText: false,
+                        hintText: 'البريد الإلكتروني',
+                        icon: Icon(
+                          Icons.email,
+                        )),
                     SizedBox(height: 12.h),
                     const AppTextFormField(
                       hintText: 'كلمة المرور',
-                      icon: Icons.lock,
+                      icon: Icon(
+                        Icons.lock,
+                      ),
                       obscureText: true,
                     ),
                     SizedBox(height: 12.h),
                     const AppTextFormField(
                       hintText: 'تأكيد كلمة المرور',
-                      icon: Icons.lock,
+                      icon: Icon(
+                        Icons.lock,
+                      ),
                       obscureText: true,
                     ),
                     SizedBox(height: 16.h),
-                    Container(
-                      padding: const EdgeInsets.all(0),
-                      decoration:
-                          BoxDecoration(gradient: AppColors.buttonColor),
-                      child: MaterialButton(
-                        height: 65.h,
-                        minWidth: double.infinity,
-                        onPressed: () {},
-                        child: const Text(
-                          "تسحيل الدخول",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
+                    const AppButton(
+                      buttonName: "أنشاء حساب",
                     ),
                     SizedBox(height: 12.h),
                     Row(
@@ -106,7 +96,8 @@ class Signup extends StatelessWidget {
             ),
           ),
         ),
-        body: Container(
+        title: "مرحبا",
+        child: Container(
           height: size.height * 0.42.h,
           alignment: Alignment.topCenter,
           decoration: const BoxDecoration(

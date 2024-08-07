@@ -25,20 +25,17 @@ class MyApp extends StatelessWidget {
       // Use builder only if you need to use library outside ScreenUtilInit context
       builder: (_, child) {
         return GetMaterialApp(
-            locale: const Locale('ar'),
+            // locale: const Locale('ar'),
             debugShowCheckedModeBanner: false,
             title: 'First Method',
             // You can use the library anywhere in the app even in theme
             theme: AppThemes.appLightTheme,
             home:
-                //  Directionality(
-                //   textDirection: TextDirection.rtl,
-                //  child:
-                child
+                Directionality(textDirection: TextDirection.rtl, child: child!)
             //  ),
             );
       },
-      child: const Home(),
+      child: const Favorite(),
     );
     // return MaterialApp(
     //   title: 'BIG CART',
