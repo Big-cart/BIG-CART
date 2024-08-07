@@ -3,22 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppButton extends StatelessWidget {
-  final String buttonName;
+  final Widget child;
   final void Function()? onPressed;
-  const AppButton({super.key, required this.buttonName, this.onPressed});
+  const AppButton({super.key, required this.child, this.onPressed});
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(0),
-      decoration: BoxDecoration(gradient: AppColors.buttonColor),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4.r),
+          gradient: AppColors.buttonColor),
       child: MaterialButton(
         height: 65.h,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.r)),
         minWidth: double.infinity,
         onPressed: onPressed,
-        child: Text(
-          buttonName,
-          style: TextStyle(color: Colors.white),
-        ),
+        child: child,
       ),
     );
   }

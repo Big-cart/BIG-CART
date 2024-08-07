@@ -13,7 +13,7 @@ class Home extends StatelessWidget {
       drawer: const Drawer(
         backgroundColor: Colors.white,
       ),
-      appBar: appBar(""),
+      appBar:AppBar(),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0.w),
         child: Column(

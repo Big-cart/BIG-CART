@@ -1,5 +1,6 @@
-import 'package:big_cart/View/Widgets/Auth/app_auth_scaffold.dart';
-import 'package:big_cart/View/Widgets/app_text_form_field.dart';
+import 'package:big_cart/core/Widgets/app_auth_scaffold.dart';
+import 'package:big_cart/View/Widgets/Auth/app_text_form_field.dart';
+import 'package:big_cart/core/Widgets/app_bottom_sheet.dart';
 import 'package:big_cart/core/Widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,14 +14,8 @@ class Login extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return AppAuthScaffold(
       title: "مرحبا",
-      bottomSheet: Container(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 6.h),
-        height: size.height * 0.52.h,
-        decoration: BoxDecoration(
-            color: Colors.grey[200],
-            borderRadius:
-                BorderRadiusDirectional.vertical(top: Radius.circular(24.r))),
-        child: Column(
+      
+      bottomSheet: AppBottomSheet(height: size.height * 0.52.h,  child:Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Align(
@@ -70,7 +65,7 @@ class Login extends StatelessWidget {
             ),
             SizedBox(height: 15.h),
             const AppButton(
-              buttonName: "تسحيل الدخول",
+              child: Text("تسحيل الدخول",)
             ),
             SizedBox(
               height: 10.h,
@@ -91,8 +86,7 @@ class Login extends StatelessWidget {
               ],
             )
           ],
-        ),
-      ),
+        ),),
 
       child: Container(
         height: size.height * 0.55.h,

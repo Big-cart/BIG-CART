@@ -1,9 +1,10 @@
-import 'package:big_cart/View/Widgets/Auth/app_auth_scaffold.dart';
-import 'package:big_cart/View/Widgets/app_text_form_field.dart';
+import 'package:big_cart/View/Screens/home.dart';
+import 'package:big_cart/core/Widgets/app_auth_scaffold.dart';
+import 'package:big_cart/View/Widgets/Auth/app_text_form_field.dart';
 import 'package:big_cart/core/constant/app_colors.dart';
-import 'package:big_cart/view/Screens/home.dart';
-import 'package:big_cart/view/Screens/login.dart';
-import 'package:big_cart/view/Screens/profile.dart';
+// import 'package:big_cart/view/Screens/home.dart';
+// import 'package:big_cart/view/Screens/login.dart';
+// import 'package:big_cart/view/Screens/profile.dart';
 import 'package:big_cart/core/Widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -79,8 +80,9 @@ class Signup extends StatelessWidget {
                     ),
                     SizedBox(height: 16.h),
                     const AppButton(
-                      buttonName: "أنشاء حساب",
-                    ),
+                        child: Text(
+                      "أنشاء حساب",
+                    )),
                     SizedBox(height: 12.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -91,7 +93,7 @@ class Signup extends StatelessWidget {
                         ),
                         TextButton(
                           onPressed: () {
-                            Get.to(Home());
+                            Get.to(const Home());
                           },
                           child: Text('تسجيل',
                               style: Theme.of(context).textTheme.bodyLarge),

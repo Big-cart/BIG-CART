@@ -1,35 +1,40 @@
-import 'package:big_cart/view/route/app_routes.dart';
+import 'package:big_cart/View/Screens/product.dart';
+import 'package:big_cart/View/Screens/profile.dart';
+import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:get/get.dart';
 import 'package:big_cart/View/Screens/favorite.dart';
 import 'package:big_cart/View/Screens/home.dart';
 import 'package:big_cart/View/Screens/login.dart';
 import 'package:big_cart/View/Screens/search.dart';
 import 'package:big_cart/View/Screens/signup.dart';
-import 'package:big_cart/view/Screens/profile.dart';
 
 List<GetPage<dynamic>>? route = [
   GetPage(
-    name: '/home',
+    name: AppRoute.home,
     page: () => const Home(),
   ),
   GetPage(
-    name: '/signup',
+    name: AppRoute.signup,
     page: () => const Signup(),
   ),
   GetPage(
-    name: '/favorite',
+    name: AppRoute.favorite,
     page: () => const Favorite(),
   ),
   GetPage(
-    name: '/search',
+    name: AppRoute.search,
     page: () => const Search(),
   ),
   GetPage(
-    name: '/login',
+    name: AppRoute.login,
     page: () => const Login(),
   ),
   GetPage(
-    name: '/profile',
+    name: AppRoute.profile,
     page: () => const Profile(),
   ),
+  // GetPage(
+  //   name: AppRoute.product,
+  //   page: () => const Product(),
+  // ),
 ];

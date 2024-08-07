@@ -1,4 +1,4 @@
-import 'package:big_cart/view/Screens/search.dart';
+// import 'package:big_cart/view/Screens/search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -35,7 +35,7 @@ class SearchBarWidget extends StatelessWidget {
         IconButton(
             padding: EdgeInsets.symmetric(horizontal: 2.w),
             onPressed: () {
-              Get.to(Search());
+              // Get.to(Search());
             },
             icon: const Icon(Icons.filter_alt_outlined)),
       ],

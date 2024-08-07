@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   static final Color spalshScreenColor = HexColor.fromHex('#A7CA9A');
+  static final Color productColor = HexColor.fromHex("#AEDC81");
   static final LinearGradient buttonColor = LinearGradient(
       begin: Alignment.centerLeft,
       end: Alignment.centerRight,
-      colors: [Colors.green.shade200, Colors.green]);
+      colors: [HexColor.fromHex("#AEDC81"), HexColor.fromHex("#6CC51D")]);
 }
