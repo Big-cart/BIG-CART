@@ -33,6 +33,7 @@ class AppThemes {
         foregroundColor: WidgetStatePropertyAll(Colors.green),
       ),
     ),
+    iconTheme: const IconThemeData(color: Colors.green),
     //!icontheme
 
     //bottom sheet Theme

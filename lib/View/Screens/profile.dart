@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Profile extends StatelessWidget {
-  static String routeName = '/profile';
   const Profile({super.key});
 
   @override
@@ -17,83 +17,82 @@ class Profile extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          Positioned(
-            top: 70,
-            left: MediaQuery.of(context).size.width / 2 - 57,
-            child: GestureDetector(
-              onTap: () {
-                // من هنا يمكنك وضع كود تغيير الصورة
-              },
-              child: Container(
-                width: 114,
-                height: 114,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0xFF6CC51D),
-                      offset: Offset(0, 4),
-                      blurRadius: 2,
-                    ),
-                  ],
-                ),
-                child: Stack(
-                  children: [
-                    Center(
-                      child: Icon(
-                        Icons.person,
-                        size: 60,
-                        color: Colors.grey,
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.bottomRight,
-                      child: Container(
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.white,
-                        ),
-                        child: Icon(
-                          Icons.camera_alt,
-                          size: 20,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            top: 200,
-            left: 0,
-            right: 0,
+          GestureDetector(
+            onTap: () {
+              // من هنا يمكنك وضع كود تغيير الصورة
+            },
             child: Column(
               children: [
-                Text(
-                  'اسم المستخدم',
-                  style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 15,
-                    height: 1.3,
-                    letterSpacing: -0.5,
-                    color: Colors.black,
+                SizedBox(height: 40.h),
+                Center(
+                  child: Container(
+                    width: 114.w,
+                    height: 124.h,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0xFF6CC51D),
+                          offset: Offset(0, 4),
+                          blurRadius: 2,
+                        ),
+                      ],
+                    ),
+                    child: Stack(
+                      children: [
+                        const Center(
+                          child: Icon(
+                            Icons.person,
+                            size: 60,
+                            color: Colors.grey,
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: Container(
+                            padding: const EdgeInsets.all(5),
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.white,
+                            ),
+                            child: const Icon(
+                              Icons.camera_alt,
+                              size: 20,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                SizedBox(height: 5),
-                Text(
-                  'username@gmail.com',
-                  style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12,
-                    height: 1.7,
-                    letterSpacing: -0.5,
-                    color: Color(0xFF868889),
-                  ),
-                ),
+                SizedBox(height: 40.h),
+                Column(
+                  children: [
+                    Text(
+                      'اسم المستخدم',
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15,
+                        height: 1.3,
+                        letterSpacing: -0.5,
+                        color: Colors.black,
+                      ),
+                    ),
+                    const SizedBox(height: 5),
+                    Text(
+                      'username@gmail.com',
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12,
+                        height: 1.7,
+                        letterSpacing: -0.5,
+                        color: const Color(0xFF868889),
+                      ),
+                    ),
+                  ],
+                )
               ],
             ),
           ),

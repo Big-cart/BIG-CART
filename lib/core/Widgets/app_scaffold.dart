@@ -4,12 +4,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppScaffold extends StatelessWidget {
   final Widget child;
+  final Widget? drawer;
 
   final PreferredSizeWidget? appBar;
-  const AppScaffold({super.key, required this.child, this.appBar});
+  const AppScaffold({
+    super.key,
+    required this.child,
+    this.appBar,
+    this.drawer,
+  });
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: drawer,
       extendBodyBehindAppBar: true,
       appBar: appBar,
       body: SafeArea(
