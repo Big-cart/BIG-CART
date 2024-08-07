@@ -138,66 +138,7 @@ class GrapeItem extends StatelessWidget {
           )
         ],
       ),
-      // child: Column(
-      //   children: [
-      //     Stack(
-      //       children: [
-      //         const ClipRRect(
-      //           borderRadius: BorderRadius.only(
-      //             topLeft: Radius.circular(15),
-      //             topRight: Radius.circular(15),
-      //           ),
-      //           // child: Image.asset(
-      //           //   grape.image,
-      //           //   height: 100,
-      //           //   width: double.infinity,
-      //           //   fit: BoxFit.cover,
-      //           // ),
-      //         ),
-      //         Positioned(
-      //           top: 10,
-      //           right: 10,
-      //           child: Icon(
-      //             grape.isFavorite ? Icons.favorite : Icons.favorite_border,
-      //             color: grape.isFavorite ? Colors.red : Colors.grey,
-      //           ),
-      //         ),
-      //       ],
-      //     ),
-      //     Padding(
-      //       padding: const EdgeInsets.all(10),
-      //       child: Column(
-      //         children: [
-      //           Text(
-      //             grape.name,
-      //             style: const TextStyle(
-      //               fontSize: 16,
-      //               fontWeight: FontWeight.bold,
-      //             ),
-      //           ),
-      //           const SizedBox(height: 10),
-      //           Text(
-      //             '${grape.price} ريال',
-      //             style: const TextStyle(
-      //               fontSize: 14,
-      //               color: Colors.grey,
-      //             ),
-      //           ),
-      //         ],
-      //       ),
-      //     ),
-      //     const Spacer(),
-      //     const Padding(
-      //       padding: EdgeInsets.all(10),
-      //       child: Row(
-      //         mainAxisAlignment: MainAxisAlignment.end,
-      //         children: [
-      //           Icon(Icons.lock),
-      //         ],
-      //       ),
-      //     ),
-      //   ],
-      // ),
+  
     );
   }
 }

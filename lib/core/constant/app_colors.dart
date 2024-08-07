@@ -6,5 +6,5 @@ class AppColors {
   static final LinearGradient buttonColor = LinearGradient(
       begin: Alignment.centerLeft,
       end: Alignment.centerRight,
-      colors: [Colors.green.shade100, Colors.green]);
+      colors: [Colors.green.shade200, Colors.green]);
 }

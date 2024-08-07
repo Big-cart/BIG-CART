@@ -3,14 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppBarWidget extends StatelessWidget {
   final String? title;
-  
+
   const AppBarWidget({super.key, this.title});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.grey[200],
-title: Text(title!    ),
+        surfaceTintColor: Colors.transparent,
+        title: Text(title!),
         elevation: 0,
         // leading: Icon(Icons.menu, color: Colors.green),
 
@@ -21,7 +22,6 @@ title: Text(title!    ),
                   child: Icon(Icons.person, color: Colors.red))),
         ],
       ),
-   
     );
   }
 }

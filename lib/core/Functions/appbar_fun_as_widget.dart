@@ -5,7 +5,7 @@ AppBar appBar(String title) {
   return AppBar(
     // backgroundColor: Colors.grey[200],
     title: Text(title),
-    surfaceTintColor: Colors.tealAccent,
+    surfaceTintColor: Colors.transparent,
     elevation: 0,
     // leading: Icon(Icons.menu, color: Colors.green),
 
