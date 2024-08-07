@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextFormField extends StatelessWidget {
   final String hintText;
-  final IconData icon;
+  final Icon icon;
   final Icon? suffixIcon;
   final bool obscureText;
   const AppTextFormField({
@@ -24,7 +24,7 @@ class AppTextFormField extends StatelessWidget {
         hintText: hintText,
         labelStyle: const TextStyle(),
         hintTextDirection: TextDirection.rtl,
-        prefixIcon: Icon(icon),
+        prefixIcon: icon,
         suffixIcon: suffixIcon,
         border: OutlineInputBorder(
           borderSide: BorderSide.none,

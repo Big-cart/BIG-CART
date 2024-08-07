@@ -1,3 +1,6 @@
+import 'package:big_cart/View/Widgets/Auth/app_auth_scaffold.dart';
+import 'package:big_cart/View/Widgets/app_text_form_field.dart';
+import 'package:big_cart/core/Widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -7,14 +10,8 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: const Text("مرحبا"),
-        foregroundColor: Colors.white,
-        centerTitle: true,
-      ),
+    return AppAuthScaffold(
+      title: "مرحبا",
       bottomSheet: Container(
         padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 6.h),
         height: size.height * 0.52.h,
@@ -35,34 +32,16 @@ class Login extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-            TextField(
-              decoration: InputDecoration(
-                hintText: "البريد الالكتروني",
-                hintTextDirection: TextDirection.rtl,
-                suffixIcon: Icon(Icons.mail),
-                fillColor: Colors.white,
-                filled: true,
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(4.r),
-                ),
-              ),
-            ),
+            const AppTextFormField(
+                hintText: "اليريد الالكتزوني",
+                icon: Icon(Icons.mail),
+                obscureText: false),
             SizedBox(height: 15.h),
-            TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                hintText: "Password",
-                hintTextDirection: TextDirection.rtl,
-                suffixIcon: Icon(Icons.lock),
-                prefixIcon: Icon(Icons.remove_red_eye_outlined),
-                fillColor: Colors.white,
-                filled: true,
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(4.r),
-                ),
-              ),
+            const AppTextFormField(
+              hintText: "كلمة السر ",
+              suffixIcon: Icon(Icons.remove_red_eye_outlined),
+              obscureText: false,
+              icon: Icon(Icons.lock),
             ),
             SizedBox(height: 15.h),
             Row(
@@ -86,30 +65,11 @@ class Login extends StatelessWidget {
                     style: TextStyle(color: Colors.blue),
                   ),
                 ),
-                Row(
-                  children: [
-                    Text(
-                      "ادكرني",
-                      style: TextStyle(color: Colors.black45),
-                    ),
-                    Switch(
-                      value: false,
-                      onChanged: (val) {},
-                    ),
-                  ],
-                )
               ],
             ),
             SizedBox(height: 15.h),
-            MaterialButton(
-              height: 65.h,
-              minWidth: double.infinity,
-              color: Colors.green,
-              onPressed: () {},
-              child: const Text(
-                "تسحيل الدخول",
-                style: TextStyle(color: Colors.white),
-              ),
+            const AppButton(
+              buttonName: "تسحيل الدخول",
             ),
             SizedBox(
               height: 10.h,
@@ -117,15 +77,15 @@ class Login extends StatelessWidget {
             const Wrap(
               children: [
                 Text(
+                  "ليس لديك حساب ؟",
+                  textDirection: TextDirection.rtl,
+                  style: TextStyle(color: Colors.black45),
+                ),
+                Text(
                   textDirection: TextDirection.rtl,
                   "أنشاء حساب",
                   style: TextStyle(
                       color: Colors.black, fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  "ليس لديك حساب ؟",
-                  textDirection: TextDirection.rtl,
-                  style: TextStyle(color: Colors.black45),
                 ),
               ],
             )
@@ -133,7 +93,7 @@ class Login extends StatelessWidget {
         ),
       ),
 
-      body: Container(
+      child: Container(
         height: size.height * 0.55.h,
         alignment: Alignment.topCenter,
         decoration: const BoxDecoration(
