@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Home extends StatelessWidget {
+  static String home = '/home';
   const Home({super.key});
 
   @override

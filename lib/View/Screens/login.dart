@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Login extends StatelessWidget {
+  static String routeName = '/login';
   const Login({super.key});
 
   @override
