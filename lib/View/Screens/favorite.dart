@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Favorite extends StatelessWidget {
+  static String routeName = '/favorite';
   const Favorite({super.key});
 
   @override

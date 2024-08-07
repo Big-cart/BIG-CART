@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Search extends StatelessWidget {
+  static String routeName = '/profile';
   const Search({super.key});
   @override
   Widget build(BuildContext context) {

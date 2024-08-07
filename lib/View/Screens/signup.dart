@@ -1,9 +1,14 @@
 import 'package:big_cart/View/Widgets/app_text_form_field.dart';
 import 'package:big_cart/core/constant/app_colors.dart';
+import 'package:big_cart/view/Screens/home.dart';
+import 'package:big_cart/view/Screens/login.dart';
+import 'package:big_cart/view/Screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class Signup extends StatelessWidget {
+  static String routeName = '/singup';
   const Signup({super.key});
   @override
   Widget build(BuildContext context) {
@@ -78,7 +83,9 @@ class Signup extends StatelessWidget {
                       child: MaterialButton(
                         height: 65.h,
                         minWidth: double.infinity,
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(Home());
+                        },
                         child: const Text(
                           "تسحيل الدخول",
                           style: TextStyle(color: Colors.white),
@@ -94,7 +101,9 @@ class Signup extends StatelessWidget {
                           style: Theme.of(context).textTheme.bodySmall,
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(Login());
+                          },
                           child: Text('تسجيل',
                               style: Theme.of(context).textTheme.bodyLarge),
                         ),
