@@ -91,7 +91,7 @@ class Signup extends StatelessWidget {
                         ),
                         TextButton(
                           onPressed: () {
-                            Get.to(Login());
+                            Get.to(Home());
                           },
                           child: Text('تسجيل',
                               style: Theme.of(context).textTheme.bodyLarge),
