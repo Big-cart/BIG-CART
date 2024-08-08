@@ -21,6 +21,7 @@ class AppTextFormField extends StatelessWidget {
     return TextFormField(
       keyboardType: keyboradType,
       obscureText: obscureText,
+      cursorHeight: 25.h,
       decoration: InputDecoration(
         filled: true,
         fillColor: Colors.white,
