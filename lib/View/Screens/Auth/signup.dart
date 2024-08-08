@@ -1,4 +1,4 @@
-import 'package:big_cart/View/Screens/home.dart';
+import 'package:big_cart/View/Screens/Users_View/home.dart';
 import 'package:big_cart/core/Widgets/app_auth_scaffold.dart';
 import 'package:big_cart/View/Widgets/Auth/app_text_form_field.dart';
 import 'package:big_cart/View/Widgets/app_bottom_sheet.dart';

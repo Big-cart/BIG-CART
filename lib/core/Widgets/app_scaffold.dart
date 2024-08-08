@@ -7,6 +7,8 @@ class AppScaffold extends StatelessWidget {
   final Widget? drawer;
   final bool isPadding;
   final Color? backColor;
+  final double? width;
+  final Widget? bottomNavigationBar;
 
   final PreferredSizeWidget? appBar;
   const AppScaffold({
@@ -16,10 +18,13 @@ class AppScaffold extends StatelessWidget {
     this.drawer,
     required this.isPadding,
     this.backColor,
+    this.bottomNavigationBar,
+    this.width,
   });
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        bottomNavigationBar: bottomNavigationBar,
         backgroundColor: backColor,
         drawer: drawer,
         extendBodyBehindAppBar: true,
@@ -28,8 +33,8 @@ class AppScaffold extends StatelessWidget {
             ? SafeArea(child: child)
             : SafeArea(
                 child: Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 24.0.w, vertical: 8.h),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: width ?? 24.0.w, vertical: 8.h),
                   child: child,
                 ),
               ));
