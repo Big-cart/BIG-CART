@@ -1,4 +1,4 @@
-import 'package:big_cart/View/Screens/home.dart';
+import 'package:big_cart/View/Screens/Users_View/home.dart';
 import 'package:big_cart/View/Screens/onBorading/page_1.dart';
 import 'package:big_cart/View/Screens/onBorading/page_2.dart';
 import 'package:big_cart/View/Screens/onBorading/page_3.dart';

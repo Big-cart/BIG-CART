@@ -13,8 +13,10 @@ class Login extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return AppAuthScaffold(
       title: "مرحبا",
-      
-      bottomSheet: AppBottomSheet(height: size.height * 0.52.h,  child:Column(
+
+      bottomSheet: AppBottomSheet(
+        height: size.height * 0.52.h,
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Align(
@@ -64,8 +66,9 @@ class Login extends StatelessWidget {
             ),
             SizedBox(height: 15.h),
             const AppButton(
-              child: Text("تسحيل الدخول",)
-            ),
+                child: Text(
+              "تسحيل الدخول",
+            )),
             SizedBox(
               height: 10.h,
             ),
@@ -85,14 +88,15 @@ class Login extends StatelessWidget {
               ],
             )
           ],
-        ),),
+        ),
+      ),
 
       child: Container(
         height: size.height * 0.55.h,
         alignment: Alignment.topCenter,
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/shop.jpeg"),
+              image: AssetImage("assets/images/login.jpeg"),
               alignment: Alignment.topCenter,
               fit: BoxFit.cover),
         ),
