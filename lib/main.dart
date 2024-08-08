@@ -1,18 +1,16 @@
 import 'package:big_cart/View/Screens/favorite.dart';
 import 'package:big_cart/View/Screens/home.dart';
 import 'package:big_cart/View/Screens/login.dart';
+import 'package:big_cart/View/Screens/onboarding.dart';
 import 'package:big_cart/View/Screens/product.dart';
 import 'package:big_cart/View/Screens/profile.dart';
 import 'package:big_cart/View/Screens/search.dart';
 import 'package:big_cart/View/Screens/signup.dart';
 import 'package:big_cart/core/Theme/theme.dart';
-import 'package:big_cart/view/Screens/evaluation.dart';
-import 'package:big_cart/view/Screens/onboarding.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
-import 'view/Screens/pages/SelectionScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,17 +29,18 @@ class MyApp extends StatelessWidget {
       // Use builder only if you need to use library outside ScreenUtilInit context
       builder: (_, child) {
         return GetMaterialApp(
-            // locale: const Locale('ar'),
+            locale: const Locale('ar'),
             debugShowCheckedModeBanner: false,
             title: 'First Method',
             // You can use the library anywhere in the app even in theme
             theme: AppThemes.appLightTheme,
             home:
-                Directionality(textDirection: TextDirection.rtl, child: child!)
+                // Directionality(textDirection: TextDirection.rtl, child: )
+                child!
             //  ),
             );
       },
-      child: Onboarding(),
+      child: const Onboarding(),
     );
     // return MaterialApp(
     //   title: 'BIG CART',

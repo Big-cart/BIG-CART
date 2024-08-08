@@ -68,6 +68,7 @@ flutter:
   assets:
     - assets/images/
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     - assets/images/markus_spiske_1.jpeg
@@ -76,6 +77,11 @@ flutter:
     - assets/images/markus_spiske_4.jpeg
     
 >>>>>>> 6968981357f80e42febd778e94e5eab9bc5e5b79
+=======
+  #   - assets/fonts/
+
+  #   - images/a_dot_ham.jpeg
+>>>>>>> 495b182bdf69f18dba5a4698c7aae256f66e2c70
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
