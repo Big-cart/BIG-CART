@@ -4,20 +4,24 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextFormField extends StatelessWidget {
   final String hintText;
-  final Icon icon;
+  final Icon? icon;
   final Icon? suffixIcon;
   final bool obscureText;
+  final TextInputType? keyboradType;
   const AppTextFormField({
     super.key,
     required this.hintText,
-    required this.icon,
+    this.icon,
     this.suffixIcon,
     required this.obscureText,
+    this.keyboradType,
   });
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: keyboradType,
       obscureText: obscureText,
+      cursorHeight: 25.h,
       decoration: InputDecoration(
         filled: true,
         fillColor: Colors.white,

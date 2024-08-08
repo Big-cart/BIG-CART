@@ -1,10 +1,10 @@
 import 'package:big_cart/View/Widgets/search_bar_widget.dart';
-import 'package:big_cart/core/Functions/appbar_fun_as_widget.dart';
+import 'package:big_cart/View/Widgets/card_widget.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Home extends StatelessWidget {
-  static String home = '/home';
   const Home({super.key});
 
   @override
@@ -13,7 +13,7 @@ class Home extends StatelessWidget {
       drawer: const Drawer(
         backgroundColor: Colors.white,
       ),
-      appBar:AppBar(),
+      appBar: AppBar(),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0.w),
         child: Column(
@@ -23,8 +23,11 @@ class Home extends StatelessWidget {
 
             SizedBox(height: 20.0.h),
             // Promotional Banner
+            const CardWidget(),
+            //! Promotional Banner
 
             const SizedBox(height: 20.0),
+
             // Grid of Farms
             Expanded(
               child: GridView.count(

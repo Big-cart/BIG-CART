@@ -35,40 +35,39 @@ class Product extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  width: size.width.w * 0.7,
-                  padding:
-                      EdgeInsets.symmetric(vertical: 16.h, horizontal: 20.w),
                   height: 70.h,
+                  width: size.width * 0.6.w,
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6.r),
-                      color: AppColors.productColor),
-                  child: Row(
+                    color: AppColors.productColor,
+                    borderRadius: BorderRadius.circular(4.r),
+                  ),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Expanded(
-                        flex: 6,
-                        child: Text(
-                          "ادخل الكمية",
-                          style: Theme.of(context).textTheme.titleMedium,
-                        ),
+                        flex: 5,
+                        child: Text("ادخل الكمية"),
                       ),
-                      const Expanded(
+                      Expanded(
                         flex: 1,
                         child: AppTextFormField(
-                          hintText: '1',
+                          hintText: "1",
                           obscureText: false,
-                          keyboradType: TextInputType.number,
+                          keyboradType: TextInputType.phone,
                         ),
                       )
                     ],
                   ),
                 ),
-                const Spacer(),
+                SizedBox(height: 20.h),
                 Container(
                   decoration: BoxDecoration(
                       color: Colors.grey.shade200,
                       borderRadius: BorderRadius.circular(24.r)),
                   padding:
-                      EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                      EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
                   child: Column(
                     children: [
                       const Text(
@@ -79,7 +78,7 @@ class Product extends StatelessWidget {
                         style: TextStyle(fontSize: 16),
                       ),
                       SizedBox(
-                        height: 5.h,
+                        height: 10.h,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -94,7 +93,7 @@ class Product extends StatelessWidget {
                     ],
                   ),
                 ),
-                const Spacer(),
+                SizedBox(height: 20.h),
                 Row(
                   children: [
                     Expanded(
@@ -113,10 +112,8 @@ class Product extends StatelessWidget {
                     Expanded(
                       flex: 4,
                       child: AppButton(
-                        child: Text(
-                          "اضافه لسله",
-                          style: Theme.of(context).textTheme.labelMedium,
-                        ),
+                        child: Text("اضافه لسله",
+                            style: Theme.of(context).textTheme.titleLarge),
                         onPressed: () {},
                       ),
                     ),

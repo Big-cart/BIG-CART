@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppThemes {
   static ThemeData appLightTheme = ThemeData.light().copyWith(
@@ -34,6 +35,7 @@ class AppThemes {
       ),
     ),
     iconTheme: const IconThemeData(color: Colors.green),
+
     //!icontheme
 
     //bottom sheet Theme
@@ -48,27 +50,37 @@ class AppThemes {
 //!cardCOLOR
 
     textTheme: TextTheme(
-      // titleMedium: const TextStyle(color: Colors.black),
+      // titleMedium: const GoogleFonts.poppins(color: Colors.black),
       bodyMedium: TextStyle(
+        fontFamily: "Almarai",
         color: Colors.black,
         fontSize: 18.sp,
         fontWeight: FontWeight.w500,
       ),
       bodySmall: TextStyle(
-          fontSize: 16.sp, fontWeight: FontWeight.w400, color: Colors.black45),
+          fontFamily: "Almarai",
+          fontSize: 16.sp,
+          fontWeight: FontWeight.w400,
+          color: Colors.black45),
       bodyLarge: TextStyle(
+        fontFamily: "Almarai",
         color: Colors.black,
         fontSize: 24.sp,
         fontWeight: FontWeight.bold,
       ),
-      labelMedium: TextStyle(color: Colors.white, fontSize: 18.sp),
-      titleLarge: TextStyle(color: Colors.white, fontSize: 26.sp),
-      titleSmall: const TextStyle(color: Colors.black),
+      labelMedium: TextStyle(
+          fontFamily: "Almarai", color: Colors.white, fontSize: 18.sp),
+      titleLarge: TextStyle(
+          fontFamily: "Almarai", color: Colors.white, fontSize: 26.sp),
+      titleSmall: const TextStyle(fontFamily: "Almarai", color: Colors.black),
+      titleMedium: const TextStyle(fontFamily: "Almarai", color: Colors.white),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Colors.white,
       selectedItemColor: Colors.grey[300]!,
     ),
+    //buttontheme
+    //!buttontheme
 
     //appBartheme
     appBarTheme: const AppBarTheme(
@@ -100,16 +112,16 @@ class AppThemes {
   //         )),
   //     cardColor: Colors.white,
   //     textTheme: TextTheme(
-  //       titleMedium: TextStyle(color: Colors.white),
-  //       titleLarge: TextStyle(color: Colors.white),
-  //       titleSmall: TextStyle(color: Colors.white),
-  //       bodyMedium: TextStyle(
+  //       titleMedium: TextStyle(fontFamily: "Almarai",color: Colors.white),
+  //       titleLarge: TextStyle(fontFamily: "Almarai",color: Colors.white),
+  //       titleSmall: TextStyle(fontFamily: "Almarai",color: Colors.white),
+  //       bodyMedium: TextStyle(fontFamily: "Almarai",
   //         color: Colors.white,
   //       ),
-  //       bodySmall: TextStyle(
+  //       bodySmall: TextStyle(fontFamily: "Almarai",
   //           fontSize: 18.sp, fontWeight: FontWeight.w500, color: Colors.white),
-  //       bodyLarge: TextStyle(color: Colors.white),
-  //       labelMedium: TextStyle(color: Colors.white),
+  //       bodyLarge: TextStyle(fontFamily: "Almarai",color: Colors.white),
+  //       labelMedium: TextStyle(fontFamily: "Almarai",color: Colors.white),
   //     ),
   //     scaffoldBackgroundColor: const Color.fromARGB(255, 22, 19, 19),
   //     bottomNavigationBarTheme: const BottomNavigationBarThemeData(

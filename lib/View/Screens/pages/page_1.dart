@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Page1 extends StatelessWidget {
-  const Page1({Key? key}) : super(key: key);
+  const Page1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +17,17 @@ class Page1 extends StatelessWidget {
             ),
           ),
           // النصوص فوق الصورة
-          Center(
+          const Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              children: const [
+              children: [
                 Text(
-                 'Welcome',
+                  'Welcome',
                   style: TextStyle(
                     fontSize: 90,
                     fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 7, 53, 41), // لجعل النص واضحًا على الخلفية
+                    color: Color.fromARGB(
+                        255, 7, 53, 41), // لجعل النص واضحًا على الخلفية
                   ),
                   textAlign: TextAlign.center,
                 ),
