@@ -69,15 +69,11 @@ class AppThemes {
         fontWeight: FontWeight.bold,
       ),
       labelMedium: TextStyle(
-          fontFamily: "Almarai",
-          color: Colors.white,
-          fontSize: 18.sp),
+          fontFamily: "Almarai", color: Colors.white, fontSize: 18.sp),
       titleLarge: TextStyle(
-          fontFamily: "Almarai",
-          color: Colors.white,
-          fontSize: 26.sp),
-      titleSmall: const TextStyle(
-          fontFamily: "Almarai", color: Colors.black),
+          fontFamily: "Almarai", color: Colors.white, fontSize: 26.sp),
+      titleSmall: const TextStyle(fontFamily: "Almarai", color: Colors.black),
+      titleMedium: const TextStyle(fontFamily: "Almarai", color: Colors.white),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Colors.white,
