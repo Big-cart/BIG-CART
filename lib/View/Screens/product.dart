@@ -30,7 +30,7 @@ class Product extends StatelessWidget {
             ]),
         child: AppBottomSheet(
             colorBottomSheet: Colors.white,
-            height: size.height * 0.57.h,
+            height: size.height * 0.56.h,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
