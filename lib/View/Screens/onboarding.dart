@@ -1,83 +1,126 @@
-import 'package:big_cart/view/Screens/home.dart';
-import 'package:big_cart/view/Screens/pages/page.dart';
-import 'package:big_cart/view/Screens/pages/page_1.dart';
-import 'package:big_cart/view/Screens/pages/page_2.dart';
-import 'package:big_cart/view/Screens/pages/page_3.dart';
-import 'package:big_cart/view/Screens/pages/page_4.dart';
+import 'package:big_cart/View/Screens/home.dart';
+import 'package:big_cart/View/Screens/pages/page_1.dart';
+import 'package:big_cart/View/Screens/pages/page_2.dart';
+import 'package:big_cart/View/Screens/pages/page_3.dart';
+import 'package:big_cart/View/Screens/pages/page_4.dart';
+import 'package:big_cart/core/Widgets/app_button.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Onboarding extends StatefulWidget {
-  const Onboarding({Key? key}) : super(key: key);
+  const Onboarding({super.key});
 
   @override
-  _OnboardingState createState() => _OnboardingState();
+  OnboardingState createState() => OnboardingState();
 }
 
 PageController _controller = PageController();
 
-class _OnboardingState extends State<Onboarding> {
-  bool onLastPage = false;
+List<Widget> pages = [
+  const Page1(),
+  const Page2(),
+  const Page3(),
+  const Page4(),
+];
 
+class OnboardingState extends State<Onboarding> {
+  bool onLastPage = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(
       children: [
         PageView(
-          controller: _controller,
-          onPageChanged: (index) {
-            setState(() {
-              onLastPage = (index == 3);
-            });
-          },
-          children: 
-           [
-            Page1(),
-            Page2(),
-            Page3(),
-            Page4(),
-          ],
+            scrollDirection: Axis.horizontal,
+            reverse: true,
+            controller: _controller,
+            onPageChanged: (index) {
+              setState(() {
+                onLastPage = (index == 3);
+              });
+            },
+            children: pages),
+        Positioned(
+          top: 50.h,
+          right: 24.w,
+          child: SizedBox(
+            width: 90.w,
+            height: 55.h,
+            child: AppButton(
+              onPressed: () {
+                _controller.jumpToPage(
+                  3,
+                );
+              },
+              child: Text(
+                'تخطي',
+                style: Theme.of(context).textTheme.labelMedium,
+              ),
+            ),
+          ),
         ),
         Container(
-          alignment: Alignment(0, 0.75),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          alignment: const Alignment(0, 0.75),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              GestureDetector(
-                onTap: () {
-                  _controller.jumpToPage(1);
-                },
-                child: Text('skip'),
+              SmoothPageIndicator(
+                controller: _controller,
+                count: pages.length,
+                textDirection: TextDirection.ltr,
+                effect: const SlideEffect(),
               ),
-              SmoothPageIndicator(controller: _controller, count: 3),
+              SizedBox(
+                height: 20.h,
+              ),
               onLastPage
-                  ? GestureDetector(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return Home();
-                         },
+                  ? Positioned(
+                      bottom: 0,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: AppButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const Home();
+                                },
+                              ),
+                            );
+                          },
+                          child: Text(
+                            "انتقل الى صفحة التسجيل",
+                            style: Theme.of(context).textTheme.labelMedium,
+                          ),
                         ),
-                       );
-                      },
-                      child: Text('done'),
+                      ),
                     )
-                  : GestureDetector(
-                      onTap: () {
-                        _controller.nextPage(
-                          duration: Duration(milliseconds: 500),
-                          curve: Curves.easeIn,
-                        );
-                      },
-                      child: Text('next'),
+                  : Positioned(
+                      bottom: 0,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: AppButton(
+                            onPressed: () {
+                              _controller.nextPage(
+                                duration: const Duration(milliseconds: 500),
+                                curve: Curves.easeIn,
+                              );
+                            },
+                            child: Text(
+                              "التالي",
+                              style: Theme.of(context).textTheme.labelMedium,
+                            )),
+                      ),
                     ),
-
-
-                    
+              SizedBox(
+                height: 20.h,
+              )
             ],
           ),
-        )
+        ),
       ],
     ));
   }
