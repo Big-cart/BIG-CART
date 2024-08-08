@@ -1,6 +1,7 @@
 import 'package:big_cart/View/Screens/home.dart';
 import 'package:big_cart/core/Widgets/app_auth_scaffold.dart';
 import 'package:big_cart/View/Widgets/Auth/app_text_form_field.dart';
+import 'package:big_cart/core/Widgets/app_bottom_sheet.dart';
 import 'package:big_cart/core/constant/app_colors.dart';
 // import 'package:big_cart/view/Screens/home.dart';
 // import 'package:big_cart/view/Screens/login.dart';
@@ -17,13 +18,8 @@ class Signup extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return AppAuthScaffold(
-        bottomSheet: Container(
-          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+        bottomSheet: AppBottomSheet(
           height: size.height * 0.72.h,
-          decoration: BoxDecoration(
-              color: Colors.grey[200],
-              borderRadius:
-                  BorderRadiusDirectional.vertical(top: Radius.circular(24.r))),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,6 +102,8 @@ class Signup extends StatelessWidget {
             ),
           ),
         ),
+      
+
         title: "مرحبا",
         child: Container(
           height: size.height * 0.42.h,
