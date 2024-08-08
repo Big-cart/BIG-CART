@@ -1,4 +1,3 @@
-import 'package:big_cart/View/Screens/product.dart';
 import 'package:big_cart/View/Screens/profile.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:get/get.dart';

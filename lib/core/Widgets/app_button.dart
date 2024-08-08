@@ -14,6 +14,8 @@ class AppButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(4.r),
           gradient: AppColors.buttonColor),
       child: MaterialButton(
+        textColor: Colors.white,
+
         height: 65.h,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.r)),
         minWidth: double.infinity,
