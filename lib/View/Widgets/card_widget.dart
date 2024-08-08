@@ -1,9 +1,5 @@
-// import 'package:big_cart/view/Screens/favorite.dart';
-// import 'package:big_cart/view/Screens/home.dart';
-// import 'package:big_cart/view/Screens/login.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CardWidget extends StatelessWidget {
   const CardWidget({super.key});
@@ -11,69 +7,66 @@ class CardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16.0),
+      padding: EdgeInsets.only(left: 12.w),
+      height: 200.h,
       decoration: BoxDecoration(
-        color:
-            const Color(0xFFDFFFD8), // Background color similar to light green
-        borderRadius: BorderRadius.circular(20),
+        color: Colors.green[300],
+        borderRadius: BorderRadius.circular(20.0),
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              Text(
-                'منتجات طازجة',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.green[800], // Dark green color
+          Expanded(
+            flex: 20,
+            child: Stack(
+              clipBehavior: Clip.antiAlias,
+              children: [
+                Positioned(
+                  top: 0.h,
+                  right: -170.w,
+                  child: Container(
+                      height: 250.h,
+                      width: 320.w,
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.contain,
+                              alignment: Alignment.centerRight,
+                              image: AssetImage(
+                                "assets/images/cart.png",
+                              )))),
                 ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 8),
-          Text(
-            'تطلع من المزرعة وتجي لبابك',
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.green[700], // Slightly lighter green color
+              ],
             ),
           ),
-          const SizedBox(height: 16),
-          Center(
-            child: ElevatedButton(
-              onPressed: () {
-                // Get.to(Favorite());
-                // Add your onPressed code here!
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.red, // Background color of the button
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 0.0.w),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Align(
+                  child: Text(
+                    'منتجات طازجة',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
                 ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              ),
-              child: const Text(
-                'اطلب الان',
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.white, // Text color of the button
+                Text(
+                  'تطلع من المزرعة و تجي لبابك',
+                  style: Theme.of(context).textTheme.labelMedium,
                 ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 16),
-          Container(
-            height: 150,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                    'assets/images/cart.png'), // Replace with your image asset
-                fit: BoxFit.cover,
-              ),
+                const SizedBox(height: 10.0),
+                Padding(
+                  padding: EdgeInsets.only(right: 120.0.w),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        alignment: Alignment.center,
+                        backgroundColor: Colors.red),
+                    child: const Text('اطلب الان',
+                        style: TextStyle(color: Colors.white)),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
