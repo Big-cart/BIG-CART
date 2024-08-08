@@ -1,48 +1,51 @@
+import 'package:big_cart/View/Screens/home.dart';
+import 'package:big_cart/core/Widgets/app_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SelectionScreen extends StatelessWidget {
+  const SelectionScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AppScaffold(
+      backColor: Colors.white,
+      isPadding: false,
       appBar: AppBar(),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 100),
+      child: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
               'من أنت؟',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context).textTheme.displayLarge,
             ),
-            SizedBox(height: 2),
+            SizedBox(height: 5.h),
             Text(
               'حدد أي واحد أدناه',
               style: TextStyle(
                 color: Colors.green,
-                fontSize: 16,
+                fontSize: 16.sp,
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 80.h),
             CustomCard(
               imagePath: 'assets/images/farmer.png', // ضع مسار صورة المزارع هنا
               title: 'مزارع',
               description: 'توريد المنتجات الزراعية للتجار والمستهلكين',
-              onTap: () {
-
-              },
+              onTap: () {},
             ),
-            SizedBox(height: 40),
+            SizedBox(
+              height: 50.h,
+            ),
             CustomCard(
-              imagePath: 'assets/images/draiver.png', // ضع مسار صورة المزارع هنا
+              imagePath:
+                  'assets/images/draiver.png', // ضع مسار صورة المزارع هنا
               title: 'موصل',
               description: 'توصيل الطلبات من الموردين الى التجار والمستهلكين',
-              onTap: () {
-
-              },
+              onTap: () {},
             ),
+            const Spacer(),
           ],
         ),
       ),
@@ -56,51 +59,55 @@ class CustomCard extends StatelessWidget {
   final String description;
   final VoidCallback onTap;
 
-  CustomCard({required this.imagePath, required this.title, required this.description, required this.onTap});
+  const CustomCard(
+      {super.key,
+      required this.imagePath,
+      required this.title,
+      required this.description,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(19),
+        width: MediaQuery.of(context).size.width.w * 0.55,
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 30.h),
         decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(14.r),
           color: Colors.white,
-          borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.4),
-              spreadRadius: 11,
-              blurRadius: 10,
-              offset: Offset(0, 3), // changes position of shadow
-            ),
+                offset: Offset(0, 10.h),
+                blurRadius: 10,
+                color: Colors.grey.shade400 // changes position of shadow
+                ),
           ],
         ),
         child: Column(
           children: [
-            Image.asset(imagePath, height: 80), // ضبط حجم الصورة حسب الحاجة
-            SizedBox(height: 10),
+            Image.asset(imagePath, height: 80.h), // ضبط حجم الصورة حسب الحاجة
+            SizedBox(height: 10.h),
             Text(
               title,
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 18.sp,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height:8),
+            SizedBox(height: 20.h),
             Text(
               description,
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 14,
+                fontSize: 14.sp,
                 color: Colors.grey[600],
               ),
             ),
+            SizedBox(height: 20.h),
           ],
         ),
       ),
     );
   }
 }
-
-

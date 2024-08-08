@@ -26,6 +26,7 @@ class Favorite extends StatelessWidget {
     ];
     return AppScaffold(
       appBar: AppBar(),
+      isPadding: true,
       child: Column(
         children: [
           const SearchBarWidget(),

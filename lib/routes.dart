@@ -3,9 +3,9 @@ import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:get/get.dart';
 import 'package:big_cart/View/Screens/favorite.dart';
 import 'package:big_cart/View/Screens/home.dart';
-import 'package:big_cart/View/Screens/login.dart';
+import 'package:big_cart/View/Screens/Auth/login.dart';
 import 'package:big_cart/View/Screens/search.dart';
-import 'package:big_cart/View/Screens/signup.dart';
+import 'package:big_cart/View/Screens/Auth/signup.dart';
 
 List<GetPage<dynamic>>? route = [
   GetPage(
