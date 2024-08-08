@@ -51,6 +51,15 @@ class AppThemes {
 
     textTheme: TextTheme(
       // titleMedium: const GoogleFonts.poppins(color: Colors.black),
+      displayLarge: TextStyle(
+        fontFamily: "Almarai",
+        color: Colors.black,
+        fontSize: 32.sp,
+        shadows: const [
+          Shadow(offset: Offset(0, 3), blurRadius: 10, color: Colors.black54)
+        ],
+        fontWeight: FontWeight.bold,
+      ),
       bodyMedium: TextStyle(
         fontFamily: "Almarai",
         color: Colors.black,

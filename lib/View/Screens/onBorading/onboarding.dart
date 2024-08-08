@@ -1,9 +1,9 @@
 import 'package:big_cart/View/Screens/home.dart';
-import 'package:big_cart/View/Screens/pages/page_1.dart';
-import 'package:big_cart/View/Screens/pages/page_2.dart';
-import 'package:big_cart/View/Screens/pages/page_3.dart';
-import 'package:big_cart/View/Screens/pages/page_4.dart';
-import 'package:big_cart/core/Widgets/app_button.dart';
+import 'package:big_cart/View/Screens/onBorading/page_1.dart';
+import 'package:big_cart/View/Screens/onBorading/page_2.dart';
+import 'package:big_cart/View/Screens/onBorading/page_3.dart';
+import 'package:big_cart/View/Screens/onBorading/page_4.dart';
+import 'package:big_cart/View/Widgets/app_button.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

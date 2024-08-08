@@ -1,7 +1,7 @@
 import 'package:big_cart/core/Widgets/app_auth_scaffold.dart';
 import 'package:big_cart/View/Widgets/Auth/app_text_form_field.dart';
-import 'package:big_cart/core/Widgets/app_bottom_sheet.dart';
-import 'package:big_cart/core/Widgets/app_button.dart';
+import 'package:big_cart/View/Widgets/app_bottom_sheet.dart';
+import 'package:big_cart/View/Widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

@@ -1,11 +1,12 @@
+import 'package:big_cart/View/Screens/Auth/SelectionScreen.dart';
 import 'package:big_cart/View/Screens/favorite.dart';
 import 'package:big_cart/View/Screens/home.dart';
-import 'package:big_cart/View/Screens/login.dart';
-import 'package:big_cart/View/Screens/onboarding.dart';
+import 'package:big_cart/View/Screens/Auth/login.dart';
+import 'package:big_cart/View/Screens/onBorading/onboarding.dart';
 import 'package:big_cart/View/Screens/product.dart';
 import 'package:big_cart/View/Screens/profile.dart';
 import 'package:big_cart/View/Screens/search.dart';
-import 'package:big_cart/View/Screens/signup.dart';
+import 'package:big_cart/View/Screens/Auth/signup.dart';
 import 'package:big_cart/core/Theme/theme.dart';
 
 import 'package:flutter/material.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child: const Onboarding(),
+      child:  SelectionScreen(),
     );
     // return MaterialApp(
     //   title: 'BIG CART',
