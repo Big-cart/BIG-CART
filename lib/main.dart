@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child:  SelectionScreen(),
+      child:  const SelectionScreen(),
     );
     // return MaterialApp(
     //   title: 'BIG CART',

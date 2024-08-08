@@ -1,4 +1,5 @@
-import 'package:big_cart/View/Screens/login.dart';
+import 'package:big_cart/View/Screens/Auth/login.dart';
+// import 'package:big_cart/View/Screens/login.dart';
 import 'package:get/get.dart';
 
 abstract class SplashScreenController extends GetxController{
@@ -16,8 +17,8 @@ class SplashScreenControllerImp extends SplashScreenController{
   @override
   goToHome()async {
   
-    Future.delayed( Duration(milliseconds:900)).then((value) async {
-      Get.to(Login());
+    Future.delayed( const Duration(milliseconds:900)).then((value) async {
+      Get.to(const Login());
 
     });
   }
