@@ -38,18 +38,11 @@ class CardWidget extends StatelessWidget {
                   clipBehavior: Clip.none,
                   children: [
                     Positioned(
-                      top: -20,
-                      right: -10,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(24.r),
-                        child: ImagePixels.container(
-                          colorAlignment: Alignment.center,
-                          imageProvider: AssetImage(cardImage),
-                          child: CircleAvatar(
-                            backgroundColor: Colors.transparent,
-                            backgroundImage: AssetImage(cardImage),
-                          ),
-                        ),
+                      top: -15,
+                      right: -5,
+                      child: Image.asset(
+                        cardImage,
+                        width: 40.w,
                       ),
                     )
                   ],
@@ -62,10 +55,10 @@ class CardWidget extends StatelessWidget {
                   children: [
                     Positioned(
                       bottom: 0.h,
-                      right: -50.w,
+                      right: -30.w,
                       child: Container(
-                        height: 170.h,
-                        width: 250.w,
+                        height: 150.h,
+                        width: 180.w,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.cover,
@@ -94,18 +87,23 @@ class CardWidget extends StatelessWidget {
                     ),
                     Text(
                       cardDescription,
-                      style: Theme.of(context).textTheme.labelMedium,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
-                    const SizedBox(height: 10.0),
+                    SizedBox(height: 30.0.h),
                     Padding(
-                      padding: EdgeInsets.only(right: 120.0.w),
+                      padding: EdgeInsets.only(right: 50.0.w, left: 15.w),
                       child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(6.r)),
                             alignment: Alignment.center,
-                            backgroundColor: Colors.red),
+                            backgroundColor: Colors.grey.shade200),
                         child: Text(cardButtonText,
-                            style: const TextStyle(color: Colors.white)),
+                            style: const TextStyle(
+                                color: Colors.red,
+                                fontFamily: "Almarai",
+                                fontWeight: FontWeight.w700)),
                       ),
                     ),
                   ],

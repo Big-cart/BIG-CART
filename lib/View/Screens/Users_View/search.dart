@@ -19,7 +19,7 @@ class Search extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {
-                Get.to(Home());
+                Get.to(const Home());
               },
               icon: const Icon(Icons.person)),
         ],

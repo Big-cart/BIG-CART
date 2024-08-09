@@ -27,6 +27,7 @@ class AppTextFormField extends StatelessWidget {
         fillColor: Colors.white,
         hintText: hintText,
         labelStyle: const TextStyle(),
+        hintStyle: Theme.of(context).textTheme.bodySmall,
         hintTextDirection: TextDirection.rtl,
         prefixIcon: icon,
         suffixIcon: suffixIcon,
