@@ -8,7 +8,9 @@ import 'package:big_cart/View/Screens/onBorading/onboarding.dart';
 // import 'package:big_cart/View/Screens/profile.dart';
 // import 'package:big_cart/View/Screens/search.dart';
 import 'package:big_cart/View/Screens/Auth/signup.dart';
+import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:big_cart/core/Theme/theme.dart';
+import 'package:big_cart/routes.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,6 +41,7 @@ class MyApp extends StatelessWidget {
       // Use builder only if you need to use library outside ScreenUtilInit context
       builder: (_, child) {
         return GetMaterialApp(
+            getPages: route,
             locale: const Locale('ar'),
             debugShowCheckedModeBanner: false,
             title: 'First Method',
@@ -50,7 +53,7 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child: const Home(),
+      child: const Login(),
     );
     // return MaterialApp(
     //   title: 'BIG CART',

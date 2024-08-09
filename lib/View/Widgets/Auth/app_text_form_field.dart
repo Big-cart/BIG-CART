@@ -18,22 +18,35 @@ class AppTextFormField extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      keyboardType: keyboradType,
-      obscureText: obscureText,
-      cursorHeight: 25.h,
-      decoration: InputDecoration(
-        filled: true,
-        fillColor: Colors.white,
-        hintText: hintText,
-        labelStyle: const TextStyle(),
-        hintStyle: Theme.of(context).textTheme.bodySmall,
-        hintTextDirection: TextDirection.rtl,
-        prefixIcon: icon,
-        suffixIcon: suffixIcon,
-        border: OutlineInputBorder(
-          borderSide: BorderSide.none,
-          borderRadius: BorderRadius.circular(4.r),
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(4.r),
+        boxShadow: [
+          BoxShadow(
+            offset: Offset(0, 7.h),
+            blurRadius: 10,
+            color: Colors.black12,
+          )
+        ],
+        // color: Colors.white,
+      ),
+      child: TextFormField(
+        keyboardType: keyboradType,
+        obscureText: obscureText,
+        cursorHeight: 25.h,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
+          hintText: hintText,
+          labelStyle: const TextStyle(),
+          hintStyle: Theme.of(context).textTheme.bodySmall,
+          hintTextDirection: TextDirection.rtl,
+          prefixIcon: icon,
+          suffixIcon: suffixIcon,
+          border: OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.circular(4.r),
+          ),
         ),
       ),
     );
