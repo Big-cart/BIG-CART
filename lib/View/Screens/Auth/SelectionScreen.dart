@@ -30,6 +30,16 @@ class SelectionScreen extends StatelessWidget {
             ),
             SizedBox(height: 80.h),
             CustomCard(
+              imagePath:
+                  'assets/images/draiver.png', // ضع مسار صورة المزارع هنا
+              title: 'موصل',
+              description: 'توصيل الطلبات من الموردين الى التجار والمستهلكين',
+              onTap: () {},
+            ),
+            SizedBox(
+              height: 50.h,
+            ),
+            CustomCard(
               imagePath: 'assets/images/farmer.png', // ضع مسار صورة المزارع هنا
               title: 'مزارع',
               description: 'توريد المنتجات الزراعية للتجار والمستهلكين',

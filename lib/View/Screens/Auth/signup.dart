@@ -1,4 +1,5 @@
 import 'package:big_cart/View/Screens/Users_View/home.dart';
+import 'package:big_cart/controller/Auth/signup_controller.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:big_cart/core/Widgets/app_auth_scaffold.dart';
 import 'package:big_cart/View/Widgets/Auth/app_text_form_field.dart';
@@ -13,10 +14,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class Signup extends StatelessWidget {
-  static String routeName = '/singup';
   const Signup({super.key});
   @override
   Widget build(BuildContext context) {
+    SignupControllerImp controllerImp = Get.put(SignupControllerImp());
     final size = MediaQuery.of(context).size;
     return AppAuthScaffold(
         bottomSheet: AppBottomSheet(
@@ -39,10 +40,11 @@ class Signup extends StatelessWidget {
                       style: Theme.of(context).textTheme.labelMedium,
                     ),
                     SizedBox(height: 12.h),
-                    const AppTextFormField(
+                    AppTextFormField(
+                        controller: controllerImp.name,
                         obscureText: false,
                         hintText: 'اسم المستخدم',
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.person,
                         )),
                     SizedBox(height: 12.h),
@@ -53,34 +55,44 @@ class Signup extends StatelessWidget {
                           Icons.phone,
                         )),
                     SizedBox(height: 12.h),
-                    const AppTextFormField(
+                    AppTextFormField(
+                        controller: controllerImp.email,
                         obscureText: false,
                         hintText: 'البريد الإلكتروني',
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.email,
                         )),
                     SizedBox(height: 12.h),
-                    const AppTextFormField(
+                    AppTextFormField(
+                      controller: controllerImp.password,
                       hintText: 'كلمة المرور',
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.lock,
                       ),
                       obscureText: true,
                     ),
                     SizedBox(height: 12.h),
-                    const AppTextFormField(
+                    AppTextFormField(
+                      controller: controllerImp.passwordConfirm,
                       hintText: 'تأكيد كلمة المرور',
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.lock,
                       ),
                       obscureText: true,
                     ),
                     SizedBox(height: 16.h),
-                    AppButton(
-                        child: Text(
-                      "أنشاء حساب",
-                      style: Theme.of(context).textTheme.labelMedium,
-                    )),
+                    GetBuilder<SignupControllerImp>(
+                      builder: (controller) {
+                        return AppButton(
+                            onPressed: () {
+                              controller.signUpWithEmail(context);
+                            },
+                            child: Text(
+                              "أنشاء حساب",
+                              style: Theme.of(context).textTheme.labelMedium,
+                            ));
+                      },
+                    ),
                     SizedBox(height: 12.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
