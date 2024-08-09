@@ -1,9 +1,11 @@
+import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:big_cart/core/Widgets/app_auth_scaffold.dart';
 import 'package:big_cart/View/Widgets/Auth/app_text_form_field.dart';
 import 'package:big_cart/View/Widgets/app_bottom_sheet.dart';
 import 'package:big_cart/View/Widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -13,9 +15,8 @@ class Login extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return AppAuthScaffold(
       title: "مرحبا",
-
       bottomSheet: AppBottomSheet(
-        height: size.height * 0.52.h,
+        height: size.height * 0.6.h,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -40,7 +41,7 @@ class Login extends StatelessWidget {
               obscureText: false,
               icon: Icon(Icons.lock),
             ),
-            SizedBox(height: 15.h),
+            SizedBox(height: 25.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -59,40 +60,45 @@ class Login extends StatelessWidget {
                 const InkWell(
                   child: Text(
                     "نسيت كلمة المرور",
-                    style: TextStyle(color: Colors.blue),
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 15.h),
-            const AppButton(
-                child: Text(
-              "تسحيل الدخول",
-            )),
+            SizedBox(height: 50.h),
+            AppButton(
+              child: Text(
+                "تسحيل الدخول",
+                style: Theme.of(context).textTheme.labelMedium,
+              ),
+              onPressed: () {
+                Get.toNamed(AppRoute.home);
+              },
+            ),
             SizedBox(
               height: 10.h,
             ),
-            const Wrap(
+            Wrap(
               children: [
                 Text(
-                  "ليس لديك حساب ؟",
-                  textDirection: TextDirection.rtl,
-                  style: TextStyle(color: Colors.black45),
+                  " ليس لديك حساب ؟",
+                  style: Theme.of(context).textTheme.labelMedium,
                 ),
-                Text(
-                  textDirection: TextDirection.rtl,
-                  "أنشاء حساب",
-                  style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
+                InkWell(
+                  onTap: () {
+                    Get.toNamed(AppRoute.signup);
+                  },
+                  child: const Text(
+                    " \tأنشاء حساب ",
+                  ),
                 ),
               ],
             )
           ],
         ),
       ),
-
       child: Container(
-        height: size.height * 0.55.h,
+        height: double.infinity,
         alignment: Alignment.topCenter,
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -101,69 +107,6 @@ class Login extends StatelessWidget {
               fit: BoxFit.cover),
         ),
       ),
-
-      // SingleChildScrollView(
-      //   child: Column(
-      //     children: [
-      //       Image.asset(
-      //           'assets/images/shop.jpeg'), // Add the path to your image here
-      //       Padding(
-      //         padding: const EdgeInsets.all(16.0),
-      //         child: Column(
-      //           children: [
-      //             const Text(
-      //               'مرحبا',
-      //               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-      //             ),
-      //             const Text('سجل الدخول الى حسابك'),
-      //             const TextField(
-      //               decoration: InputDecoration(
-      //                 labelText: 'البريد الالكتروني',
-      //                 prefixIcon: Icon(Icons.email),
-      //               ),
-      //             ),
-      //             const TextField(
-      //               obscureText: true,
-      //               decoration: InputDecoration(
-      //                 labelText: 'كلمة المرور',
-      //                 prefixIcon: Icon(Icons.lock),
-      //               ),
-      //             ),
-      //             Row(
-      //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //               children: [
-      //                 TextButton(
-      //                   onPressed: () {},
-      //                   child: const Text('نسيت كلمة المرور'),
-      //                 ),
-      //                 Switch(
-      //                   value: true,
-      //                   onChanged: (value) {},
-      //                   activeColor: Colors.green,
-      //                   inactiveThumbColor: Colors.grey,
-      //                 ),
-      //               ],
-      //             ),
-      //             const SizedBox(height: 20),
-      //             ElevatedButton(
-      //               onPressed: () {},
-      //               style: ElevatedButton.styleFrom(
-      //                 backgroundColor: Colors.green,
-      //                 padding: const EdgeInsets.symmetric(
-      //                     horizontal: 50, vertical: 15),
-      //               ),
-      //               child: const Text('تسجيل الدخول'),
-      //             ),
-      //             TextButton(
-      //               onPressed: () {},
-      //               child: const Text('هل لديك حساب بالفعل؟ إنشاء حساب'),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //     ],
-      //   ),
-      // ),
     );
   }
 }

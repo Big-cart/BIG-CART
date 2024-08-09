@@ -81,7 +81,8 @@ class AppThemes {
       titleLarge: TextStyle(
           fontFamily: "Almarai", color: Colors.white, fontSize: 26.sp),
       titleSmall: const TextStyle(fontFamily: "Almarai", color: Colors.black),
-      titleMedium: const TextStyle(fontFamily: "Almarai", color: Colors.white),
+      titleMedium:
+          const TextStyle(fontFamily: "Almarai", color: Colors.white70),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Colors.white,

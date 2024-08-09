@@ -1,4 +1,5 @@
 import 'package:big_cart/View/Screens/Users_View/home.dart';
+import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:big_cart/core/Widgets/app_auth_scaffold.dart';
 import 'package:big_cart/View/Widgets/Auth/app_text_form_field.dart';
 import 'package:big_cart/View/Widgets/app_bottom_sheet.dart';
@@ -35,7 +36,7 @@ class Signup extends StatelessWidget {
                     SizedBox(height: 8.h),
                     Text(
                       'إنشاء حساب بسرعة',
-                      style: TextStyle(fontSize: 16.sp, color: Colors.grey),
+                      style: Theme.of(context).textTheme.labelMedium,
                     ),
                     SizedBox(height: 12.h),
                     const AppTextFormField(
@@ -75,9 +76,10 @@ class Signup extends StatelessWidget {
                       obscureText: true,
                     ),
                     SizedBox(height: 16.h),
-                    const AppButton(
+                    AppButton(
                         child: Text(
                       "أنشاء حساب",
+                      style: Theme.of(context).textTheme.labelMedium,
                     )),
                     SizedBox(height: 12.h),
                     Row(
@@ -85,11 +87,11 @@ class Signup extends StatelessWidget {
                       children: [
                         Text(
                           'هل لديك حساب بالفعل؟',
-                          style: Theme.of(context).textTheme.bodySmall,
+                          style: Theme.of(context).textTheme.labelMedium,
                         ),
                         TextButton(
                           onPressed: () {
-                            Get.to(const Home());
+                            Get.toNamed(AppRoute.login);
                           },
                           child: Text('تسجيل',
                               style: Theme.of(context).textTheme.bodyLarge),
@@ -102,15 +104,13 @@ class Signup extends StatelessWidget {
             ),
           ),
         ),
-      
-
         title: "مرحبا",
         child: Container(
-          height: size.height * 0.42.h,
+          height: double.infinity,
           alignment: Alignment.topCenter,
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/images/signup.jpeg"),
+                image: AssetImage("assets/images/login.jpeg"),
                 alignment: Alignment.topCenter,
                 fit: BoxFit.cover),
           ),

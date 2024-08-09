@@ -18,14 +18,9 @@ class CardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
       child: SizedBox(
         height: 200.h,
-        // decoration: const BoxDecoration(
-
-        //     // color: Colors.green[300],
-        //     // borderRadius: BorderRadius.circular(20.0),
-        //     ),
         child: ImagePixels.container(
           colorAlignment: Alignment.center,
           imageProvider: AssetImage(
