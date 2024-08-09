@@ -62,17 +62,30 @@ class LoginControllerImp extends LoginController {
           // middleText: response['message'],
         );
         Get.offAllNamed(AppRoute.home);
+      } else if (response['message'] != null) {
+        //?fetch data field than show alert dialog
+        response['message'];
+        Get.defaultDialog(
+          titleStyle: const TextStyle(color: Colors.red),
+          title: "تحذير",
+          middleText: response['message'],
+        );
+        statusRequest = StatusRequest.failure;
+      } else if (response['errors']['email'] != null) {
+        print(response['errors']);
+        Get.defaultDialog(
+          titleStyle: const TextStyle(color: Colors.red),
+          title: "تحذير",
+          middleText: response['errors']['email'][0],
+        );
+      } else if (response['errors']['password'] != null) {
+        print(response['errors']);
+        Get.defaultDialog(
+          titleStyle: const TextStyle(color: Colors.red),
+          title: "تحذير",
+          middleText: response['errors']['password'][0],
+        );
       }
-    } else {
-      //?fetch data field than show alert dialog
-
-      Get.defaultDialog(
-        titleStyle:
-            TextStyle(color: Theme.of(context).textTheme.bodyMedium!.color),
-        title: "warning",
-        // middleText: response['message'],
-      );
-      statusRequest = StatusRequest.failure;
     }
 //! </login with Mysql>
     // } else {}
