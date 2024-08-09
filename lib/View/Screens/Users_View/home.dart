@@ -84,7 +84,7 @@ class Home extends StatelessWidget {
                 shrinkWrap: true,
                 children: [
                   SizedBox(
-                    height: 200.h,
+                    height: 210.h,
                     child: PageView(
                       scrollDirection: Axis.horizontal,
                       children: const [
