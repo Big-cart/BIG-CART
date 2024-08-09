@@ -21,7 +21,10 @@ class AppAuthScaffold extends StatelessWidget {
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
         backgroundColor: Colors.transparent,
-        title: Text(title),
+        title: Text(
+          title,
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
         centerTitle: true,
       ),
       bottomSheet: bottomSheet,

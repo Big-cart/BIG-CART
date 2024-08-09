@@ -16,7 +16,11 @@ class AppBottomSheet extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
       height: height,
       decoration: BoxDecoration(
-          color: colorBottomSheet ?? Colors.grey[200],
+          border: Border(
+            top: BorderSide(
+                color: const Color.fromRGBO(173, 207, 140, 0.63), width: 8.h),
+          ),
+          color: colorBottomSheet ?? const Color.fromARGB(150, 238, 238, 238),
           borderRadius:
               BorderRadiusDirectional.vertical(top: Radius.circular(24.r))),
       child: child,

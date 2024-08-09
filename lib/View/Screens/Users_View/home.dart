@@ -1,4 +1,6 @@
+import 'package:big_cart/View/Widgets/food_type.dart';
 import 'package:big_cart/View/Widgets/item_widget.dart';
+import 'package:big_cart/View/Widgets/item_widget_List.dart';
 import 'package:big_cart/View/Widgets/search_bar_widget.dart';
 import 'package:big_cart/View/Widgets/card_widget.dart';
 import 'package:big_cart/core/Widgets/app_scaffold.dart';
@@ -72,14 +74,17 @@ class Home extends StatelessWidget {
             SizedBox(
               height: 40.h,
             ),
-            const SearchBarWidget(),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.0.h),
+              child: const SearchBarWidget(),
+            ),
 
             Expanded(
               child: ListView(
                 shrinkWrap: true,
                 children: [
                   SizedBox(
-                    height: 250.h,
+                    height: 210.h,
                     child: PageView(
                       scrollDirection: Axis.horizontal,
                       children: const [
@@ -96,98 +101,20 @@ class Home extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
+                  const FoodType(
+                      chipImage: "assets/images/grape.png",
+                      chipName: [
                         'موز',
                         'طماط',
                         'بقرة',
                         'تفاح أخضر',
                         'بن يمني',
-                      ]
-                          .map(
-                            (text) => Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 14.w, vertical: 20.h),
-                              child: Row(
-                                children: [
-                                  Stack(
-                                    clipBehavior: Clip.none,
-                                    children: [
-                                      ImagePixels.container(
-                                        colorAlignment: Alignment.center,
-                                        imageProvider: const AssetImage(
-                                          "assets/images/grape.png",
-                                        ),
-                                        child: MaterialButton(
-                                          onPressed: () {},
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 14.w, vertical: 6.h),
-                                          child: Text(
-                                            text,
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .titleLarge,
-                                          ),
-                                        ),
-                                      ),
-                                      Positioned(
-                                        top: -15.h,
-                                        right: -20.w,
-                                        child: Image.asset(
-                                          "assets/images/banana.png",
-                                          width: 50.w,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          )
-                          .toList(),
-                    ),
-                  ),
-                  SizedBox(height: 20.h),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: GridView.count(
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      semanticChildCount: 2,
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 10.0.w,
-                      mainAxisSpacing: 16.0.h,
-                      childAspectRatio: 0.68,
-                      children: [
-                        buildFarmItem(
-                            // 'مزرعة إيهاب'
-                            //  'assets/farm1.jpg'
-                            ),
-                        buildFarmItem(
-                            // 'مزرعة ذكرى'
-                            // 'assets/farm2.jpg'
-                            ),
-                        buildFarmItem(
-                            // 'مزرعة مرام'
-                            // 'assets/farm3.jpg'
-                            ),
-                        buildFarmItem(
-                            // 'مزرعة أحمد'
-                            // 'assets/farm4.jpg'
-                            ),
-                        buildFarmItem(
-                            // 'مزرعة مرام'
-                            // 'assets/farm3.jpg'
-                            ),
-                        buildFarmItem(
-                            // 'مزرعة أحمد'
-                            // 'assets/farm4.jpg'
-                            ),
-                      ],
-                    ),
-                  ),
+                      ]),
+                  SizedBox(height: 10.h),
+                  const ItemWidgetList(
+                      index: 5,
+                      itemName: "itemName",
+                      itemImage: "assets/images/grape.png"),
                   SizedBox(height: 40.h)
                 ],
               ),
@@ -195,17 +122,8 @@ class Home extends StatelessWidget {
           ]),
         ));
   }
-
-  Widget buildFarmItem(
-      // String name,
-      // String image,
-      //  String imagePath
-      ) {
-    return const ItemWidget(
-        index: 1, itemName: " itemName", imageName: "assets/images/banana.png");
-  }
 }
-
+ 
     // ClipRRect(
     //   borderRadius: BorderRadius.only(
     //     bottomLeft: Radius.circular(100.r),
