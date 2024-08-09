@@ -24,13 +24,14 @@ class AppScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
         bottomNavigationBar: bottomNavigationBar,
         backgroundColor: backColor,
         drawer: drawer,
         extendBodyBehindAppBar: true,
         appBar: appBar,
         body: isPadding == false
-            ? SafeArea(child: child)
+            ? child
             : SafeArea(
                 child: Padding(
                   padding: EdgeInsets.symmetric(

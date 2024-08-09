@@ -7,8 +7,12 @@ class AppColors {
 
   static final Color spalshScreenColor = HexColor.fromHex('#A7CA9A');
   static final Color productColor = HexColor.fromHex("#AEDC81");
-  static final LinearGradient buttonColor = LinearGradient(
+  static final LinearGradient buttonGradientColor = LinearGradient(
       begin: Alignment.centerLeft,
       end: Alignment.centerRight,
       colors: [HexColor.fromHex("#AEDC81"), HexColor.fromHex("#6CC51D")]);
+  static const LinearGradient buttonGradientWhiteColor = LinearGradient(
+      begin: Alignment.centerLeft,
+      end: Alignment.centerRight,
+      colors: [Colors.white, Colors.white]);
 }

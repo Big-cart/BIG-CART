@@ -1,4 +1,7 @@
 // import 'package:big_cart/view/Screens/search.dart';
+import 'package:big_cart/View/Widgets/Auth/app_text_form_field.dart';
+import 'package:big_cart/View/Widgets/app_button.dart';
+import 'package:big_cart/core/constant/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -13,31 +16,27 @@ class SearchBarWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Expanded(
-          flex: 2,
+          flex: 5,
           child: GestureDetector(
             onTap: () {},
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.0.w),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(30.0.r),
-              ),
-              child: const TextField(
-                decoration: InputDecoration(
-                  hintText: 'ابحث هنا',
-                  border: InputBorder.none,
-                  icon: Icon(Icons.search),
-                ),
-              ),
+            child: AppTextFormField(
+              hintText: "بحث",
+              obscureText: false,
+              icon: Icon(Icons.search, color: Colors.grey.shade400),
             ),
           ),
         ),
-        IconButton(
-            padding: EdgeInsets.symmetric(horizontal: 2.w),
-            onPressed: () {
-              // Get.to(Search());
-            },
-            icon: const Icon(Icons.filter_alt_outlined)),
+        SizedBox(
+          width: 10.w,
+        ),
+        Expanded(
+          child: AppButton(
+              buttonColor: AppColors.buttonGradientWhiteColor,
+              onPressed: () {
+                // Get.to(Search());
+              },
+              child: const Icon(Icons.filter_alt_outlined)),
+        ),
       ],
     );
   }
