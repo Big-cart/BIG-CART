@@ -62,14 +62,14 @@ class AppThemes {
       bodyMedium: TextStyle(
         fontFamily: "Almarai",
         color: Colors.black,
-        fontSize: 18.sp,
-        fontWeight: FontWeight.w500,
+        fontSize: 20.sp,
+        fontWeight: FontWeight.w600,
       ),
       bodySmall: TextStyle(
           fontFamily: "Almarai",
-          fontSize: 18.sp,
-          fontWeight: FontWeight.normal,
-          color: Colors.grey.shade400),
+          fontSize: 17.sp,
+          fontWeight: FontWeight.w400,
+          color: Colors.grey.shade600),
       bodyLarge: TextStyle(
         fontFamily: "Almarai",
         color: Colors.black,

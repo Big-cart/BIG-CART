@@ -65,6 +65,10 @@ class ItemWidget extends StatelessWidget {
                   children: [
                     Text(
                       itemName,
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
+                    Text(
+                      " مزرعة السعيدة",
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                     Text(
@@ -73,10 +77,16 @@ class ItemWidget extends StatelessWidget {
                     )
                   ],
                 ),
+                SizedBox(
+                  width: 10.w,
+                ),
                 const Icon(
                   CupertinoIcons.heart,
                   color: Colors.red,
-                )
+                ),
+                SizedBox(
+                  width: 10.w,
+                ),
               ],
             )
           ],

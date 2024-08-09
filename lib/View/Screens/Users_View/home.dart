@@ -6,6 +6,7 @@ import 'package:big_cart/core/constant/app_colors.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_pixels/image_pixels.dart';
 
@@ -55,11 +56,22 @@ class Home extends StatelessWidget {
                   image: AssetImage(
                     "assets/images/background.png",
                   ),
-                  fit: BoxFit.fitWidth)),
-          padding: EdgeInsets.symmetric(horizontal: 12.0.w),
+                  fit: BoxFit.fill)),
+          padding: EdgeInsets.symmetric(horizontal: 8.0.w),
           child: Column(children: [
             // const Drawer(),
-            AppBar(),
+            AppBar(
+              systemOverlayStyle: const SystemUiOverlayStyle(
+                  systemNavigationBarColor: Colors.transparent),
+              title: Text(
+                "فواكة",
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+              centerTitle: true,
+            ),
+            SizedBox(
+              height: 40.h,
+            ),
             const SearchBarWidget(),
 
             Expanded(
@@ -73,17 +85,71 @@ class Home extends StatelessWidget {
                       children: const [
                         CardWidget(
                             cardImage: "assets/images/strawberry.png",
-                            cardTitle: "منتجات طازجة",
+                            cardTitle: "فواكة طازجة",
                             cardDescription: "لمذاقكم الرفيع",
                             cardButtonText: "اطلب الان"),
                         CardWidget(
                             cardImage: "assets/images/banana.png",
-                            cardTitle: "منتجات طازجة",
+                            cardTitle: "فواكة طازجة",
                             cardDescription: "لمذاقكم الرفيع",
                             cardButtonText: "اطلب الان"),
                       ],
                     ),
                   ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        'موز',
+                        'طماط',
+                        'بقرة',
+                        'تفاح أخضر',
+                        'بن يمني',
+                      ]
+                          .map(
+                            (text) => Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 14.w, vertical: 20.h),
+                              child: Row(
+                                children: [
+                                  Stack(
+                                    clipBehavior: Clip.none,
+                                    children: [
+                                      ImagePixels.container(
+                                        colorAlignment: Alignment.center,
+                                        imageProvider: const AssetImage(
+                                          "assets/images/grape.png",
+                                        ),
+                                        child: MaterialButton(
+                                          onPressed: () {},
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 14.w, vertical: 6.h),
+                                          child: Text(
+                                            text,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .titleLarge,
+                                          ),
+                                        ),
+                                      ),
+                                      Positioned(
+                                        top: -15.h,
+                                        right: -20.w,
+                                        child: Image.asset(
+                                          "assets/images/banana.png",
+                                          width: 50.w,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
+                          .toList(),
+                    ),
+                  ),
+                  SizedBox(height: 20.h),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: GridView.count(
@@ -92,7 +158,7 @@ class Home extends StatelessWidget {
                       semanticChildCount: 2,
                       crossAxisCount: 2,
                       crossAxisSpacing: 10.0.w,
-                      mainAxisSpacing: 10.0.h,
+                      mainAxisSpacing: 16.0.h,
                       childAspectRatio: 0.68,
                       children: [
                         buildFarmItem(
@@ -136,7 +202,10 @@ class Home extends StatelessWidget {
       //  String imagePath
       ) {
     return const ItemWidget(
-        index: 1, itemName: " itemName", imageName: "assets/images/banana");
+        index: 1, itemName: " itemName", imageName: "assets/images/banana.png");
+  }
+}
+
     // ClipRRect(
     //   borderRadius: BorderRadius.only(
     //     bottomLeft: Radius.circular(100.r),
@@ -177,5 +246,3 @@ class Home extends StatelessWidget {
     //     ),
     //   ),
     // );
-  }
-}

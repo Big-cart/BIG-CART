@@ -24,6 +24,7 @@ class AppScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
         bottomNavigationBar: bottomNavigationBar,
         backgroundColor: backColor,
         drawer: drawer,
