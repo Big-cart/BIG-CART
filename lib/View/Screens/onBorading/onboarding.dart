@@ -46,8 +46,8 @@ class OnboardingState extends State<Onboarding> {
           top: 50.h,
           right: 24.w,
           child: SizedBox(
-            width: 90.w,
-            height: 55.h,
+            width: 80.w,
+            height: 40.h,
             child: AppButton(
               onPressed: () {
                 _controller.jumpToPage(

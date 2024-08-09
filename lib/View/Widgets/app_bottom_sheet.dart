@@ -4,12 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppBottomSheet extends StatelessWidget {
   final double height;
   final Widget child;
+  final Color? colorBorderBottomSheet;
+
   final Color? colorBottomSheet;
   const AppBottomSheet(
       {super.key,
       required this.height,
       required this.child,
-      this.colorBottomSheet});
+      this.colorBottomSheet,
+      this.colorBorderBottomSheet});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +21,9 @@ class AppBottomSheet extends StatelessWidget {
       decoration: BoxDecoration(
           border: Border(
             top: BorderSide(
-                color: const Color.fromRGBO(173, 207, 140, 0.63), width: 8.h),
+                color: colorBorderBottomSheet ??
+                    const Color.fromRGBO(173, 207, 140, 0.63),
+                width: 8.h),
           ),
           color: colorBottomSheet ?? const Color.fromARGB(150, 238, 238, 238),
           borderRadius:

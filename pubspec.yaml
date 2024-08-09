@@ -45,6 +45,7 @@ dependencies:
   geolocator: ^13.0.1
   google_fonts: ^6.2.1
   image_pixels: ^3.0.2
+  dartz: ^0.10.1
 
 
 dev_dependencies:
