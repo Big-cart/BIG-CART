@@ -20,105 +20,128 @@ class Product extends StatelessWidget {
     return AppAuthScaffold(
       bottomSheet: Container(
         padding: EdgeInsets.zero,
-        child: AppBottomSheet(
-            colorBorderBottomSheet: Colors.transparent,
-            colorBottomSheet: Colors.white,
-            height: size.height * 0.56.h,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Stack(
+        child: Stack(
+          clipBehavior: Clip.none,
+          alignment: Alignment.center,
+          children: [
+            AppBottomSheet(
+              colorBorderBottomSheet: Colors.transparent,
+              colorBottomSheet: Colors.white,
+              height: size.height * 0.53.h,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 55.h,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.grey.shade200,
+                        borderRadius: BorderRadius.circular(24.r)),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text(" السعر 1000 للكيلو"),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: List.generate(5, (index) {
+                                return Icon(
+                                  index < 4 ? Icons.star : Icons.star_border,
+                                  color: Colors.amber,
+                                  size: 30.sp,
+                                );
+                              }),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 15.h,
+                        ),
+                        Text(
+                          'تاريخ الحصاد: 2000812\n\n'
+                          'قطوف عنب أخضر بشكلها المميز الطازج وطعمها اللذيذ وهذا بجانب احتوائها على العديد من الفيتامينات والعناصر المغذية لصحة الجسم والبشرة.\n\n'
+                          'السعرات الحرارية: 76.72 سعره حرارية لكل 100 جرام\n',
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Spacer(),
+                  AppButton(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(
+                          CupertinoIcons.bag,
+                          color: Colors.white,
+                        ),
+                        VerticalDivider(
+                          width: 10.w,
+                        ),
+                        Text(
+                          "اضافه لسله",
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
+                      ],
+                    ),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+            ),
+            //end of bottom sheet design
+            Positioned(
+              top: -30,
+              child: Container(
+                alignment: Alignment.center,
+                width: size.width.w * 0.7,
+                padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 20.w),
+                height: 70.h,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(6.r),
+                  boxShadow: [
+                    BoxShadow(
+                        color: AppColors.productColor,
+                        offset: const Offset(0, 5),
+                        blurRadius: 0,
+                        spreadRadius: 1),
+                  ],
+                ),
+                child: Row(
                   children: [
-                    Container(
-                      width: size.width.w * 0.7,
-                      padding: EdgeInsets.symmetric(
-                          vertical: 16.h, horizontal: 20.w),
-                      height: 70.h,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6.r),
+                    Expanded(
+                      flex: 6,
+                      child: Text(
+                        "ادخل الكمية",
+                        style: Theme.of(context).textTheme.bodySmall,
                       ),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            flex: 6,
-                            child: Text(
-                              "ادخل الكمية",
-                              style: Theme.of(context).textTheme.bodySmall,
-                            ),
-                          ),
-                          const Expanded(
-                            flex: 1,
-                            child: AppTextFormField(
-                              hintText: '1',
-                              obscureText: false,
-                              keyboradType: TextInputType.number,
-                            ),
-                          )
-                        ],
+                    ),
+                    const Expanded(
+                      flex: 1,
+                      child: AppTextFormField(
+                        hintText: '1',
+                        obscureText: false,
+                        keyboradType: TextInputType.number,
                       ),
                     ),
                   ],
                 ),
-                const Spacer(),
-                Container(
-                  decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
-                      borderRadius: BorderRadius.circular(24.r)),
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text(" السعر 1000 للكيلو"),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: List.generate(5, (index) {
-                              return Icon(
-                                index < 4 ? Icons.star : Icons.star_border,
-                                color: Colors.amber,
-                                size: 30.sp,
-                              );
-                            }),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 15.h,
-                      ),
-                      Text(
-                        'تاريخ الحصاد: 2000\\8\\12\n\n'
-                        'قطوف عنب أخضر بشكلها المميز الطازج وطعمها اللذيذ وهذا بجانب احتوائها على العديد من الفيتامينات والعناصر المغذية لصحة الجسم والبشرة.\n\n'
-                        'السعرات الحرارية: 76.72 سعره حرارية لكل 100 جرام\n',
-                        style: Theme.of(context).textTheme.bodySmall,
-                      ),
-                    ],
-                  ),
-                ),
-                const Spacer(),
-                AppButton(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Icon(
-                        CupertinoIcons.bag,
-                        color: Colors.white,
-                      ),
-                      VerticalDivider(
-                        width: 10.w,
-                      ),
-                      Text(
-                        "اضافه لسله",
-                        style: Theme.of(context).textTheme.titleLarge,
-                      ),
-                    ],
-                  ),
-                  onPressed: () {},
-                ),
-              ],
-            )),
+              ),
+            ),
+            Positioned(
+                left: -50.w,
+                bottom: -70.h,
+                child: Image.asset("assets/images/leaf.png")),
+          ],
+        ),
       ),
+      // ! end of bottom sheet design with positioned leaf
+
       title: "اسم المنتج",
       actionButton: [
         IconButton(
@@ -158,6 +181,18 @@ class Product extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
+              Positioned(
+                  right: -25.w,
+                  top: 400.h,
+                  child: Image.asset(
+                    "assets/images/leaf2.png",
+                    fit: BoxFit.fill,
+                    width: 100,
+                  )),
+              Positioned(
+                  left: -50.w,
+                  top: 100.h,
+                  child: Image.asset("assets/images/leaf.png")),
             ],
           ),
         ],
