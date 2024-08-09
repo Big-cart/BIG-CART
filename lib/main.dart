@@ -1,3 +1,4 @@
+import 'package:big_cart/Bindings/intial_bindings.dart';
 import 'package:big_cart/View/Screens/Auth/SelectionScreen.dart';
 // import 'package:big_cart/View/Screens/favorite.dart';
 // import 'package:big_cart/View/Screens/home.dart';
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
             getPages: route,
             locale: const Locale('ar'),
             debugShowCheckedModeBanner: false,
+            initialBinding: IntialBindings(),
             title: 'First Method',
             // You can use the library anywhere in the app even in theme
             theme: AppThemes.appLightTheme,
@@ -63,7 +65,7 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child: const Product(),
+      child: const Signup(),
 
 //       child: const Onboarding(),
     );

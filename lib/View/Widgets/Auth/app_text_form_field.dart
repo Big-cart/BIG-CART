@@ -7,6 +7,7 @@ class AppTextFormField extends StatelessWidget {
   final Icon? icon;
   final Icon? suffixIcon;
   final bool obscureText;
+  final TextEditingController? controller;
   final TextInputType? keyboradType;
   const AppTextFormField({
     super.key,
@@ -14,7 +15,7 @@ class AppTextFormField extends StatelessWidget {
     this.icon,
     this.suffixIcon,
     required this.obscureText,
-    this.keyboradType,
+    this.keyboradType, this.controller,
   });
   @override
   Widget build(BuildContext context) {
@@ -31,6 +32,7 @@ class AppTextFormField extends StatelessWidget {
         // color: Colors.white,
       ),
       child: TextFormField(
+        controller:controller ,
         keyboardType: keyboradType,
         obscureText: obscureText,
         cursorHeight: 25.h,
