@@ -5,38 +5,32 @@ class Page1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: const Color.fromARGB(255, 244, 246, 244),
-      child: Stack(
-        children: [
-          // الصورة كخلفية
-          Positioned.fill(
-            child: Image.asset(
-              'assets/images/markus_spiske_1.jpeg',
-              fit: BoxFit.cover, // لجعل الصورة تغطي كامل الخلفية
-            ),
+    return Scaffold(
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/bacg1.png"),
+            fit: BoxFit.fitWidth,
           ),
-          // النصوص فوق الصورة
-          const Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  'Welcome',
-                  style: TextStyle(
-                    fontSize: 90,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(
-                        255, 7, 53, 41), // لجعل النص واضحًا على الخلفية
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: 120),
-                // يمكنك إضافة المزيد من النصوص أو العناصر هنا إذا لزم الأمر
-              ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              "assets/images/logo.png",
+              width: 300,
+              height: 100,
             ),
-          ),
-        ],
+            const SizedBox(height: 30),
+            Image.asset(
+              "assets/images/onbo1.png",
+              width: 300,
+              height: 300,
+            ),
+          ],
+        ),
       ),
     );
   }
