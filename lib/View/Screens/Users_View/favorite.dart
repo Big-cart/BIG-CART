@@ -44,6 +44,7 @@ class Favorite extends StatelessWidget {
               ),
               itemCount: grapes.length,
               itemBuilder: (ctx, i) => ItemWidget(
+                imageName: "assets/images/grape.png",
                 index: i,
                 itemName: grapes[i],
               ),

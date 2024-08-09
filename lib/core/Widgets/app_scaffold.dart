@@ -30,7 +30,7 @@ class AppScaffold extends StatelessWidget {
         extendBodyBehindAppBar: true,
         appBar: appBar,
         body: isPadding == false
-            ? SafeArea(child: child)
+            ? child
             : SafeArea(
                 child: Padding(
                   padding: EdgeInsets.symmetric(
