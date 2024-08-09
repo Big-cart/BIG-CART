@@ -4,15 +4,21 @@ import 'package:big_cart/View/Screens/Auth/SelectionScreen.dart';
 import 'package:big_cart/View/Screens/Auth/login.dart';
 import 'package:big_cart/View/Screens/Users_View/home.dart';
 import 'package:big_cart/View/Screens/onBorading/onboarding.dart';
+
+
 // import 'package:big_cart/View/Screens/product.dart';
 // import 'package:big_cart/View/Screens/profile.dart';
 // import 'package:big_cart/View/Screens/search.dart';
+
 import 'package:big_cart/View/Screens/Auth/signup.dart';
 import 'package:big_cart/core/Theme/theme.dart';
+import 'package:big_cart/view/Screens/shopping_cart.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+
+import 'View/Screens/splash_screen.dart';
 
 // import 'View/Screens/google_map.dart';
 // import 'View/Screens/order.dart';
@@ -20,6 +26,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 // import 'View/Screens/splash_screen.dart';
 // import 'View/Screens/test.dart';
 // import 'View/Screens/track.dart';
+
 import 'package:get/get.dart';
 
 void main() {
