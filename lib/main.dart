@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child:  const ShoppingCart(),
+      child:  const SelectionScreen(),
     );
     // return MaterialApp(
     //   title: 'BIG CART',
