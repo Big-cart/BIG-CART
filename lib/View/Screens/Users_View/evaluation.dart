@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class evaluation extends StatelessWidget {
+class Evaluation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

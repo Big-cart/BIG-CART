@@ -12,6 +12,7 @@ import 'package:big_cart/View/Screens/onBorading/onboarding.dart';
 
 import 'package:big_cart/View/Screens/Auth/signup.dart';
 import 'package:big_cart/core/Theme/theme.dart';
+import 'package:big_cart/view/Screens/bigin_prodact.dart';
 import 'package:big_cart/view/Screens/shopping_cart.dart';
 
 import 'package:flutter/material.dart';
@@ -28,6 +29,8 @@ import 'View/Screens/splash_screen.dart';
 // import 'View/Screens/track.dart';
 
 import 'package:get/get.dart';
+
+import 'view/Screens/Users_View/evaluation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,7 +60,7 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child: const Home(),
+      child: const Onboarding(),
     );
     // return MaterialApp(
     //   title: 'BIG CART',
