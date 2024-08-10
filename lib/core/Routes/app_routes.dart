@@ -6,5 +6,8 @@ class AppRoute {
   static const String search = "/search";
   static const String profile = "/profile";
   static const String product = "/product";
+  static const String forgetpass = "/ForgetPass";
+  static const String completpass = "/profile";
+  static const String surepass = "/surepass";
 
 }
