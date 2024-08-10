@@ -1,26 +1,30 @@
+import 'package:big_cart/core/Widgets/app_scaffold.dart';
 import 'package:flutter/material.dart';
 
-class Evaluation extends StatelessWidget {
+class Rate extends StatelessWidget {
+  const Rate({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AppScaffold(
+      isPadding: false,
       appBar: AppBar(),
-      body: Padding(
+      child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: 40),
-              Text(
+              const SizedBox(height: 40),
+              const Text(
                 'التقييم',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 'يرجى إعطاء تقييمك عن طريق النقر على النجوم أدناه',
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -28,7 +32,7 @@ class Evaluation extends StatelessWidget {
                   color: Colors.grey,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(5, (index) {
@@ -44,7 +48,7 @@ class Evaluation extends StatelessWidget {
                   );
                 }),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               TextField(
                 maxLines: 5,
                 decoration: InputDecoration(
@@ -52,16 +56,17 @@ class Evaluation extends StatelessWidget {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  suffixIcon: Icon(Icons.edit),
+                  suffixIcon: const Icon(Icons.edit),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   // Add your submit functionality here
                 },
                 style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(vertical: 15), backgroundColor: Colors.green,
+                  padding: const EdgeInsets.symmetric(vertical: 15),
+                  backgroundColor: Colors.green,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -69,7 +74,7 @@ class Evaluation extends StatelessWidget {
                 child: Container(
                   width: double.infinity,
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     'إرسال',
                     style: TextStyle(fontSize: 18),
                   ),
@@ -79,8 +84,6 @@ class Evaluation extends StatelessWidget {
           ),
         ),
       ),
-      backgroundColor: Colors.grey.shade200,
     );
   }
 }
-

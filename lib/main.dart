@@ -4,6 +4,7 @@ import 'package:big_cart/View/Screens/Auth/SelectionScreen.dart';
 // import 'package:big_cart/View/Screens/home.dart';
 import 'package:big_cart/View/Screens/Auth/login.dart';
 import 'package:big_cart/View/Screens/Users_View/cow_screen.dart';
+import 'package:big_cart/View/Screens/Users_View/rate.dart';
 import 'package:big_cart/View/Screens/Users_View/home.dart';
 import 'package:big_cart/View/Screens/Users_View/product.dart';
 import 'package:big_cart/View/Widgets/categery_product.dart';
@@ -19,6 +20,7 @@ import 'package:big_cart/View/Screens/Users_View/empty_cart.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:big_cart/core/Theme/theme.dart';
 import 'package:big_cart/routes.dart';
+import 'package:dartz/dartz.dart';
 
 // import 'package:big_cart/view/Screens/bigin_prodact.dart';
 // import 'package:big_cart/view/Screens/shopping_cart.dart';
@@ -69,7 +71,7 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child: const CowScreen(),
+      child: const Rate(),
 
 //       child: const Onboarding(),
     );
