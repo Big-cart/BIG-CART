@@ -43,7 +43,7 @@ class ItemWidget extends StatelessWidget {
                   ),
                   minWidth: 50.w,
                   padding:
-                      EdgeInsets.symmetric(vertical: 12.h, horizontal: 20.w),
+                      EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w),
                   color: Colors.white38,
                   onPressed: () {},
                   child: const Icon(Icons.shopping_cart_checkout_outlined,
@@ -51,12 +51,16 @@ class ItemWidget extends StatelessWidget {
                 ),
               ],
             ),
+            SizedBox(height: 5.h),
             Center(
               child: Image.asset(
                 "assets/images/grape$index.png",
                 fit: BoxFit.cover,
+                height: 110.h,
               ),
             ),
+            SizedBox(height: 10.h),
+
             // const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -76,9 +80,6 @@ class ItemWidget extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium,
                     )
                   ],
-                ),
-                SizedBox(
-                  width: 10.w,
                 ),
                 const Icon(
                   CupertinoIcons.heart,

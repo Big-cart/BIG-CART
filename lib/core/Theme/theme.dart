@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppThemes {
   static ThemeData appLightTheme = ThemeData.light().copyWith(
@@ -48,14 +47,16 @@ class AppThemes {
 
 //!cardCOLOR
 
+
     textTheme: TextTheme(
+      
       // titleMedium: const GoogleFonts.poppins(color: Colors.black),
       displayLarge: TextStyle(
         fontFamily: "Almarai",
         color: Colors.black,
         fontSize: 32.sp,
         shadows: const [
-          Shadow(offset: Offset(0, 3), blurRadius: 12, color: Colors.black38)
+          Shadow(offset: Offset(0, 3), blurRadius: 15, color: Colors.black38)
         ],
         fontWeight: FontWeight.bold,
       ),
@@ -73,17 +74,18 @@ class AppThemes {
       bodyLarge: TextStyle(
         fontFamily: "Almarai",
         color: Colors.black,
-        fontSize: 24.sp,
+        fontSize: 22.sp,
         fontWeight: FontWeight.bold,
       ),
       labelMedium: TextStyle(
           fontFamily: "Almarai", color: Colors.white, fontSize: 18.sp),
       titleLarge: TextStyle(
-          fontFamily: "Almarai", color: Colors.white, fontSize: 26.sp),
+          fontFamily: "Almarai", color: Colors.white, fontSize: 22.sp),
       titleSmall: const TextStyle(fontFamily: "Almarai", color: Colors.black),
       titleMedium:
           const TextStyle(fontFamily: "Almarai", color: Colors.white70),
     ),
+
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Colors.white,
       selectedItemColor: Colors.grey[300]!,

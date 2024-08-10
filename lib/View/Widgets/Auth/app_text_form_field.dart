@@ -22,7 +22,6 @@ class AppTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(4.r),
         boxShadow: [
           BoxShadow(
             offset: Offset(0, 7.h),
@@ -39,7 +38,8 @@ class AppTextFormField extends StatelessWidget {
         cursorHeight: 25.h,
         style: TextStyle(color: Colors.black, fontSize: 14.sp),
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.only(top: 5.h, right: 10.w),
+          contentPadding:
+              EdgeInsets.symmetric(vertical: 21.h, horizontal: 10.w),
           filled: true,
           fillColor: Colors.white,
           hintText: hintText,
@@ -49,7 +49,7 @@ class AppTextFormField extends StatelessWidget {
           suffixIcon: suffixIcon,
           border: OutlineInputBorder(
             borderSide: BorderSide.none,
-            borderRadius: BorderRadius.circular(4.r),
+            borderRadius: BorderRadius.circular(6.r),
           ),
         ),
       ),
