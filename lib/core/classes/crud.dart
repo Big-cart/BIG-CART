@@ -16,10 +16,8 @@ class Crud {
               linkUrl,
             ),
             body: data);
-        print("respone send");
 
         if (response.statusCode >= 200 || response.statusCode != 404) {
-          print("respone accept");
 
           Map responseBody = jsonDecode(
             
@@ -27,7 +25,6 @@ class Crud {
           );
           return Right(responseBody);
         } else {
-          print("respone field");
 
           return const Left(StatusRequest.serverfailure);
         }
@@ -35,7 +32,6 @@ class Crud {
         return const Left(StatusRequest.offlinefailure);
       }
     } catch (e) {
-      print(e.toString());
       return const Left(StatusRequest.serverfailure);
     }
   }

@@ -1,12 +1,10 @@
 import 'package:big_cart/View/Screens/Users_View/home.dart';
 import 'package:big_cart/core/Widgets/search_bar_widget.dart';
 import 'package:big_cart/core/constant/app_icons.dart';
-// import 'package:big_cart/view/Screens/home.dart';
-// import 'package:big_cart/view/Screens/login.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class Search extends StatelessWidget {
   static String routeName = '/profile';

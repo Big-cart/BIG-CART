@@ -18,7 +18,6 @@ class SignUpData {
       "password_confirmation": passwordConfirm,
       "role_id": roleId,
     });
-    print(response);
     return response.fold(
       (l) => l,
       (r) => r,

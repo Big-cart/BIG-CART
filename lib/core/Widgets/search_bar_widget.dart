@@ -4,8 +4,6 @@ import 'package:big_cart/View/Widgets/app_button.dart';
 import 'package:big_cart/core/constant/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class SearchBarWidget extends StatelessWidget {
   const SearchBarWidget({super.key});

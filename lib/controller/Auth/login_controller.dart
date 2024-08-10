@@ -1,7 +1,6 @@
 import 'package:big_cart/core/DataSource/Remote/Auth/login.dart';
 import 'package:big_cart/core/Functions/handiling_data_controller.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
-import 'package:big_cart/core/constant/app_colors.dart';
 import 'package:big_cart/core/enum/status_request.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -53,7 +52,6 @@ class LoginControllerImp extends LoginController {
     if (statusRequest == StatusRequest.succses) {
       //?fetch data success than store user data and login
       if (response['success'] == true) {
-        print(response['user']);
         data = response['user'];
         Get.defaultDialog(
           titleStyle:
@@ -72,14 +70,12 @@ class LoginControllerImp extends LoginController {
         );
         statusRequest = StatusRequest.failure;
       } else if (response['errors']['email'] != null) {
-        print(response['errors']);
         Get.defaultDialog(
           titleStyle: const TextStyle(color: Colors.red),
           title: "تحذير",
           middleText: response['errors']['email'][0],
         );
       } else if (response['errors']['password'] != null) {
-        print(response['errors']);
         Get.defaultDialog(
           titleStyle: const TextStyle(color: Colors.red),
           title: "تحذير",

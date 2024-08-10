@@ -1,15 +1,13 @@
-import 'package:big_cart/View/Widgets/Auth/app_text_form_field.dart';
-import 'package:big_cart/core/Extension/color_extension.dart';
-import 'package:big_cart/core/Functions/appbar_fun_as_widget.dart';
-import 'package:big_cart/core/Widgets/app_auth_scaffold.dart';
-import 'package:big_cart/View/Widgets/app_bottom_sheet.dart';
-import 'package:big_cart/View/Widgets/app_button.dart';
-import 'package:big_cart/core/Widgets/app_scaffold.dart';
-import 'package:big_cart/core/constant/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_pixels/image_pixels.dart';
+
+import 'package:big_cart/View/Widgets/Auth/app_text_form_field.dart';
+import 'package:big_cart/View/Widgets/app_bottom_sheet.dart';
+import 'package:big_cart/View/Widgets/app_button.dart';
+import 'package:big_cart/core/Widgets/app_auth_scaffold.dart';
+import 'package:big_cart/core/constant/app_colors.dart';
 
 class Product extends StatelessWidget {
   const Product({super.key});

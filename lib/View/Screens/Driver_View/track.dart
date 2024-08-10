@@ -31,7 +31,7 @@ class Track extends StatelessWidget {
           child: Container(
             padding:
                 const EdgeInsets.symmetric(horizontal: 22.0, vertical: 8.0),
-            child: Column(
+            child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -42,7 +42,7 @@ class Track extends StatelessWidget {
                 CustomContainer(icon: Icons.note_add_outlined, text: 'الطلب قيد التجهيز',),
                 CustomContainer(icon: Icons.hexagon_outlined, text: 'تم الشحن ',),
                 CustomContainer(icon: Icons.fire_truck, text: 'الطلب في الطريق',),
-                CustomContainer(icon: Icons.check_circle_outline, text: 'تم التسليم',last: true,),
+                const CustomContainer(icon: Icons.check_circle_outline, text: 'تم التسليم',last: true,),
 
               ],
             ),
