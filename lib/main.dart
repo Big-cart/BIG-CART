@@ -3,8 +3,11 @@ import 'package:big_cart/View/Screens/Auth/SelectionScreen.dart';
 // import 'package:big_cart/View/Screens/favorite.dart';
 // import 'package:big_cart/View/Screens/home.dart';
 import 'package:big_cart/View/Screens/Auth/login.dart';
+import 'package:big_cart/View/Screens/Users_View/cow_screen.dart';
 import 'package:big_cart/View/Screens/Users_View/home.dart';
 import 'package:big_cart/View/Screens/Users_View/product.dart';
+import 'package:big_cart/View/Widgets/categery_product.dart';
+import 'package:big_cart/View/Screens/Users_View/cart.dart';
 import 'package:big_cart/View/Screens/onBorading/onboarding.dart';
 
 // import 'package:big_cart/View/Screens/product.dart';
@@ -12,6 +15,7 @@ import 'package:big_cart/View/Screens/onBorading/onboarding.dart';
 // import 'package:big_cart/View/Screens/search.dart';
 
 import 'package:big_cart/View/Screens/Auth/signup.dart';
+import 'package:big_cart/View/Screens/Users_View/empty_cart.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:big_cart/core/Theme/theme.dart';
 import 'package:big_cart/routes.dart';
@@ -65,7 +69,7 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child: const Signup(),
+      child: const CowScreen(),
 
 //       child: const Onboarding(),
     );

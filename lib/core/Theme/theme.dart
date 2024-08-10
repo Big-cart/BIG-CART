@@ -55,7 +55,7 @@ class AppThemes {
         color: Colors.black,
         fontSize: 32.sp,
         shadows: const [
-          Shadow(offset: Offset(0, 3), blurRadius: 10, color: Colors.black54)
+          Shadow(offset: Offset(0, 3), blurRadius: 12, color: Colors.black38)
         ],
         fontWeight: FontWeight.bold,
       ),

@@ -1,7 +1,7 @@
 import 'package:big_cart/View/Widgets/food_type.dart';
 import 'package:big_cart/View/Widgets/item_widget.dart';
 import 'package:big_cart/View/Widgets/item_widget_List.dart';
-import 'package:big_cart/View/Widgets/search_bar_widget.dart';
+import 'package:big_cart/core/Widgets/search_bar_widget.dart';
 import 'package:big_cart/View/Widgets/card_widget.dart';
 import 'package:big_cart/core/Widgets/app_scaffold.dart';
 import 'package:big_cart/core/constant/app_colors.dart';

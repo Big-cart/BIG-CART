@@ -1,7 +1,7 @@
 import 'package:big_cart/View/widget/cart/custom_container_delete.dart';
 import 'package:flutter/material.dart';
 
-import '../widget/cart/custom_container_counter.dart';
+import '../../widget/cart/custom_container_counter.dart';
 
 class Cart extends StatelessWidget {
   const Cart({super.key});
