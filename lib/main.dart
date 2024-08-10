@@ -71,7 +71,7 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child: const Rate(),
+      child: const Home(),
 
 //       child: const Onboarding(),
     );
