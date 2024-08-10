@@ -18,6 +18,7 @@ class CardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
+
       padding: EdgeInsets.symmetric(horizontal: 12.w),
       child: ImagePixels(
         defaultColor: Colors.grey,
@@ -64,10 +65,13 @@ class CardWidget extends StatelessWidget {
                               image: AssetImage(
                                 cardImage,
                               ),
+              width: 40.w,
+
                             ),
-                          ),
-                        ),
+                          )
+                        ],
                       ),
+
                     ],
                   ),
                 ),
@@ -103,15 +107,18 @@ class CardWidget extends StatelessWidget {
                                   fontFamily: "Almarai",
                                   fontWeight: FontWeight.w700)),
                         ),
+
                       ),
                     ],
                   ),
                 ),
+
               ],
             ),
           );
         },
       ),
+
     );
   }
 }
