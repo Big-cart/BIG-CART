@@ -2,6 +2,11 @@ import 'package:big_cart/View/Screens/Auth/SelectionScreen.dart';
 import 'package:big_cart/View/Screens/cart.dart';
 
 import 'package:big_cart/core/Theme/theme.dart';
+import 'package:big_cart/routes.dart';
+import 'package:big_cart/view/Screens/Auth/CompletPass.dart';
+import 'package:big_cart/view/Screens/Auth/forget_pass.dart';
+import 'package:big_cart/view/Screens/Auth/sure_psaa.dart';
+import 'package:big_cart/view/Screens/Users_View/CatogerProdact.dart'
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -48,7 +53,9 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child:  const Home(),
+      child: const Signup(),
+
+//       child: const Onboarding(),
     );
     // return MaterialApp(
     //   title: 'BIG CART',
