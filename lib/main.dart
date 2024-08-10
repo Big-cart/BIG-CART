@@ -1,14 +1,13 @@
 import 'package:big_cart/Bindings/intial_bindings.dart';
 import 'package:big_cart/View/Screens/Auth/SelectionScreen.dart';
 import 'package:big_cart/View/Screens/Auth/login.dart';
+import 'package:big_cart/View/Screens/Users_View/home.dart';
 import 'package:big_cart/core/Theme/theme.dart';
 import 'package:big_cart/routes.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-
 import 'package:get/get.dart';
 
 void main() {
@@ -63,7 +62,7 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child: const Login(),
+      child: const Home(),
 
 //       child: const Onboarding(),
     );
