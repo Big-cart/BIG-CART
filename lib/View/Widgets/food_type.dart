@@ -48,8 +48,7 @@ class FoodType extends StatelessWidget {
                                     horizontal: 18.w, vertical: 6.h),
                                 child: Text(
                                   text,
-                                  style:
-                                      Theme.of(context).textTheme.labelMedium,
+                                  style: Theme.of(context).textTheme.titleLarge,
                                 ),
                               ),
                             );

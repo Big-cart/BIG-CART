@@ -53,7 +53,7 @@ class AppThemes {
       displayLarge: TextStyle(
         fontFamily: "Almarai",
         color: Colors.black,
-        fontSize: 32.sp,
+        fontSize: 28.sp,
         shadows: const [
           Shadow(offset: Offset(0, 3), blurRadius: 12, color: Colors.black38)
         ],
@@ -73,13 +73,13 @@ class AppThemes {
       bodyLarge: TextStyle(
         fontFamily: "Almarai",
         color: Colors.black,
-        fontSize: 24.sp,
+        fontSize: 20.sp,
         fontWeight: FontWeight.bold,
       ),
       labelMedium: TextStyle(
           fontFamily: "Almarai", color: Colors.white, fontSize: 18.sp),
       titleLarge: TextStyle(
-          fontFamily: "Almarai", color: Colors.white, fontSize: 26.sp),
+          fontFamily: "Almarai", color: Colors.white, fontSize: 22.sp),
       titleSmall: const TextStyle(fontFamily: "Almarai", color: Colors.black),
       titleMedium:
           const TextStyle(fontFamily: "Almarai", color: Colors.white70),
