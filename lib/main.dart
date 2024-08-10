@@ -1,20 +1,6 @@
 import 'package:big_cart/View/Screens/Auth/SelectionScreen.dart';
-
-// import 'package:big_cart/View/Screens/favorite.dart';
-// import 'package:big_cart/View/Screens/home.dart';
-import 'package:big_cart/View/Screens/Auth/login.dart';
-import 'package:big_cart/View/Screens/Users_View/cow_screen.dart';
-import 'package:big_cart/View/Screens/Users_View/rate.dart';
-import 'package:big_cart/View/Screens/Users_View/home.dart';
-import 'package:big_cart/View/Screens/Users_View/product.dart';
-import 'package:big_cart/View/Widgets/categery_product.dart';
-import 'package:big_cart/View/Screens/Users_View/cart.dart';
-import 'package:big_cart/View/Screens/onBorading/onboarding.dart';
-
 import 'package:big_cart/core/Theme/theme.dart';
 import 'package:big_cart/routes.dart';
-
-import 'package:dartz/dartz.dart';
 
 
 import 'package:flutter/material.dart';
@@ -31,8 +17,6 @@ import 'View/Screens/Driver_View/test.dart';
 import 'View/Screens/Users_View/home.dart';
 import 'View/Screens/Users_View/profile.dart';
 import 'View/Screens/Users_View/search.dart';
-// import 'View/Screens/bigin_prodact.dart';
-// import 'View/Screens/shopping_cart.dart';
 
 
 void main() {
