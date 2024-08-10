@@ -1,4 +1,5 @@
-import 'package:big_cart/View/Screens/Auth/CompletPass.dart';
+import 'package:big_cart/Bindings/intial_bindings.dart';
+import 'package:big_cart/View/Screens/Auth/compelet_pass.dart';
 import 'package:big_cart/View/Screens/Auth/forget_pass.dart';
 import 'package:big_cart/View/Screens/Auth/sure_psaa.dart';
 import 'package:big_cart/View/Screens/Users_View/profile.dart';
@@ -48,5 +49,4 @@ List<GetPage<dynamic>>? route = [
     name: AppRoute.forgetpass,
     page: () => const ForgetPass(),
   ),
-
 ];

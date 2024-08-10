@@ -18,7 +18,6 @@ class CardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-
       padding: EdgeInsets.symmetric(horizontal: 12.w),
       child: ImagePixels(
         defaultColor: Colors.grey,
@@ -62,19 +61,22 @@ class CardWidget extends StatelessWidget {
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               alignment: Alignment.centerRight,
+                              // width: 40.w,
                               image: AssetImage(
                                 cardImage,
                               ),
-              width: 40.w,
-
                             ),
-                          )
-                        ],
-                      ),
-
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 ),
+                //         ],
+                //       ),
+                //     );
+                //   },
+                // ),
                 Padding(
                   padding: EdgeInsets.only(left: 12.w),
                   child: Column(
@@ -107,18 +109,15 @@ class CardWidget extends StatelessWidget {
                                   fontFamily: "Almarai",
                                   fontWeight: FontWeight.w700)),
                         ),
-
                       ),
                     ],
                   ),
                 ),
-
               ],
             ),
           );
         },
       ),
-
     );
   }
 }
