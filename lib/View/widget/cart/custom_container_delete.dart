@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomContainerDelete extends StatelessWidget {
-  const CustomContainerDelete({super.key});
+class CustomContainerDelete extends StatelessWidget {final Color color;
+  const CustomContainerDelete({super.key, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +9,7 @@ class CustomContainerDelete extends StatelessWidget {
       height: 40.0,
       width: 40.0,
       decoration: BoxDecoration(
-          color: const Color(0xffFDE1DA), borderRadius: BorderRadius.circular(20.0)),
+          color: color, borderRadius: BorderRadius.circular(20.0)),
       child: const Icon(
         Icons.delete_forever,
         color: Colors.red,
