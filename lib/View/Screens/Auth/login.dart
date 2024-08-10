@@ -15,17 +15,17 @@ class Login extends StatelessWidget {
       title: "مرحبا",
 
       bottomSheet: AppBottomSheet(
-        height: size.height * 0.52.h,
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  "سجل الدخول الى حسابك",
-                  style: TextStyle(color: Colors.black45),
-                ),
+
+        height: size.height * 0.57.h,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Align(
+              alignment: Alignment.centerRight,
+              child: Text(
+                "سجل الدخول الى حسابك",
+                style: TextStyle(color: Colors.black45),
+
               ),
               SizedBox(
                 height: 20.h,
@@ -63,10 +63,16 @@ class Login extends StatelessWidget {
                       style: TextStyle(color: Colors.blue),
                     ),
                   ),
-                ],
-              ),
-              SizedBox(height: 15.h),
-              const AppButton(
+
+                ),
+              ],
+            ),
+            SizedBox(height: 30.h),
+            GetBuilder<LoginControllerImp>(
+              init: LoginControllerImp(),
+              builder: (controllerImp) {
+                return AppButton(
+
                   child: Text(
                 "تسحيل الدخول",
               )),
