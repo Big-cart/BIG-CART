@@ -18,7 +18,7 @@ class Login extends StatelessWidget {
     return AppAuthScaffold(
       title: "مرحبا",
       bottomSheet: AppBottomSheet(
-        height: size.height * 0.6.h,
+        height: size.height * 0.57.h,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -73,7 +73,7 @@ class Login extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 50.h),
+            SizedBox(height: 30.h),
             GetBuilder<LoginControllerImp>(
               init: LoginControllerImp(),
               builder: (controllerImp) {

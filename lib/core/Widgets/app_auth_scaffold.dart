@@ -25,7 +25,7 @@ class AppAuthScaffold extends StatelessWidget {
         actions: actionButton,
         title: Text(
           title,
-          style: Theme.of(context).textTheme.bodyLarge,
+          style: Theme.of(context).textTheme.displayLarge,
         ),
         centerTitle: true,
       ),
