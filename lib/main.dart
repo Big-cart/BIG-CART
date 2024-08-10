@@ -22,6 +22,7 @@ import 'package:big_cart/routes.dart';
 import 'package:big_cart/view/Screens/Auth/CompletPass.dart';
 import 'package:big_cart/view/Screens/Auth/forget_pass.dart';
 import 'package:big_cart/view/Screens/Auth/sure_psaa.dart';
+import 'package:big_cart/view/Screens/Users_View/CatogerProdact.dart';
 
 // import 'package:big_cart/view/Screens/bigin_prodact.dart';
 // import 'package:big_cart/view/Screens/shopping_cart.dart';
@@ -72,7 +73,7 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child: const CowScreen(),
+      child: const Signup(),
 
 //       child: const Onboarding(),
     );
