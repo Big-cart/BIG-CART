@@ -1,5 +1,8 @@
 import 'package:big_cart/View/Screens/Users_View/profile.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
+import 'package:big_cart/view/Screens/Auth/CompletPass.dart';
+import 'package:big_cart/view/Screens/Auth/forget_pass.dart';
+import 'package:big_cart/view/Screens/Auth/sure_psaa.dart';
 import 'package:get/get.dart';
 import 'package:big_cart/View/Screens/Users_View/favorite.dart';
 import 'package:big_cart/View/Screens/Users_View/home.dart';
@@ -32,8 +35,17 @@ List<GetPage<dynamic>>? route = [
     name: AppRoute.profile,
     page: () => const Profile(),
   ),
-  // GetPage(
-  //   name: AppRoute.product,
-  //   page: () => const Product(),
-  // ),
+  GetPage(
+    name: AppRoute.surepass,
+    page: () => const SurePass(),
+  ),
+  GetPage(
+    name: AppRoute.completpass,
+    page: () => const Completpass(),
+  ),
+  GetPage(
+    name: AppRoute.forgetpass,
+    page: () => const ForgetPass(),
+  ),
+
 ];

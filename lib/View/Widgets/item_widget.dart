@@ -65,15 +65,15 @@ class ItemWidget extends StatelessWidget {
                   children: [
                     Text(
                       itemName,
-                      style: Theme.of(context).textTheme.bodyMedium,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                     Text(
                       " مزرعة السعيدة",
-                      style: Theme.of(context).textTheme.bodySmall,
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                     Text(
                       " 4000 الف ريال ",
-                      style: Theme.of(context).textTheme.bodySmall,
+                      style: Theme.of(context).textTheme.titleMedium,
                     )
                   ],
                 ),

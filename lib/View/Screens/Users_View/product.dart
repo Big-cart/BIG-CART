@@ -9,6 +9,7 @@ import 'package:big_cart/core/constant/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_pixels/image_pixels.dart';
 
 class Product extends StatelessWidget {
   const Product({super.key});
@@ -19,141 +20,180 @@ class Product extends StatelessWidget {
     return AppAuthScaffold(
       bottomSheet: Container(
         padding: EdgeInsets.zero,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50.r),
-            boxShadow: [
-              BoxShadow(
-                  color: AppColors.productColor,
-                  blurStyle: BlurStyle.normal,
-                  offset: const Offset(0, 0),
-                  spreadRadius: 12.h)
-            ]),
-        child: AppBottomSheet(
-            colorBottomSheet: Colors.white,
-            height: size.height * 0.56.h,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: size.width.w * 0.7,
-                  padding:
-                      EdgeInsets.symmetric(vertical: 16.h, horizontal: 20.w),
-                  height: 70.h,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6.r),
-                      color: AppColors.productColor),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        flex: 6,
-                        child: Text(
-                          "ادخل الكمية",
-                          style: Theme.of(context).textTheme.titleMedium,
-                        ),
-                      ),
-                      const Expanded(
-                        flex: 1,
-                        child: AppTextFormField(
-                          hintText: '1',
-                          obscureText: false,
-                          keyboradType: TextInputType.number,
-                        ),
-                      )
-                    ],
+        child: Stack(
+          clipBehavior: Clip.none,
+          alignment: Alignment.center,
+          children: [
+            AppBottomSheet(
+              colorBorderBottomSheet: Colors.transparent,
+              colorBottomSheet: Colors.white,
+              height: size.height * 0.53.h,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 55.h,
                   ),
-                ),
-                const Spacer(),
-                Container(
-                  decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
-                      borderRadius: BorderRadius.circular(24.r)),
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-                  child: Column(
-                    children: [
-                      const Text(
-                        'تاريخ الحصاد: 2000\\8\\12\n\n'
-                        'قطوف عنب أخضر بشكلها المميز الطازج وطعمها اللذيذ وهذا بجانب احتوائها على العديد من الفيتامينات والعناصر المغذية لصحة الجسم والبشرة.\n\n'
-                        'السعرات الحرارية: 76.72 سعره حرارية لكل 100 جرام\n\n'
-                        'السعر 1000 للكيلو',
-                        style: TextStyle(fontSize: 16),
-                      ),
-                      SizedBox(
-                        height: 5.h,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: List.generate(5, (index) {
-                          return Icon(
-                            index < 4 ? Icons.star : Icons.star_border,
-                            color: Colors.amber,
-                            size: 40.sp,
-                          );
-                        }),
-                      ),
-                    ],
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.grey.shade200,
+                        borderRadius: BorderRadius.circular(24.r)),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text(" السعر 1000 للكيلو"),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: List.generate(5, (index) {
+                                return Icon(
+                                  index < 4 ? Icons.star : Icons.star_border,
+                                  color: Colors.amber,
+                                  size: 30.sp,
+                                );
+                              }),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 15.h,
+                        ),
+                        Text(
+                          'تاريخ الحصاد: 2000812\n\n'
+                          'قطوف عنب أخضر بشكلها المميز الطازج وطعمها اللذيذ وهذا بجانب احتوائها على العديد من الفيتامينات والعناصر المغذية لصحة الجسم والبشرة.\n\n'
+                          'السعرات الحرارية: 76.72 سعره حرارية لكل 100 جرام\n',
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                      ],
+                    ),
                   ),
+                  const Spacer(),
+                  AppButton(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(
+                          CupertinoIcons.bag,
+                          color: Colors.white,
+                        ),
+                        VerticalDivider(
+                          width: 10.w,
+                        ),
+                        Text(
+                          "اضافه لسله",
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
+                      ],
+                    ),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+            ),
+            //end of bottom sheet design
+            Positioned(
+              top: -30,
+              child: Container(
+                alignment: Alignment.center,
+                width: size.width.w * 0.7,
+                padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 20.w),
+                height: 70.h,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(6.r),
+                  boxShadow: [
+                    BoxShadow(
+                        color: AppColors.productColor,
+                        offset: const Offset(0, 5),
+                        blurRadius: 0,
+                        spreadRadius: 1),
+                  ],
                 ),
-                const Spacer(),
-                Row(
+                child: Row(
                   children: [
                     Expanded(
-                      flex: 1,
-                      child: AppButton(
-                        child: Icon(
-                          CupertinoIcons.heart,
-                          size: 30.sp,
-                        ),
-                        onPressed: () {},
+                      flex: 6,
+                      child: Text(
+                        "ادخل الكمية",
+                        style: Theme.of(context).textTheme.bodySmall,
                       ),
                     ),
-                    VerticalDivider(
-                      width: 10.w,
-                    ),
-                    Expanded(
-                      flex: 4,
-                      child: AppButton(
-                        child: Text(
-                          "اضافه لسله",
-                          style: Theme.of(context).textTheme.labelMedium,
-                        ),
-                        onPressed: () {},
+                    const Expanded(
+                      flex: 1,
+                      child: AppTextFormField(
+                        hintText: '1',
+                        obscureText: false,
+                        keyboradType: TextInputType.number,
                       ),
                     ),
                   ],
                 ),
-              ],
-            )),
+              ),
+            ),
+            Positioned(
+                left: -50.w,
+                bottom: -70.h,
+                child: Image.asset("assets/images/leaf.png")),
+          ],
+        ),
       ),
+      // ! end of bottom sheet design with positioned leaf
+
       title: "اسم المنتج",
-      child: Stack(
-        clipBehavior: Clip.none,
-        alignment: Alignment.topCenter,
+      actionButton: [
+        IconButton(
+            onPressed: () {},
+            icon: const Icon(CupertinoIcons.heart_fill, color: Colors.red))
+      ],
+      child: Column(
         children: [
-          Positioned(
-            child: Container(
-              height: 300.h,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(color: AppColors.productColor, spreadRadius: 10)
-                  ],
-                  borderRadius: BorderRadius.vertical(
-                      bottom: Radius.circular(size.longestSide.r))),
-              // child: const CircleAvatar(
-              //   radius: double.infinity,
-              //   backgroundColor: Colors.white,
-              // ),
-            ),
-          ),
-          Positioned(
-            top: 120.h,
-            child: Image.asset(
-              "assets/images/grape.png",
-              width: 250.w,
-              fit: BoxFit.cover,
-            ),
+          Stack(
+            clipBehavior: Clip.none,
+            alignment: Alignment.topCenter,
+            children: [
+              Positioned(
+                child: ClipRRect(
+                  borderRadius:
+                      BorderRadius.only(bottomRight: Radius.circular(120.r)),
+                  child: ImagePixels.container(
+                    imageProvider: const AssetImage("assets/images/grape.png"),
+                    colorAlignment: Alignment.center,
+                    child: SizedBox(
+                      height: 300.h,
+                      width: double.infinity,
+
+                      // child: const CircleAvatar(
+                      //   radius: double.infinity,
+                      //   backgroundColor: Colors.white,
+                      // ),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 120.h,
+                child: Image.asset(
+                  "assets/images/grape.png",
+                  width: 250.w,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Positioned(
+                  right: -25.w,
+                  top: 400.h,
+                  child: Image.asset(
+                    "assets/images/leaf2.png",
+                    fit: BoxFit.fill,
+                    width: 100,
+                  )),
+              Positioned(
+                  left: -50.w,
+                  top: 100.h,
+                  child: Image.asset("assets/images/leaf.png")),
+            ],
           ),
         ],
       ),

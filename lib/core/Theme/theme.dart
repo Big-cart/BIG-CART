@@ -55,7 +55,7 @@ class AppThemes {
         color: Colors.black,
         fontSize: 32.sp,
         shadows: const [
-          Shadow(offset: Offset(0, 3), blurRadius: 10, color: Colors.black54)
+          Shadow(offset: Offset(0, 3), blurRadius: 12, color: Colors.black38)
         ],
         fontWeight: FontWeight.bold,
       ),
@@ -81,7 +81,8 @@ class AppThemes {
       titleLarge: TextStyle(
           fontFamily: "Almarai", color: Colors.white, fontSize: 26.sp),
       titleSmall: const TextStyle(fontFamily: "Almarai", color: Colors.black),
-      titleMedium: const TextStyle(fontFamily: "Almarai", color: Colors.white),
+      titleMedium:
+          const TextStyle(fontFamily: "Almarai", color: Colors.white70),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Colors.white,

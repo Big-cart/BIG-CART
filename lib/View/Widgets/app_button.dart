@@ -18,7 +18,14 @@ class AppButton extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: width ?? 0),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8.r),
+          borderRadius: BorderRadius.circular(4.r),
+          boxShadow: [
+            BoxShadow(
+              offset: Offset(0, 7.h),
+              blurRadius: 10,
+              color: Colors.black12,
+            )
+          ],
           // color: Colors.white,
           gradient: buttonColor ?? AppColors.buttonGradientColor),
       child: MaterialButton(

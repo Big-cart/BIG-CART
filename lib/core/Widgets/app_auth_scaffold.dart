@@ -6,13 +6,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppAuthScaffold extends StatelessWidget {
   final Widget bottomSheet;
   final Widget child;
-
+  final List<Widget>? actionButton;
   final String title;
   const AppAuthScaffold({
     super.key,
     required this.bottomSheet,
     required this.child,
     required this.title,
+    this.actionButton,
   });
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,11 @@ class AppAuthScaffold extends StatelessWidget {
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
         backgroundColor: Colors.transparent,
-        title: Text(title),
+        actions: actionButton,
+        title: Text(
+          title,
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
         centerTitle: true,
       ),
       bottomSheet: bottomSheet,
