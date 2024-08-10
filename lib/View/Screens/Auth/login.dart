@@ -16,78 +16,80 @@ class Login extends StatelessWidget {
 
       bottomSheet: AppBottomSheet(
         height: size.height * 0.52.h,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Align(
-              alignment: Alignment.centerRight,
-              child: Text(
-                "سجل الدخول الى حسابك",
-                style: TextStyle(color: Colors.black45),
-              ),
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            const AppTextFormField(
-                hintText: "اليريد الالكتزوني",
-                icon: Icon(Icons.mail),
-                obscureText: false),
-            SizedBox(height: 15.h),
-            const AppTextFormField(
-              hintText: "كلمة السر ",
-              suffixIcon: Icon(Icons.remove_red_eye_outlined),
-              obscureText: false,
-              icon: Icon(Icons.lock),
-            ),
-            SizedBox(height: 15.h),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Switch(
-                      value: false,
-                      onChanged: (val) {},
-                    ),
-                    const Text(
-                      "ادكرني",
-                      style: TextStyle(color: Colors.black45),
-                    ),
-                  ],
-                ),
-                const InkWell(
-                  child: Text(
-                    "نسيت كلمة المرور",
-                    style: TextStyle(color: Colors.blue),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 15.h),
-            const AppButton(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Align(
+                alignment: Alignment.centerRight,
                 child: Text(
-              "تسحيل الدخول",
-            )),
-            SizedBox(
-              height: 10.h,
-            ),
-            const Wrap(
-              children: [
-                Text(
-                  "ليس لديك حساب ؟",
-                  textDirection: TextDirection.rtl,
+                  "سجل الدخول الى حسابك",
                   style: TextStyle(color: Colors.black45),
                 ),
-                Text(
-                  textDirection: TextDirection.rtl,
-                  "أنشاء حساب",
-                  style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
-                ),
-              ],
-            )
-          ],
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              const AppTextFormField(
+                  hintText: "اليريد الالكتزوني",
+                  icon: Icon(Icons.mail),
+                  obscureText: false),
+              SizedBox(height: 15.h),
+              const AppTextFormField(
+                hintText: "كلمة السر ",
+                suffixIcon: Icon(Icons.remove_red_eye_outlined),
+                obscureText: false,
+                icon: Icon(Icons.lock),
+              ),
+              SizedBox(height: 15.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Switch(
+                        value: false,
+                        onChanged: (val) {},
+                      ),
+                      const Text(
+                        "ادكرني",
+                        style: TextStyle(color: Colors.black45),
+                      ),
+                    ],
+                  ),
+                  const InkWell(
+                    child: Text(
+                      "نسيت كلمة المرور",
+                      style: TextStyle(color: Colors.blue),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 15.h),
+              const AppButton(
+                  child: Text(
+                "تسحيل الدخول",
+              )),
+              SizedBox(
+                height: 10.h,
+              ),
+              const Wrap(
+                children: [
+                  Text(
+                    "ليس لديك حساب ؟",
+                    textDirection: TextDirection.rtl,
+                    style: TextStyle(color: Colors.black45),
+                  ),
+                  Text(
+                    textDirection: TextDirection.rtl,
+                    "أنشاء حساب",
+                    style: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
 

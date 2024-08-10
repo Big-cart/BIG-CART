@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomContainerCounter extends StatelessWidget {
-  const CustomContainerCounter({super.key});
+  final Color color;
+  const CustomContainerCounter({super.key, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -9,12 +10,12 @@ class CustomContainerCounter extends StatelessWidget {
       height: 40.0,
       width: 120.0,
       decoration: BoxDecoration(
-          color: const Color(0xffFDE1DA), borderRadius: BorderRadius.circular(20.0)),
+          color: color, borderRadius: BorderRadius.circular(20.0)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 5),
+            margin: const EdgeInsets.symmetric(horizontal: 5),
             height: 30.0,
             width: 30.0,
             decoration: BoxDecoration(
@@ -24,7 +25,7 @@ class CustomContainerCounter extends StatelessWidget {
               color: Color(0xff6D3805),
             ),
           ),
-          const Text("2"),
+          const Text("2",style: TextStyle(color: Colors.white),),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 5),
             height: 30.0,

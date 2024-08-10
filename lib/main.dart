@@ -1,36 +1,24 @@
 import 'package:big_cart/View/Screens/Auth/SelectionScreen.dart';
-// import 'package:big_cart/View/Screens/favorite.dart';
-// import 'package:big_cart/View/Screens/home.dart';
-import 'package:big_cart/View/Screens/Auth/login.dart';
-import 'package:big_cart/View/Screens/Users_View/home.dart';
-import 'package:big_cart/View/Screens/onBorading/onboarding.dart';
+import 'package:big_cart/View/Screens/cart.dart';
 
-
-// import 'package:big_cart/View/Screens/product.dart';
-// import 'package:big_cart/View/Screens/profile.dart';
-// import 'package:big_cart/View/Screens/search.dart';
-
-import 'package:big_cart/View/Screens/Auth/signup.dart';
 import 'package:big_cart/core/Theme/theme.dart';
-import 'package:big_cart/view/Screens/bigin_prodact.dart';
-import 'package:big_cart/view/Screens/shopping_cart.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
-import 'View/Screens/splash_screen.dart';
-
-// import 'View/Screens/google_map.dart';
-// import 'View/Screens/order.dart';
-// import 'View/Screens/order_details.dart';
-// import 'View/Screens/splash_screen.dart';
-// import 'View/Screens/test.dart';
-// import 'View/Screens/track.dart';
-
 import 'package:get/get.dart';
 
-import 'view/Screens/Users_View/evaluation.dart';
+import 'View/Screens/Auth/login.dart';
+import 'View/Screens/Auth/signup.dart';
+import 'View/Screens/Driver_View/google_map.dart';
+import 'View/Screens/Driver_View/test.dart';
+import 'View/Screens/Users_View/home.dart';
+import 'View/Screens/Users_View/profile.dart';
+import 'View/Screens/Users_View/search.dart';
+import 'View/Screens/bigin_prodact.dart';
+import 'View/Screens/shopping_cart.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -60,7 +48,7 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child: const Onboarding(),
+      child:  const Home(),
     );
     // return MaterialApp(
     //   title: 'BIG CART',
