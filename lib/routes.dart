@@ -1,9 +1,8 @@
-import 'package:big_cart/View/Screens/Auth/CompletPass.dart';
-import 'package:big_cart/View/Screens/Auth/forget_pass.dart';
-import 'package:big_cart/View/Screens/Auth/sure_psaa.dart';
 import 'package:big_cart/View/Screens/Users_View/profile.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
-
+import 'package:big_cart/view/Screens/Auth/CompletPass.dart';
+import 'package:big_cart/view/Screens/Auth/forget_pass.dart';
+import 'package:big_cart/view/Screens/Auth/sure_psaa.dart';
 import 'package:get/get.dart';
 import 'package:big_cart/View/Screens/Users_View/favorite.dart';
 import 'package:big_cart/View/Screens/Users_View/home.dart';

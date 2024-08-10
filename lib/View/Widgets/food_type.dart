@@ -30,29 +30,20 @@ class FoodType extends StatelessWidget {
                     Stack(
                       clipBehavior: Clip.none,
                       children: [
-                        ImagePixels(
+                        ImagePixels.container(
+                          colorAlignment: Alignment.center,
                           imageProvider: AssetImage(
                             chipImage,
                           ),
-                          builder: (context, img) {
-                            return Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12.r),
-                                color: img
-                                    .pixelColorAtAlignment!(Alignment.center),
-                              ),
-                              child: MaterialButton(
-                                shape: const RoundedRectangleBorder(),
-                                onPressed: onPressed,
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 18.w, vertical: 6.h),
-                                child: Text(
-                                  text,
-                                  style: Theme.of(context).textTheme.titleLarge,
-                                ),
-                              ),
-                            );
-                          },
+                          child: MaterialButton(
+                            onPressed: onPressed,
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 18.w, vertical: 6.h),
+                            child: Text(
+                              text,
+                              style: Theme.of(context).textTheme.titleLarge,
+                            ),
+                          ),
                         ),
                         Positioned(
                           top: -15.h,

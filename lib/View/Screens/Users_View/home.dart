@@ -59,7 +59,7 @@ class Home extends StatelessWidget {
                     "assets/images/background.png",
                   ),
                   fit: BoxFit.fill)),
-          padding: EdgeInsets.symmetric(horizontal: 12.0.w),
+          padding: EdgeInsets.symmetric(horizontal: 8.0.w),
           child: Column(children: [
             // const Drawer(),
             AppBar(
@@ -72,24 +72,20 @@ class Home extends StatelessWidget {
               centerTitle: true,
             ),
             SizedBox(
-              height: 20.h,
+              height: 40.h,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12.0.h),
+              padding: EdgeInsets.symmetric(horizontal: 24.0.h),
               child: const SearchBarWidget(),
             ),
-            SizedBox(
-              height: 10.h,
-            ),
+
             Expanded(
               child: ListView(
                 shrinkWrap: true,
-                clipBehavior: Clip.none,
                 children: [
                   SizedBox(
-                    height: 200.h,
+                    height: 210.h,
                     child: PageView(
-                      clipBehavior: Clip.none,
                       scrollDirection: Axis.horizontal,
                       children: const [
                         CardWidget(
@@ -105,9 +101,6 @@ class Home extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 20.h,
-                  ),
                   const FoodType(
                       chipImage: "assets/images/grape.png",
                       chipName: [
@@ -117,9 +110,7 @@ class Home extends StatelessWidget {
                         'تفاح أخضر',
                         'بن يمني',
                       ]),
-                  SizedBox(
-                    height: 20.h,
-                  ),
+                  SizedBox(height: 10.h),
                   const ItemWidgetList(
                       index: 5,
                       itemName: "itemName",
