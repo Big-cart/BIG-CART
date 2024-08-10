@@ -32,15 +32,11 @@ class Login extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-            GetBuilder<LoginControllerImp>(
-              builder: (controllerImp) {
-                return AppTextFormField(
-                    controller: controllerImp.email,
-                    hintText: "اليريد الالكتزوني",
-                    icon: const Icon(Icons.mail),
-                    obscureText: false);
-              },
-            ),
+            AppTextFormField(
+                controller: controllerImp.email,
+                hintText: "اليريد الالكتزوني",
+                icon: const Icon(Icons.mail),
+                obscureText: false),
             SizedBox(height: 15.h),
             AppTextFormField(
               controller: controllerImp.password,
