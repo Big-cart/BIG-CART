@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 
-class myOnboarding extends StatefulWidget {
-  const myOnboarding({super.key});
+class MyOnboarding extends StatefulWidget {
+  const MyOnboarding({super.key});
 
   @override
-  State<myOnboarding> createState() => _myOnboardingState();
+  State<MyOnboarding> createState() => _MyOnboardingState();
 }
 
-class _myOnboardingState extends State<myOnboarding> {
+class _MyOnboardingState extends State<MyOnboarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF1F1EF),
-     body: Container(
-         height: double.infinity,
-
-         child: Image.asset("assets/images/1.png",fit: BoxFit.fitHeight,)),
+      backgroundColor: const Color(0xffF1F1EF),
+      body: SizedBox(
+          height: double.infinity,
+          child: Image.asset(
+            "assets/images/1.png",
+            fit: BoxFit.fitHeight,
+          )),
     );
   }
 }

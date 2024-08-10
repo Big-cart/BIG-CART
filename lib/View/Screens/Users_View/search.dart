@@ -1,5 +1,5 @@
 import 'package:big_cart/View/Screens/Users_View/home.dart';
-import 'package:big_cart/View/Widgets/search_bar_widget.dart';
+import 'package:big_cart/core/Widgets/search_bar_widget.dart';
 import 'package:big_cart/core/constant/app_icons.dart';
 // import 'package:big_cart/view/Screens/home.dart';
 // import 'package:big_cart/view/Screens/login.dart';
