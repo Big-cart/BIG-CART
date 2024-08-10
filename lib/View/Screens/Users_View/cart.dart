@@ -1,11 +1,10 @@
+import 'package:big_cart/View/Widgets/app_button.dart';
+import 'package:big_cart/View/widget/cart/custom_card_cart.dart';
 import 'package:big_cart/View/widget/cart/custom_container_delete.dart';
 import 'package:big_cart/core/constant/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:image_pixels/image_pixels.dart';
 
-import '../Widgets/app_button.dart';
-import '../widget/cart/custom_card_cart.dart';
-import '../widget/cart/custom_container_counter.dart';
 
 class Cart extends StatelessWidget {
   const Cart({super.key});

@@ -18,7 +18,6 @@ class CardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-
       padding: EdgeInsets.symmetric(horizontal: 12.w),
       child: ImagePixels(
         defaultColor: Colors.grey,
@@ -62,63 +61,67 @@ class CardWidget extends StatelessWidget {
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               alignment: Alignment.centerRight,
+                              // width: 40.w,
                               image: AssetImage(
                                 cardImage,
                               ),
-              width: 40.w,
-
                             ),
-                          )
-                        ],
-                      ),
-
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: 12.w),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Align(
-                        child: Text(
-                          cardTitle,
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                      ),
-                      Text(
-                        cardDescription,
-                        style: Theme.of(context).textTheme.titleLarge,
-                      ),
-                      SizedBox(height: 30.0.h),
-                      Padding(
-                        padding: EdgeInsets.only(right: 50.0.w, left: 15.w),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(6.r)),
-                              alignment: Alignment.center,
-                              backgroundColor: Colors.grey.shade200),
-                          child: Text(cardButtonText,
-                              style: const TextStyle(
-                                  color: Colors.red,
-                                  fontFamily: "Almarai",
-                                  fontWeight: FontWeight.w700)),
-                        ),
-
-                      ),
-                    ],
-                  ),
-                ),
-
               ],
             ),
           );
         },
       ),
+      // Padding(
+      //   padding: EdgeInsets.only(left: 12.w),
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     crossAxisAlignment: CrossAxisAlignment.center,
+      //     children: [
+      //       Align(
+      //         child: Text(
+      //           cardTitle,
+      //           style: Theme.of(context).textTheme.titleLarge,
+      //         ),
+      //       ),
+      //       Text(
+      //         cardDescription,
+      //         style: Theme.of(context).textTheme.titleLarge,
+      //       ),
+      //       SizedBox(height: 30.0.h),
+      //       Padding(
+      //         padding: EdgeInsets.only(right: 50.0.w, left: 15.w),
+      //         child: ElevatedButton(
+      //           onPressed: () {},
+      //           style: ElevatedButton.styleFrom(
+      //               shape: RoundedRectangleBorder(
+      //                   borderRadius: BorderRadius.circular(6.r)),
+      //               alignment: Alignment.center,
+      //               backgroundColor: Colors.grey.shade200),
+      //           child: Text(cardButtonText,
+      //               style: const TextStyle(
+      //                   color: Colors.red,
+      //                   fontFamily: "Almarai",
+      //                   fontWeight: FontWeight.w700)),
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
 
+      //           ],
+      //         ),
+      //       )
+      //     },
+      //   ),
+
+      // );
+    
     );
   }
 }
