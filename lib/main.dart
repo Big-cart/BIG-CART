@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child: const Profile(),
+      child: const MainUserScreen(),
 
 //       child: const Onboarding(),
     );
