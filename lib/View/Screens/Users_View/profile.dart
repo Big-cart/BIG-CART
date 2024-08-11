@@ -89,16 +89,23 @@ class Profile extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 15.h),
+                        SizedBox(height: 10.h),
                         Column(
                           children: [
                             Text(
                               'اسم المستخدم',
                               style: Theme.of(context).textTheme.bodyMedium,
                             ),
-                            const SizedBox(height: 5),
-                            Text('username@gmail.com',
-                                style: Theme.of(context).textTheme.bodySmall),
+                            SizedBox(height: 5.h),
+                            Text(
+                              'username@gmail.com',
+                              style: Theme.of(context).textTheme.bodySmall,
+                            ),
+                            SizedBox(height: 5.h),
+                            Text(
+                              "967733333333+",
+                              style: Theme.of(context).textTheme.bodySmall,
+                            ),
                           ],
                         )
                       ],
