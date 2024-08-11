@@ -1,8 +1,6 @@
 
 
 import 'package:big_cart/View/Widgets/app_button.dart';
-import 'package:big_cart/View/widget/cart/custom_card_cart.dart';
-import 'package:big_cart/View/widget/cart/custom_container_delete.dart';
 
 import 'package:big_cart/core/constant/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -68,10 +66,10 @@ class Cart extends StatelessWidget {
                           topLeft: Radius.circular(33.0))),
                   child:  const Center(child: Text("الإجمالي :60000ريال")),
                 ),
-                const Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: AppButton(child: Text("الدفع",style: TextStyle(color: Colors.white),),),
-                )
+                // Padding(
+                //   padding: const EdgeInsets.all(16.0),
+                //   child: AppButton(child: Text("الدفع",style: TextStyle(color: Colors.white),),),
+                // )
               ],
             ),
           ),
