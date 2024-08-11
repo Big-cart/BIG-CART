@@ -1,4 +1,4 @@
-import 'package:big_cart/controller/Auth/signup_controller.dart';
+import 'package:big_cart/controller/users/Auth/signup_controller.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:big_cart/core/Widgets/app_auth_scaffold.dart';
 import 'package:big_cart/View/Widgets/Auth/app_text_form_field.dart';
@@ -100,7 +100,7 @@ class Signup extends StatelessWidget {
                         ),
                         TextButton(
                           onPressed: () {
-                            Get.toNamed(AppRoute.login);
+                            Get.toNamed(AppRoute.userLogin);
                           },
                           child: Text('تسجيل',
                               style: Theme.of(context).textTheme.bodyLarge),
