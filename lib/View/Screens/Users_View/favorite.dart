@@ -48,6 +48,7 @@ class Favorite extends StatelessWidget {
               ),
               Expanded(
                 child: GridView.builder(
+                  clipBehavior: Clip.none,
                   shrinkWrap: true,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,

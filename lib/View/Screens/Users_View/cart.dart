@@ -38,6 +38,7 @@ class Cart extends StatelessWidget {
         ),
         child: SafeArea(
           child: SingleChildScrollView(
+            clipBehavior: Clip.none,
             child: Column(
               children: [
                 AppBar(
