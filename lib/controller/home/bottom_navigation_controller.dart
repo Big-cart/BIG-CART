@@ -2,6 +2,7 @@ import 'package:big_cart/View/Screens/Users_View/cart.dart';
 import 'package:big_cart/View/Screens/Users_View/favorite.dart';
 import 'package:big_cart/View/Screens/Users_View/home.dart';
 import 'package:big_cart/View/Screens/Users_View/profile.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,6 +15,7 @@ class BottomNavigationControllerImp extends BottomNavigationController {
   List<Widget> pages = <Widget>[
     const Home(),
     const Favorite(),
+    const Cart(),
     const Cart(),
     const Profile()
   ];
@@ -28,6 +30,10 @@ class BottomNavigationControllerImp extends BottomNavigationController {
     ),
     const Icon(
       Icons.favorite_border,
+      color: Colors.white,
+    ),
+    const Icon(
+      Icons.crop_square_rounded,
       color: Colors.white,
     ),
     const Icon(

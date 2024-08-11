@@ -1,19 +1,18 @@
 import 'package:big_cart/core/DataSource/Remote/Auth/login.dart';
 import 'package:big_cart/core/Functions/handiling_data_controller.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
-import 'package:big_cart/core/constant/app_colors.dart';
 import 'package:big_cart/core/enum/status_request.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-abstract class LoginController extends GetxController {
+abstract class LoginControllerDriver extends GetxController {
   goToSignUp();
   loginWithEmail(
     BuildContext context,
   );
 }
 
-class LoginControllerImp extends LoginController {
+class LoginControllerDriverImp extends LoginControllerDriver {
   LoginData loginData = LoginData(Get.find());
 
   late TextEditingController email;
@@ -27,7 +26,7 @@ class LoginControllerImp extends LoginController {
 
   @override
   goToSignUp() {
-    Get.offAllNamed(AppRoute.signup);
+    Get.offAllNamed(AppRoute.userSignup);
   }
 
   @override
@@ -52,16 +51,19 @@ class LoginControllerImp extends LoginController {
 
     if (statusRequest == StatusRequest.succses) {
       //?fetch data success than store user data and login
+      print("Sucsses");
       if (response['success'] == true) {
-        print(response['user']);
-        data = response['user'];
-        Get.defaultDialog(
-          titleStyle:
-              TextStyle(color: Theme.of(context).textTheme.bodyMedium!.color),
-          title: "warning",
-          // middleText: response['message'],
-        );
-        Get.offAllNamed(AppRoute.home);
+        print(response['role_id']);
+        if (response['role_id'] == 2) {
+          data = response['user'];
+          Get.defaultDialog(
+            titleStyle:
+                TextStyle(color: Theme.of(context).textTheme.bodyMedium!.color),
+            title: "warning",
+            // middleText: response['message'],
+          );
+          Get.offAllNamed(AppRoute.driverOrder);
+        }
       } else if (response['message'] != null) {
         //?fetch data field than show alert dialog
         response['message'];
@@ -72,14 +74,12 @@ class LoginControllerImp extends LoginController {
         );
         statusRequest = StatusRequest.failure;
       } else if (response['errors']['email'] != null) {
-        print(response['errors']);
         Get.defaultDialog(
           titleStyle: const TextStyle(color: Colors.red),
           title: "تحذير",
           middleText: response['errors']['email'][0],
         );
       } else if (response['errors']['password'] != null) {
-        print(response['errors']);
         Get.defaultDialog(
           titleStyle: const TextStyle(color: Colors.red),
           title: "تحذير",

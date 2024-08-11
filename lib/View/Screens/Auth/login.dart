@@ -1,4 +1,4 @@
-import 'package:big_cart/controller/Auth/login_controller.dart';
+import 'package:big_cart/controller/users/Auth/login_controller.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:big_cart/core/Widgets/app_auth_scaffold.dart';
 import 'package:big_cart/View/Widgets/Auth/app_text_form_field.dart';
@@ -95,7 +95,7 @@ class Login extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Get.toNamed(AppRoute.signup);
+                    Get.toNamed(AppRoute.userSignup);
                   },
                   child: const Text(
                     " \tأنشاء حساب ",

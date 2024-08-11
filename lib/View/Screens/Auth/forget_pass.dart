@@ -3,7 +3,6 @@ import 'package:big_cart/View/Widgets/app_button.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class ForgetPass extends StatelessWidget {
   const ForgetPass({super.key});
@@ -11,7 +10,6 @@ class ForgetPass extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // الحصول على ارتفاع الشاشة
-    final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
       body: Container(
@@ -35,7 +33,7 @@ class ForgetPass extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
-                  Text(
+                  const Text(
                     'نسيت كلمة المرور',
                     style: TextStyle(
                       fontSize: 24,
@@ -52,7 +50,7 @@ class ForgetPass extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  Text(
+                  const Text(
                     'email@gmil.com',
                     style: TextStyle(
                       fontSize: 14,
@@ -63,7 +61,7 @@ class ForgetPass extends StatelessWidget {
                   TextField(
                     decoration: InputDecoration(
                       hintText: 'البريد الالكتروني',
-                      prefixIcon: Icon(Icons.email),
+                      prefixIcon: const Icon(Icons.email),
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
@@ -79,7 +77,7 @@ class ForgetPass extends StatelessWidget {
                       style: Theme.of(context).textTheme.labelMedium,
                     ),
                     onPressed: () {
-                      Get.to(SurePass());
+                      Get.to(const SurePass());
                     },
                   ),
                 ],

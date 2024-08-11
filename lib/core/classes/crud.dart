@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:big_cart/core/Functions/check_internet.dart';
 import 'package:big_cart/core/enum/status_request.dart';
@@ -8,6 +9,7 @@ import 'package:dartz/dartz.dart';
 import 'package:http/http.dart' as http;
 
 class Crud {
+  late final String token;
   Future<Either<StatusRequest, Map>> postData(String linkUrl, Map data) async {
     try {
       if (await checkInternet()) {
@@ -15,11 +17,12 @@ class Crud {
             Uri.parse(
               linkUrl,
             ),
+            headers: {
+              HttpHeaders.authorizationHeader:""
+            },
             body: data);
-        print("respone send");
 
         if (response.statusCode >= 200 || response.statusCode != 404) {
-          print("respone accept");
 
           Map responseBody = jsonDecode(
             
@@ -27,7 +30,6 @@ class Crud {
           );
           return Right(responseBody);
         } else {
-          print("respone field");
 
           return const Left(StatusRequest.serverfailure);
         }
@@ -35,7 +37,6 @@ class Crud {
         return const Left(StatusRequest.offlinefailure);
       }
     } catch (e) {
-      print(e.toString());
       return const Left(StatusRequest.serverfailure);
     }
   }

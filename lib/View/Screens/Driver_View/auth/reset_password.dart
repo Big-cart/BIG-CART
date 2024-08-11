@@ -1,8 +1,8 @@
+import 'package:big_cart/View/widget/auth/login/custom_button.dart';
+import 'package:big_cart/View/widget/auth/login/custom_container_login.dart';
+import 'package:big_cart/View/widget/auth/login/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
-import '../../../widget/driver/auth/login/custom_button.dart';
-import '../../../widget/driver/auth/login/custom_container_login.dart';
-import '../../../widget/driver/auth/login/custom_text_form_field.dart';
 
 class ResetPasswordDriver extends StatelessWidget {
   const ResetPasswordDriver({super.key});

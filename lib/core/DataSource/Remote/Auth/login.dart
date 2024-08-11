@@ -7,11 +7,10 @@ class LoginData {
   postdata(
     String password,
     String email,
-    
   ) async {
     var response = await crud.postData(AppLink.linkLogin, {
-      "password": password,
       "email": email,
+      "password": password,
     });
     return response.fold(
       (l) => l,

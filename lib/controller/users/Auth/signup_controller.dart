@@ -1,10 +1,8 @@
 import 'package:big_cart/core/DataSource/Remote/Auth/signup.dart';
 import 'package:big_cart/core/Functions/handiling_data_controller.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
-import 'package:big_cart/core/constant/app_colors.dart';
 import 'package:big_cart/core/enum/status_request.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 abstract class SignupController extends GetxController {
@@ -48,7 +46,6 @@ class SignupControllerImp extends SignupController {
     if (statusRequest == StatusRequest.succses) {
       //?fetch data success than store user data and login
       if (response['success'] == true) {
-        print(response['user']);
         // data = response['user'];
         Get.defaultDialog(
           titleStyle:
@@ -67,21 +64,18 @@ class SignupControllerImp extends SignupController {
         );
         statusRequest = StatusRequest.failure;
       } else if (response['errors']['name'] != null) {
-        print(response['errors']);
         Get.defaultDialog(
           titleStyle: const TextStyle(color: Colors.red),
           title: "تحذير",
           middleText: response['errors']['name'][0],
         );
       } else if (response['errors']['email'] != null) {
-        print(response['errors']);
         Get.defaultDialog(
           titleStyle: const TextStyle(color: Colors.red),
           title: "تحذير",
           middleText: response['errors']['email'][0],
         );
       } else if (response['errors']['password'] != null) {
-        print(response['errors']);
         Get.defaultDialog(
           titleStyle: const TextStyle(color: Colors.red),
           title: "تحذير",
@@ -97,7 +91,6 @@ class SignupControllerImp extends SignupController {
       //       fontWeight: FontWeight.bold),
       //   middleText: "Phone Numbet Or Email Already Exist ",
       // );
-      print(statusRequest);
 
       // statusRequest = StatusRequest.failure;
     } else {
@@ -116,7 +109,7 @@ class SignupControllerImp extends SignupController {
 
   @override
   goToLogIn() {
-    Get.offAllNamed(AppRoute.login);
+    Get.offAllNamed(AppRoute.userLogin);
   }
 
   @override
@@ -137,6 +130,3 @@ class SignupControllerImp extends SignupController {
     super.dispose();
   }
 }
-
-
-

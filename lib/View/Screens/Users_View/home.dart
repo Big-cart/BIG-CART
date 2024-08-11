@@ -1,19 +1,14 @@
-import 'package:big_cart/View/Screens/app_bottom_navigation.dart';
-import 'package:big_cart/View/Widgets/food_type.dart';
-import 'package:big_cart/View/Widgets/item_widget.dart';
-import 'package:big_cart/View/Widgets/item_widget_List.dart';
-import 'package:big_cart/controller/home/bottom_navigation_controller.dart';
-import 'package:big_cart/core/Widgets/search_bar_widget.dart';
-import 'package:big_cart/View/Widgets/card_widget.dart';
-import 'package:big_cart/core/Widgets/app_scaffold.dart';
-import 'package:big_cart/core/constant/app_colors.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-
+import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'package:big_cart/View/Widgets/card_widget.dart';
+import 'package:big_cart/View/Widgets/food_type.dart';
+import 'package:big_cart/View/Widgets/item_widget_list.dart';
+import 'package:big_cart/core/Widgets/app_scaffold.dart';
+import 'package:big_cart/core/Widgets/search_bar_widget.dart';
 import 'package:get/get.dart';
-import 'package:image_pixels/image_pixels.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -53,7 +48,9 @@ class Home extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12.0.h),
-              child: const SearchBarWidget(),
+              child: SearchBarWidget(
+                onTap: () => Get.toNamed(AppRoute.search),
+              ),
             ),
             SizedBox(
               height: 10.h,

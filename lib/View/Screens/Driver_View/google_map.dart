@@ -1,4 +1,4 @@
-import 'package:big_cart/controller/google_map_controller.dart';
+import 'package:big_cart/controller/driver/google_map_controller.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

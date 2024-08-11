@@ -1,5 +1,5 @@
 import 'package:big_cart/View/Widgets/app_button.dart';
-import 'package:big_cart/controller/rate_controller.dart';
+import 'package:big_cart/controller/users/rate_controller.dart';
 import 'package:big_cart/core/Widgets/app_scaffold.dart';
 import 'package:big_cart/core/constant/app_colors.dart';
 import 'package:flutter/material.dart';
