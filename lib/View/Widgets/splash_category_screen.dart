@@ -2,11 +2,11 @@ import 'package:big_cart/core/Widgets/app_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CategreyProdact extends StatelessWidget {
+class SplashCategorySelected extends StatelessWidget {
   final String categreyName;
   final String categreyImage;
 
-  const CategreyProdact(
+  const SplashCategorySelected(
       {super.key, required this.categreyName, required this.categreyImage});
 
   @override

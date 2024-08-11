@@ -62,6 +62,7 @@ class LoginControllerDriverImp extends LoginControllerDriver {
       if (response['success'] == true) {
         print(response['role_id']);
         if (response['role_id'] == 2) {
+          response['token'];
           data = response['user'];
           Get.defaultDialog(
             titleStyle:
