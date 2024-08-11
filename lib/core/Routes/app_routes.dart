@@ -14,17 +14,17 @@ class AppRoute {
   static const String forgetpass = "/ForgetPass";
   static const String completpass = "/completpass";
   static const String surepass = "/surepass";
-  static const String Invoce = "/invoce";
-  static const String ListOfOrders = "/listoforders";
-  static const String SelectionScreen = "/selectionscreen";
-  static const String Onboarding = "/onboarding";
-  static const String Page1 = "/page1";
-  static const String Page2 = "/page2";
-  static const String Page3 = "/page3";
-  static const String Page4 = "/page4";
-  static const String EmptyCart = "/emptycart";
-  static const String CatogerProdact = "/catogerprodact";
-
+  static const String invoice = "/invoce";
+  static const String listOfOrders = "/listoforders";
+  static const String selectionScreen = "/selectionscreen";
+  static const String onboarding = "/onboarding";
+  static const String page1 = "/page1";
+  static const String page2 = "/page2";
+  static const String page3 = "/page3";
+  static const String page4 = "/page4";
+  static const String emptyCart = "/emptycart";
+  static const String catogerProdact = "/catogerprodact";
+  static const String aboutMe = "/aboutme";
 
 //====================Auth-Driver===============================
 

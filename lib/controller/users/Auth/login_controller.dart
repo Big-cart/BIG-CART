@@ -3,6 +3,7 @@ import 'package:big_cart/core/Functions/handiling_data_controller.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:big_cart/core/constant/app_colors.dart';
 import 'package:big_cart/core/enum/status_request.dart';
+import 'package:big_cart/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -64,13 +65,17 @@ class LoginControllerImp extends LoginController {
         print(response['role_id']);
         if (response['role_id'] == 1) {
           data = response['user'];
+          print("${response['token']}");
+          sharedPref.setString(
+              "token", "Bearer ${response['token']}".toString());
+
           Get.defaultDialog(
             titleStyle:
                 TextStyle(color: Theme.of(context).textTheme.bodyMedium!.color),
             title: "تحذير",
             // middleText: response['message'],
           );
-          Get.offAllNamed(AppRoute.driverOrder);
+          Get.offAllNamed(AppRoute.home);
         } else {
           Get.defaultDialog(
             titleStyle:

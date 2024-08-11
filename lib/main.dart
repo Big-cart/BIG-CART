@@ -1,8 +1,11 @@
 import 'package:big_cart/Bindings/intial_bindings.dart';
 import 'package:big_cart/View/Screens/Auth/login.dart';
-import 'package:big_cart/View/Screens/Users_View/CatogerProdact.dart';
+import 'package:big_cart/View/Screens/Users_View/aboutme.dart';
+import 'package:big_cart/View/Screens/Users_View/cart.dart';
+import 'package:big_cart/View/Screens/Users_View/invoice.dart';
+import 'package:big_cart/View/Screens/Users_View/select_category_screen.dart';
 import 'package:big_cart/View/Screens/Users_View/main_user_screen.dart';
-import 'package:big_cart/View/Widgets/categery_product.dart';
+import 'package:big_cart/View/Widgets/splash_category_screen.dart';
 
 import 'package:big_cart/core/Theme/theme.dart';
 import 'package:big_cart/routes.dart';
@@ -70,7 +73,7 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child: const CatogerProdact(),
+      child: const SelectCategoryScreen(),
 
 //       child: const Onboarding(),
     );

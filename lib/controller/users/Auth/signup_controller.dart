@@ -61,7 +61,7 @@ class SignupControllerImp extends SignupController {
           title: "warning",
           middleText: response['message'],
         );
-        Get.offAllNamed(AppRoute.home);
+        Get.offAllNamed(AppRoute.userLogin);
       } else if (response['message'] != null && response['success'] == false) {
         //?fetch data field than show alert dialog
         response['message'];

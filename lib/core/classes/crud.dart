@@ -3,13 +3,13 @@ import 'dart:io';
 
 import 'package:big_cart/core/Functions/check_internet.dart';
 import 'package:big_cart/core/enum/status_request.dart';
+import 'package:big_cart/main.dart';
 import 'package:dartz/dartz.dart';
 // import 'package:heal_me/Core/Class/status_request.dart';
 // import 'package:heal_me/Core/Functions/check_internet.dart';
 import 'package:http/http.dart' as http;
 
 class Crud {
-  late final String token;
   Future<Either<StatusRequest, Map>> postData(String linkUrl, Map data) async {
     try {
       if (await checkInternet()) {
@@ -18,7 +18,8 @@ class Crud {
               linkUrl,
             ),
             headers: {
-              HttpHeaders.authorizationHeader:""
+              HttpHeaders.authorizationHeader:
+                  sharedPref.getString('token') ?? ""
             },
             body: data);
 

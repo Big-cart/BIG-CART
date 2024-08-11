@@ -7,9 +7,11 @@ import 'package:big_cart/View/Screens/Driver_View/auth/login_driver.dart';
 import 'package:big_cart/View/Screens/Driver_View/auth/reset_password.dart';
 import 'package:big_cart/View/Screens/Driver_View/auth/success_reset_pass_screen.dart';
 import 'package:big_cart/View/Screens/Driver_View/order.dart';
-import 'package:big_cart/View/Screens/Users_View/CatogerProdact.dart';
+import 'package:big_cart/View/Screens/Users_View/aboutme.dart';
+import 'package:big_cart/View/Screens/Users_View/main_user_screen.dart';
+import 'package:big_cart/View/Screens/Users_View/select_category_screen.dart';
 import 'package:big_cart/View/Screens/Users_View/empty_cart.dart';
-import 'package:big_cart/View/Screens/Users_View/invoce.dart';
+import 'package:big_cart/View/Screens/Users_View/invoice.dart';
 import 'package:big_cart/View/Screens/Users_View/list_of_orders.dart';
 import 'package:big_cart/View/Screens/Users_View/profile.dart';
 import 'package:big_cart/View/Screens/onBorading/onboarding.dart';
@@ -50,48 +52,48 @@ List<GetPage<dynamic>>? route = [
   ),
 //====================Users-Screens===============================
   GetPage(
-    name: AppRoute.Invoce,
-    page: () => const Invoce(),
+    name: AppRoute.invoice,
+    page: () => const Invoice(),
   ),
   GetPage(
-    name: AppRoute.ListOfOrders,
+    name: AppRoute.listOfOrders,
     page: () => const ListOfOrders(),
   ),
   GetPage(
-    name: AppRoute.SelectionScreen,
+    name: AppRoute.selectionScreen,
     page: () => const SelectionScreen(),
   ),
   GetPage(
-    name: AppRoute.Onboarding,
+    name: AppRoute.onboarding,
     page: () => const Onboarding(),
   ),
   GetPage(
-    name: AppRoute.Page1,
+    name: AppRoute.page1,
     page: () => const Page1(),
   ),
   GetPage(
-    name: AppRoute.Page2,
+    name: AppRoute.page2,
     page: () => const Page2(),
   ),
   GetPage(
-    name: AppRoute.Page3,
+    name: AppRoute.page3,
     page: () => const Page3(),
   ),
   GetPage(
-    name: AppRoute.Page4,
+    name: AppRoute.page4,
     page: () => const Page4(),
   ),
   GetPage(
-    name: AppRoute.EmptyCart,
+    name: AppRoute.emptyCart,
     page: () => const EmptyCart(),
   ),
   GetPage(
-    name: AppRoute.CatogerProdact,
-    page: () => const CatogerProdact(),
+    name: AppRoute.catogerProdact,
+    page: () => const SelectCategoryScreen(),
   ),
   GetPage(
     name: AppRoute.home,
-    page: () => const Home(),
+    page: () => const MainUserScreen(),
   ),
 
   GetPage(
@@ -107,10 +109,17 @@ List<GetPage<dynamic>>? route = [
     name: AppRoute.profile,
     page: () => const Profile(),
   ),
+  GetPage(
+    name: AppRoute.profile,
+    page: () => const Profile(),
+  ),
+  GetPage(
+    name: AppRoute.aboutMe,
+    page: () => const AboutMe(),
+  ),
 
 //====================Driver-Route===============================
-
-//====================Auth-Driver===============================
+  //====================Auth-Driver===============================
   GetPage(
     name: AppRoute.driverLogin,
     page: () => const LoginDriver(),
@@ -127,7 +136,7 @@ List<GetPage<dynamic>>? route = [
     name: AppRoute.driverResetPassSuccess,
     page: () => const SuccessResetPassScreenDriver(),
   ),
-//====================Driver-Screens===============================
+  //====================Driver-Screens===============================
   GetPage(
     name: AppRoute.driverOrder,
     page: () => const Order(),
