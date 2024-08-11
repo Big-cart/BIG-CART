@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SearchBarWidget extends StatelessWidget {
-  const SearchBarWidget({super.key});
+  final void Function()? onTap;
+  const SearchBarWidget({super.key, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +16,11 @@ class SearchBarWidget extends StatelessWidget {
       children: [
         Expanded(
           flex: 5,
-          child: GestureDetector(
-            onTap: () {},
-            child: AppTextFormField(
-              hintText: "بحث",
-              obscureText: false,
-              icon: Icon(Icons.search, color: Colors.grey.shade400),
-            ),
+          child: AppTextFormField(
+            onTap: onTap,
+            hintText: "بحث",
+            obscureText: false,
+            icon: Icon(Icons.search, color: Colors.grey.shade400),
           ),
         ),
         SizedBox(
