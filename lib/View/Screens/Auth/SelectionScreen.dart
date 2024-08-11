@@ -9,54 +9,63 @@ class SelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      backColor: Colors.white,
       isPadding: false,
       appBar: AppBar(),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(
-              'من أنت؟',
-              style: Theme.of(context).textTheme.displayLarge,
-            ),
-            SizedBox(height: 5.h),
-            Text(
-              'حدد أي واحد أدناه',
-              style: TextStyle(
-                color: Colors.green,
-                fontSize: 16.sp,
+      child: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/background.png"),
+            fit: BoxFit.fitWidth,
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(height: 90.h),
+              Text(
+                'من أنت؟',
+                style: Theme.of(context).textTheme.displayLarge,
               ),
-            ),
-            SizedBox(height: 80.h),
-            CustomCard(
-              imagePath:
-                  'assets/images/draiver.png', // ضع مسار صورة المزارع هنا
-              title: 'موصل',
-              description: 'توصيل الطلبات من الموردين الى التجار والمستهلكين',
-              onTap: () {},
-            ),
-            SizedBox(
-              height: 50.h,
-            ),
-            CustomCard(
-              imagePath: 'assets/images/farmer.png', // ضع مسار صورة المزارع هنا
-              title: 'مزارع',
-              description: 'توريد المنتجات الزراعية للتجار والمستهلكين',
-              onTap: () {},
-            ),
-            SizedBox(
-              height: 50.h,
-            ),
-            CustomCard(
-              imagePath:
-                  'assets/images/draiver.png', // ضع مسار صورة المزارع هنا
-              title: 'موصل',
-              description: 'توصيل الطلبات من الموردين الى التجار والمستهلكين',
-              onTap: () {},
-            ),
-            const Spacer(),
-          ],
+              SizedBox(height: 5.h),
+              Text(
+                'حدد أي واحد أدناه',
+                style: TextStyle(
+                  color: Colors.green,
+                  fontSize: 16.sp,
+                ),
+              ),
+              SizedBox(height: 80.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomCard(
+                    imagePath: "assets/images/farme.png", // ضع مسار صورة المزارع هنا
+                    title: 'مورد',
+                    description: 'توريد المنتجات الزراعية للتجار والمستهلكين',
+                    onTap: () {},
+                  ),
+                  SizedBox(width: 20.w), // مسافة بين الكرتين
+                  CustomCard(
+                    imagePath: 'assets/images/clien.png', // ضع مسار صورة العميل هنا
+                    title: 'عميل',
+                    description: 'شراء المنتجات من المزارعين والموردين',
+                    onTap: () {},
+                  ),
+                ],
+              ),
+              SizedBox(height: 50.h),
+              CustomCard(
+                imagePath: 'assets/images/draiver.png', // ضع مسار صورة الموصل هنا
+                title: 'موصل',
+                description: 'توصيل الطلبات من الموردين الى التجار والمستهلكين',
+                onTap: () {},
+              ),
+              const Spacer(),
+            ],
+          ),
         ),
       ),
     );
@@ -81,8 +90,8 @@ class CustomCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: MediaQuery.of(context).size.width.w * 0.55,
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 30.h),
+        width: MediaQuery.of(context).size.width.w * 0.43, // تعديل الحجم ليكون مناسب
+        padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 30.h),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(14.r),
           color: Colors.white,
@@ -105,7 +114,7 @@ class CustomCard extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 20.h),
+            SizedBox(height: 10.h),
             Text(
               description,
               textAlign: TextAlign.center,
@@ -114,7 +123,7 @@ class CustomCard extends StatelessWidget {
                 color: Colors.grey[600],
               ),
             ),
-            SizedBox(height: 20.h),
+            SizedBox(height: 10.h),
           ],
         ),
       ),
