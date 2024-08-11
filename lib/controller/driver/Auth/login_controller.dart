@@ -34,12 +34,14 @@ class LoginControllerDriverImp extends LoginControllerDriver {
   loginWithEmail(
     BuildContext context,
   ) async {
-    update();
-Get.defaultDialog(
-        content: CircularProgressIndicator(
-      color: AppColors.profileColor,
-    ));
     statusRequest = StatusRequest.loading;
+    Get.defaultDialog(
+      titleStyle: TextStyle(color: Colors.black, fontFamily: "Almarai"),
+      title: "يرحى الانتظار",
+      content: CircularProgressIndicator(
+        color: AppColors.profileColor,
+      ),
+    );
 
     // var formdata = formkey.currentState;
     // if (formdata!.validate()) {
@@ -52,8 +54,9 @@ Get.defaultDialog(
     );
 
     statusRequest = handlingData(response);
-
+    print("$statusRequest");
     if (statusRequest == StatusRequest.succses) {
+      Get.back();
       //?fetch data success than store user data and login
       print("Sucsses");
       if (response['success'] == true) {
@@ -67,32 +70,45 @@ Get.defaultDialog(
             // middleText: response['message'],
           );
           Get.offAllNamed(AppRoute.driverOrder);
+        } else {
+          Get.defaultDialog(
+            titleStyle:
+                TextStyle(color: Theme.of(context).textTheme.bodyMedium!.color),
+            title: "warning",
+            middleText: "هذا الحساب ليس حساب سائق",
+          );
         }
       } else if (response['message'] != null) {
         //?fetch data field than show alert dialog
         response['message'];
         Get.defaultDialog(
-          titleStyle: const TextStyle(color: Colors.red),
+          titleStyle: TextStyle(color: Colors.red, fontFamily: "Almarai"),
           title: "تحذير",
           middleText: response['message'],
         );
         statusRequest = StatusRequest.failure;
       } else if (response['errors']['email'] != null) {
         Get.defaultDialog(
-          titleStyle: const TextStyle(color: Colors.red),
+          titleStyle: TextStyle(color: Colors.red, fontFamily: "Almarai"),
           title: "تحذير",
           middleText: response['errors']['email'][0],
         );
       } else if (response['errors']['password'] != null) {
         Get.defaultDialog(
-          titleStyle: const TextStyle(color: Colors.red),
+          titleStyle: TextStyle(color: Colors.red, fontFamily: "Almarai"),
           title: "تحذير",
           middleText: response['errors']['password'][0],
         );
       }
+    } else {
+      Get.back();
+      Get.defaultDialog(
+          titleStyle: TextStyle(color: Colors.red, fontFamily: "Almarai"),
+          title: "تحذير",
+          middleText: "الرجاء التحقق من اتصالك بالانترنت ");
     }
 //! </login with Mysql>
-    // } else {}
+    update();
   }
 
   @override

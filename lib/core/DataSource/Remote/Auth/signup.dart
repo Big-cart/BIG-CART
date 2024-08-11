@@ -7,6 +7,7 @@ class SignUpData {
   postdata(
     String name,
     String email,
+    String phone,
     String password,
     String passwordConfirm,
     String roleId,
@@ -14,6 +15,7 @@ class SignUpData {
     var response = await crud.postData(AppLink.linkSignUp, {
       "name": name,
       "email": email,
+      "phone": phone,
       "password": password,
       "password_confirmation": passwordConfirm,
       "role_id": roleId,
