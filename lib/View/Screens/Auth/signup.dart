@@ -45,7 +45,8 @@ class Signup extends StatelessWidget {
                           Icons.person,
                         )),
                     SizedBox(height: 12.h),
-                    const AppTextFormField(
+                    AppTextFormField(
+                        controller: controllerImp.phone,
                         obscureText: false,
                         hintText: 'رقم الهاتف',
                         icon: Icon(
