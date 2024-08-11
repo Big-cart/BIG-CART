@@ -6,19 +6,17 @@ class OrderDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Color(0xffEEF9E4),
       appBar: AppBar(
-        title: Image.asset("assets/images/bigCart.png"),
+        title: Image.asset("assets/images/logo.png",height: 50,),
         centerTitle: true,
-        actions: [
-          Container(
-              margin: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Image.asset("assets/images/person.png"))],
-        backgroundColor: Colors.grey[200],
+
+        backgroundColor: Color(0xffEEF9E4),
         elevation: 0.0,
       ),
       drawer: const Drawer(),
       body:Container(
+        decoration: const BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/orderdetealsbackgound.png"))),
         margin: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 16.0),
         child:Column(
           crossAxisAlignment: CrossAxisAlignment.center,

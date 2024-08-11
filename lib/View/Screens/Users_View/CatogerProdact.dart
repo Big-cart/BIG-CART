@@ -22,16 +22,16 @@ class CatogerProdact extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(height: 120), // إضافة مساحة فارغة بارتفاع 30
+            const SizedBox(height: 120), 
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: GridView.count(
-                shrinkWrap: true, // التأكد من أن GridView لا يأخذ مساحة إضافية
-                crossAxisCount: 2, // عدد الأعمدة
-                crossAxisSpacing: 20.0, // المسافة بين الأعمدة
-                mainAxisSpacing: 20.0, // المسافة بين الصفوف
+                shrinkWrap: true, 
+                crossAxisCount: 2, 
+                crossAxisSpacing: 20.0, 
+                mainAxisSpacing: 20.0, 
                 children: [
-                  // العنصر الأول
+                 
                   Container(
                     decoration: BoxDecoration(
                       color: Colors.green.withOpacity(0.10),
@@ -52,7 +52,7 @@ class CatogerProdact extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // العنصر الثاني
+                 
                   Container(
                     decoration: BoxDecoration(
                       color: Colors.green.withOpacity(0.10),
@@ -73,7 +73,7 @@ class CatogerProdact extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // العنصر الثالث
+                 
                   Container(
                     decoration: BoxDecoration(
                       color: Colors.green.withOpacity(0.10),
@@ -94,7 +94,7 @@ class CatogerProdact extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // العنصر الرابع
+                  
                   Container(
                     decoration: BoxDecoration(
                       color: Colors.green.withOpacity(0.10),

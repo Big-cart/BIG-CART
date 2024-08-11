@@ -11,16 +11,12 @@ class GoogleMapScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     GoogleMapScreenControllerImp controller =Get.put(GoogleMapScreenControllerImp());
     return Scaffold(
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Color(0xffEEF9E4),
         appBar: AppBar(
-          title: Image.asset("assets/images/bigCart.png"),
+          title: Image.asset("assets/images/logo.png",height: 50,),
           centerTitle: true,
-          actions: [
-            Container(
-                margin: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Image.asset("assets/images/person.png"))
-          ],
-          backgroundColor: Colors.grey[200],
+
+          backgroundColor: Color(0xffEEF9E4),
           elevation: 0.0,
         ),
         drawer: const Drawer(),
@@ -39,6 +35,7 @@ class GoogleMapScreen extends StatelessWidget {
          ,
         bottomNavigationBar: CurvedNavigationBar(
             buttonBackgroundColor: const Color(0xffA7CA9A),
+            // color: Color(0xffEEF9E4),
             backgroundColor: Colors.transparent,
             items: const <Widget>[
               Icon(Icons.favorite_border_outlined, size: 30,color: Color(0xffA7CA9A),),

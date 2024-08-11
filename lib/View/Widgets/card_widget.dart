@@ -18,6 +18,7 @@ class CardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
+
       padding: EdgeInsets.symmetric(horizontal: 12.w),
       child: ImagePixels(
         defaultColor: Colors.grey,
@@ -64,6 +65,7 @@ class CardWidget extends StatelessWidget {
                               // width: 40.w,
                               image: AssetImage(
                                 cardImage,
+
                               ),
                             ),
                           ),
