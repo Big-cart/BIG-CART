@@ -25,32 +25,52 @@ class Favorite extends StatelessWidget {
       'عناب عامري',
     ];
     return AppScaffold(
-      appBar: AppBar(),
-      isPadding: true,
-      child: Column(
-        children: [
-          const SearchBarWidget(),
-          SizedBox(
-            height: 12.h,
+      isPadding: false,
+      child: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/background.png"),
+            fit: BoxFit.cover,
           ),
-          Expanded(
-            child: GridView.builder(
-              shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 5.w,
-                mainAxisSpacing: 10.h,
-                childAspectRatio: 0.75.h,
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.0.w),
+          child: Column(
+            children: [
+              AppBar(
+                centerTitle: true,
+                title: Text(
+                  "المفضلة",
+                  style: Theme.of(context).textTheme.displayLarge,
+                ),
               ),
-              itemCount: grapes.length,
-              itemBuilder: (ctx, i) => ItemWidget(
-                imageName: "assets/images/grape.png",
-                index: i,
-                itemName: grapes[i],
+              SizedBox(
+                height: 24.h,
               ),
-            ),
+              const SearchBarWidget(),
+              SizedBox(
+                height: 12.h,
+              ),
+              Expanded(
+                child: GridView.builder(
+                  shrinkWrap: true,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 5.w,
+                    mainAxisSpacing: 10.h,
+                    childAspectRatio: 0.75.h,
+                  ),
+                  itemCount: grapes.length,
+                  itemBuilder: (ctx, i) => ItemWidget(
+                    imageName: "assets/images/grape$i.png",
+                    index: i,
+                    itemName: grapes[i],
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

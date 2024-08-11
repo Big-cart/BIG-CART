@@ -1,8 +1,8 @@
-import 'package:big_cart/view/Screens/Users_View/home.dart';
-import 'package:big_cart/view/Widgets/app_button.dart';
+
+import 'package:big_cart/View/Screens/Users_View/home.dart';
+import 'package:big_cart/View/Widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class Completpass extends StatelessWidget {
   const Completpass({super.key});

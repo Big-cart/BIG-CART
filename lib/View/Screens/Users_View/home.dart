@@ -1,6 +1,8 @@
+import 'package:big_cart/View/Screens/app_bottom_navigation.dart';
 import 'package:big_cart/View/Widgets/food_type.dart';
 import 'package:big_cart/View/Widgets/item_widget.dart';
 import 'package:big_cart/View/Widgets/item_widget_List.dart';
+import 'package:big_cart/controller/home/bottom_navigation_controller.dart';
 import 'package:big_cart/core/Widgets/search_bar_widget.dart';
 import 'package:big_cart/View/Widgets/card_widget.dart';
 import 'package:big_cart/core/Widgets/app_scaffold.dart';
@@ -10,6 +12,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:image_pixels/image_pixels.dart';
 
 class Home extends StatelessWidget {
@@ -17,38 +20,12 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // BottomNavigationControllerImp controllerImp =
+    //     Get.put(BottomNavigationControllerImp());
     return AppScaffold(
         isPadding: false,
         drawer: const Drawer(
           backgroundColor: Colors.white,
-        ),
-        bottomNavigationBar: CurvedNavigationBar(
-          index: 3,
-          backgroundColor: Colors.transparent,
-
-          color: AppColors.bottomNavBarColor,
-
-          buttonBackgroundColor: AppColors.bottomNavBarColor,
-
-// Set this according to the current tab
-          items: const [
-            Icon(
-              Icons.person_outline,
-              color: Colors.white,
-            ),
-            Icon(
-              Icons.shopping_cart_checkout_outlined,
-              color: Colors.white,
-            ),
-            Icon(
-              Icons.favorite_border,
-              color: Colors.white,
-            ),
-            Icon(
-              Icons.home_outlined,
-              color: Colors.white,
-            ),
-          ],
         ),
         child: Container(
           height: double.infinity,
@@ -59,7 +36,7 @@ class Home extends StatelessWidget {
                     "assets/images/background.png",
                   ),
                   fit: BoxFit.fill)),
-          padding: EdgeInsets.symmetric(horizontal: 8.0.w),
+          padding: EdgeInsets.symmetric(horizontal: 12.0.w),
           child: Column(children: [
             // const Drawer(),
             AppBar(
@@ -72,20 +49,24 @@ class Home extends StatelessWidget {
               centerTitle: true,
             ),
             SizedBox(
-              height: 40.h,
+              height: 20.h,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.0.h),
+              padding: EdgeInsets.symmetric(horizontal: 12.0.h),
               child: const SearchBarWidget(),
             ),
-
+            SizedBox(
+              height: 10.h,
+            ),
             Expanded(
               child: ListView(
                 shrinkWrap: true,
+                clipBehavior: Clip.none,
                 children: [
                   SizedBox(
-                    height: 210.h,
+                    height: 200.h,
                     child: PageView(
+                      clipBehavior: Clip.none,
                       scrollDirection: Axis.horizontal,
                       children: const [
                         CardWidget(
@@ -101,6 +82,9 @@ class Home extends StatelessWidget {
                       ],
                     ),
                   ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
                   const FoodType(
                       chipImage: "assets/images/grape.png",
                       chipName: [
@@ -110,7 +94,9 @@ class Home extends StatelessWidget {
                         'تفاح أخضر',
                         'بن يمني',
                       ]),
-                  SizedBox(height: 10.h),
+                  SizedBox(
+                    height: 20.h,
+                  ),
                   const ItemWidgetList(
                       index: 5,
                       itemName: "itemName",

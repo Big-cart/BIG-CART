@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -63,7 +62,6 @@ class Profile extends StatelessWidget {
                             ),
                           ),
                         ),
-                      
                       ],
                     ),
                   ),
@@ -73,41 +71,16 @@ class Profile extends StatelessWidget {
                   children: [
                     Text(
                       'اسم المستخدم',
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 15,
-                        height: 1.3,
-                        letterSpacing: -0.5,
-                        color: Colors.black,
-                      ),
+                      style: Theme.of(context).textTheme.bodySmall,
                     ),
                     const SizedBox(height: 5),
-                    Text(
-                      'username@gmail.com',
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12,
-                        height: 1.7,
-                        letterSpacing: -0.5,
-                        color: const Color(0xFF868889),
-                      ),
-                    ),
+                    Text('username@gmail.com',
+                        style: Theme.of(context).textTheme.bodySmall),
                   ],
                 )
               ],
             ),
           ),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.green,
-        unselectedItemColor: Colors.grey,
-        currentIndex: 3, // Set this according to the current tab
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
         ],
       ),
     );
