@@ -35,6 +35,13 @@ class Profile extends StatelessWidget {
                 Container(
                   height: 160.h,
                   decoration: BoxDecoration(
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black26,
+                          offset: Offset(0, 4),
+                          blurRadius: 2,
+                        ),
+                      ],
                       color: AppColors.profileColor,
                       borderRadius: BorderRadius.circular(24.r)),
                 ),
@@ -133,6 +140,13 @@ class Profile extends StatelessWidget {
                   padding: EdgeInsets.only(top: 25.h),
                   height: 460.h,
                   decoration: BoxDecoration(
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black26,
+                        offset: Offset(0, 4),
+                        blurRadius: 2,
+                      ),
+                    ],
                     borderRadius: BorderRadius.circular(24.r),
                     color: AppColors.profileColor,
                   ),
