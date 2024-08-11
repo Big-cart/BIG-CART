@@ -9,7 +9,7 @@ import 'package:dartz/dartz.dart';
 import 'package:http/http.dart' as http;
 
 class Crud {
-  // late final String token;
+  late final String token;
   Future<Either<StatusRequest, Map>> postData(String linkUrl, Map data) async {
     try {
       if (await checkInternet()) {
@@ -17,9 +17,9 @@ class Crud {
             Uri.parse(
               linkUrl,
             ),
-            // headers: {
-            //   HttpHeaders.authorizationHeader:""
-            // },
+            headers: {
+              HttpHeaders.authorizationHeader:""
+            },
             body: data);
 
         if (response.statusCode >= 200 || response.statusCode != 404) {

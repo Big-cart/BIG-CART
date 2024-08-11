@@ -1,115 +1,119 @@
-
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CatogerProdact extends StatelessWidget {
   const CatogerProdact({super.key});
 
   @override
   Widget build(BuildContext context) {
- 
-
     return Scaffold(
       body: Container(
         width: double.infinity,
         height: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/cat_bacgraond.png"),
+            image: AssetImage(
+              "assets/images/cat_bacgraond.png",
+            ),
             fit: BoxFit.cover,
           ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(height: 120), 
+            SizedBox(height: 140.h),
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: EdgeInsets.symmetric(horizontal: 24.0.w),
               child: GridView.count(
-                shrinkWrap: true, 
-                crossAxisCount: 2, 
-                crossAxisSpacing: 20.0, 
-                mainAxisSpacing: 20.0, 
+                shrinkWrap: true,
+                crossAxisCount: 2,
+                crossAxisSpacing: 20.0.w,
+                mainAxisSpacing: 20.0.h,
+                childAspectRatio: 0.88.h,
                 children: [
-                 
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.green.withOpacity(0.10),
-                      borderRadius: BorderRadius.circular(15.0),
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(24.0.r),
                       image: const DecorationImage(
-                        image: AssetImage("assets/images/cat_bacg1.png"),
+                        image: AssetImage(
+                          "assets/images/vegetables.png",
+                        ),
                         fit: BoxFit.cover,
                       ),
                     ),
-                    child: const Center(
+                    child: Center(
                       child: Text(
                         'خضروات',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 24.0,
+                          fontSize: 24.0.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                   ),
-                 
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.green.withOpacity(0.10),
-                      borderRadius: BorderRadius.circular(15.0),
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(24.0.r),
                       image: const DecorationImage(
-                        image: AssetImage("assets/images/cat_bac2.png"),
+                        image: AssetImage(
+                          "assets/images/fruits.png",
+                        ),
                         fit: BoxFit.cover,
                       ),
                     ),
-                    child: const Center(
+                    child: Center(
                       child: Text(
                         'فواكة',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 24.0,
+                          fontSize: 24.0.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                   ),
-                 
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.green.withOpacity(0.10),
-                      borderRadius: BorderRadius.circular(15.0),
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(24.0.r),
                       image: const DecorationImage(
-                        image: AssetImage("assets/images/cat_bac3.png"),
+                        image: AssetImage(
+                          "assets/images/grains.png",
+                        ),
                         fit: BoxFit.cover,
                       ),
                     ),
-                    child: const Center(
+                    child: Center(
                       child: Text(
                         'حبوب',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 24.0,
+                          fontSize: 24.0.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                   ),
-                  
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.green.withOpacity(0.10),
-                      borderRadius: BorderRadius.circular(15.0),
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(24.0.r),
                       image: const DecorationImage(
-                        image: AssetImage("assets/images/cat_bac4.png"),
+                        image: AssetImage(
+                          "assets/images/cheicken.png",
+                        ),
                         fit: BoxFit.cover,
                       ),
                     ),
-                    child: const Center(
+                    child: Center(
                       child: Text(
                         ' المواشي والدواجن',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 22.0,
+                          fontSize: 22.0.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
