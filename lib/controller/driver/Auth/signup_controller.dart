@@ -116,7 +116,7 @@ class SignupControllerImp extends SignupController {
 
   @override
   goToLogIn() {
-    Get.offAllNamed(AppRoute.login);
+    Get.offAllNamed(AppRoute.userLogin);
   }
 
   @override
@@ -137,6 +137,3 @@ class SignupControllerImp extends SignupController {
     super.dispose();
   }
 }
-
-
-
