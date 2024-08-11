@@ -1,6 +1,7 @@
 import 'package:big_cart/core/DataSource/Remote/Auth/login.dart';
 import 'package:big_cart/core/Functions/handiling_data_controller.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
+import 'package:big_cart/core/constant/app_colors.dart';
 import 'package:big_cart/core/enum/status_request.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -34,7 +35,11 @@ class LoginControllerImp extends LoginController {
     BuildContext context,
   ) async {
     update();
-
+    Get.defaultDialog(
+      content: CircularProgressIndicator(
+        color: AppColors.profileColor,
+      ),
+    );
     statusRequest = StatusRequest.loading;
 
     // var formdata = formkey.currentState;
@@ -51,15 +56,19 @@ class LoginControllerImp extends LoginController {
 
     if (statusRequest == StatusRequest.succses) {
       //?fetch data success than store user data and login
+      print("Sucsses");
       if (response['success'] == true) {
-        data = response['user'];
-        Get.defaultDialog(
-          titleStyle:
-              TextStyle(color: Theme.of(context).textTheme.bodyMedium!.color),
-          title: "warning",
-          // middleText: response['message'],
-        );
-        Get.offAllNamed(AppRoute.home);
+        print(response['role_id']);
+        if (response['role_id'] == 1) {
+          data = response['user'];
+          Get.defaultDialog(
+            titleStyle:
+                TextStyle(color: Theme.of(context).textTheme.bodyMedium!.color),
+            title: "warning",
+            // middleText: response['message'],
+          );
+          Get.offAllNamed(AppRoute.driverOrder);
+        }
       } else if (response['message'] != null) {
         //?fetch data field than show alert dialog
         response['message'];

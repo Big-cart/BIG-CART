@@ -1,6 +1,7 @@
 import 'package:big_cart/core/DataSource/Remote/Auth/signup.dart';
 import 'package:big_cart/core/Functions/handiling_data_controller.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
+import 'package:big_cart/core/constant/app_colors.dart';
 import 'package:big_cart/core/enum/status_request.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,7 +28,10 @@ class SignupControllerImp extends SignupController {
   @override
   signUpWithEmail(BuildContext context) async {
     update();
-
+Get.defaultDialog(
+        content: CircularProgressIndicator(
+      color: AppColors.profileColor,
+    ));
     // var formdata = formkey.currentState;
     statusRequest = StatusRequest.loading;
     // if (formdata!.validate()) {

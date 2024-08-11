@@ -29,7 +29,10 @@ class SignupControllerImp extends SignupController {
   @override
   signUpWithEmail(BuildContext context) async {
     update();
-
+    Get.defaultDialog(
+        content: CircularProgressIndicator(
+      color: AppColors.profileColor,
+    ));
     // var formdata = formkey.currentState;
     statusRequest = StatusRequest.loading;
     // if (formdata!.validate()) {
@@ -46,6 +49,7 @@ class SignupControllerImp extends SignupController {
 
     statusRequest = handlingData(response);
     if (statusRequest == StatusRequest.succses) {
+      Get.back();
       //?fetch data success than store user data and login
       if (response['success'] == true) {
         print(response['user']);
