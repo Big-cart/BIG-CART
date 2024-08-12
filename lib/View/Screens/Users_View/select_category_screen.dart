@@ -1,22 +1,28 @@
 import 'package:big_cart/View/Widgets/category_widget.dart';
+import 'package:big_cart/controller/users/category_controller.dart';
+import 'package:big_cart/controller/users/products_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class SelectCategoryScreen extends StatelessWidget {
   const SelectCategoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    ProductsControllerImp productsControllerImp =
+        Get.put(ProductsControllerImp());
+
     final List<String> categoryImage = <String>[
       "assets/images/vegetables.png",
-      "assets/images/fruits.png",
       "assets/images/grains.png",
+      "assets/images/fruits.png",
       "assets/images/cheicken.png",
     ];
     final List<String> categoryName = <String>[
       'خضروات',
-      'فواكة',
       'حبوب',
+      'فواكة',
       ' المواشي\n والدواجن',
     ];
     return Scaffold(
@@ -37,22 +43,33 @@ class SelectCategoryScreen extends StatelessWidget {
             SizedBox(height: 140.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.0.w),
-              child: GridView.count(
-                shrinkWrap: true,
-                crossAxisCount: 2,
-                crossAxisSpacing: 20.0.w,
-                mainAxisSpacing: 20.0.h,
-                childAspectRatio: 0.88.h,
-                children: [
-                  ...List.generate(
-                    categoryName.length,
-                    (index) {
-                      return CategoryWidget(
-                          categoryName: categoryName[index],
-                          categoryImage: categoryImage[index]);
-                    },
-                  )
-                ],
+              child: GetBuilder<CategoryControllerImp>(
+                init: CategoryControllerImp(),
+                builder: (controller) {
+                  controller.showAllCategories(context);
+                  return GridView.count(
+                    shrinkWrap: true,
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 20.0.w,
+                    mainAxisSpacing: 20.0.h,
+                    childAspectRatio: 0.88.h,
+                    children: [
+                      ...List.generate(
+                        4,
+                        // controller.data.length,
+                        (index) {
+                          return CategoryWidget(
+                              onTap: () {
+                                productsControllerImp.showCategoriesProduct(
+                                    context, "$index");
+                              },
+                              categoryName: controller.data[index]["name"],
+                              categoryImage: categoryImage[index]);
+                        },
+                      )
+                    ],
+                  );
+                },
               ),
             ),
           ],

@@ -88,7 +88,7 @@ List<GetPage<dynamic>>? route = [
     page: () => const EmptyCart(),
   ),
   GetPage(
-    name: AppRoute.catogerProdact,
+    name: AppRoute.selectCategoryScreen,
     page: () => const SelectCategoryScreen(),
   ),
   GetPage(

@@ -1,4 +1,4 @@
-import 'package:big_cart/core/DataSource/Remote/category.dart';
+import 'package:big_cart/core/DataSource/Remote/product.dart';
 import 'package:big_cart/core/Functions/handiling_data_controller.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:big_cart/core/constant/app_colors.dart';
@@ -6,23 +6,24 @@ import 'package:big_cart/core/enum/status_request.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-abstract class CategoryController extends GetxController {
-  showAllCategories(
-    BuildContext context,
-  );
-  goToSelectedCategory();
+abstract class ProductsController extends GetxController {
+  showCategoriesProduct(BuildContext context,String selectedItemIndex);
 }
 
-class CategoryControllerImp extends CategoryController {
-  CategoryData categoryData = CategoryData(Get.find());
+class ProductsControllerImp extends ProductsController {
+  final String productIdQueryParameter = '';
+  final String categoryIdQueryParameter = '';
 
+  ProductData productData = ProductData(Get.find());
+
+  // final String categoryIdQueryParameter = '';
   StatusRequest statusRequest = StatusRequest.loading;
 
   List<Map<String, dynamic>> data = [];
 
-    // ! <login with Mysql>
+  // ! <login with Mysql>
   @override
-  showAllCategories(BuildContext context) async {
+  showCategoriesProduct(BuildContext context,String selectedItemIndex) async {
     update();
     Get.defaultDialog(
       titleStyle: TextStyle(color: Colors.black, fontFamily: "Almarai"),
@@ -37,7 +38,7 @@ class CategoryControllerImp extends CategoryController {
     // if (formdata!.validate()) {
     // wariningDialog(context, 20, statusRequest);
 
-    var response = await categoryData.getdata();
+    var response = await productData.getCategoryProductData(selectedItemIndex);
 
     statusRequest = handlingData(response);
     // print("$statusRequest");
@@ -77,7 +78,4 @@ class CategoryControllerImp extends CategoryController {
     update();
   }
 //! </login with Mysql>
-
-  @override
-  goToSelectedCategory() {}
 }

@@ -6,6 +6,8 @@ class AppLink {
   static const String linkSignUp = "$linkServerName/api/register";
   static const String linkLogin = "$linkServerName/api/login";
   //==============================User-Links==============================//
-  static const String linkCategories = "$linkServerName/api/categories";
+  static const String linkAllCategories = "$linkServerName/api/categories/";
+static const String linkAllProducts = "$linkServerName/api/products/";
+static const String linkSingleCategoryProducts = "$linkServerName/api/products/category/";
 
 }

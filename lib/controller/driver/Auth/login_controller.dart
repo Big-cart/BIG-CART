@@ -3,6 +3,7 @@ import 'package:big_cart/core/Functions/handiling_data_controller.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:big_cart/core/constant/app_colors.dart';
 import 'package:big_cart/core/enum/status_request.dart';
+import 'package:big_cart/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -62,15 +63,31 @@ class LoginControllerDriverImp extends LoginControllerDriver {
       if (response['success'] == true) {
         print(response['role_id']);
         if (response['role_id'] == 2) {
-          response['token'];
+          //!< accept case>
+
+          // store received data
           data = response['user'];
-          Get.defaultDialog(
-            titleStyle:
-                TextStyle(color: Theme.of(context).textTheme.bodyMedium!.color),
-            title: "warning",
-            // middleText: response['message'],
-          );
+          // make sure that you have token
+
+          print("${response['token']}");
+
+          // store token
+
+          sharedPref.setString(
+              "token", "Bearer ${response['token']}".toString());
+
+          // Get.defaultDialog(
+          //   titleStyle:
+          //       TextStyle(color: Theme.of(context).textTheme.bodyMedium!.color),
+          //   title: "تحذير",
+          //   // middleText: response['message'],
+          // );
+
+          //navigate to the next page
+
           Get.offAllNamed(AppRoute.driverOrder);
+
+          //!</ accept case>
         } else {
           Get.defaultDialog(
             titleStyle:

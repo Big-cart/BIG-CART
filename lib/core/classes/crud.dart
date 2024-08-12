@@ -44,7 +44,7 @@ class Crud {
     var response = await http.get(
       Uri.parse(linkurl),
       headers: {
-        HttpHeaders.authorizationHeader: sharedPref.getString('token') ?? ""
+        HttpHeaders.authorizationHeader: sharedPref.getString('token') ?? "",
       },
     );
     if (response.statusCode == 200 || response.statusCode == 404) {
