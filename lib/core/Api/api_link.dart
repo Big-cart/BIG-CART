@@ -7,5 +7,8 @@ class AppLink {
   static const String linkLogin = "$linkServerName/api/login";
   //==============================User-Links==============================//
   static const String linkCategories = "$linkServerName/api/categories";
+  //==============================address==============================//
+  static const String addressApi = "$linkServerName/api/addresses";
+
 
 }
