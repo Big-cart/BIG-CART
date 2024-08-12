@@ -1,12 +1,12 @@
-import 'package:big_cart/View/Screens/Auth/SelectionScreen.dart';
-import 'package:big_cart/View/Screens/Auth/compelet_pass.dart';
-import 'package:big_cart/View/Screens/Auth/forget_pass.dart';
-import 'package:big_cart/View/Screens/Auth/sure_psaa.dart';
-import 'package:big_cart/View/Screens/Driver_View/auth/forget_password.dart';
-import 'package:big_cart/View/Screens/Driver_View/auth/login_driver.dart';
-import 'package:big_cart/View/Screens/Driver_View/auth/reset_password.dart';
-import 'package:big_cart/View/Screens/Driver_View/auth/success_reset_pass_screen.dart';
-import 'package:big_cart/View/Screens/Driver_View/order.dart';
+import 'package:big_cart/View/Screens/Users_View/Auth/SelectionScreen.dart';
+import 'package:big_cart/View/Screens/Users_View/Auth/compelet_pass.dart';
+import 'package:big_cart/View/Screens/Users_View/Auth/forget_pass.dart';
+import 'package:big_cart/View/Screens/Users_View/Auth/sure_psaa.dart';
+import 'package:big_cart/View/Screens/Users_View/Driver_View/auth/forget_password.dart';
+import 'package:big_cart/View/Screens/Users_View/Driver_View/auth/login_driver.dart';
+import 'package:big_cart/View/Screens/Users_View/Driver_View/auth/reset_password.dart';
+import 'package:big_cart/View/Screens/Users_View/Driver_View/auth/success_reset_pass_screen.dart';
+import 'package:big_cart/View/Screens/Users_View/Driver_View/order.dart';
 import 'package:big_cart/View/Screens/Users_View/aboutme.dart';
 import 'package:big_cart/View/Screens/Users_View/main_user_screen.dart';
 import 'package:big_cart/View/Screens/Users_View/select_category_screen.dart';
@@ -24,9 +24,9 @@ import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:get/get.dart';
 import 'package:big_cart/View/Screens/Users_View/favorite.dart';
 import 'package:big_cart/View/Screens/Users_View/home.dart';
-import 'package:big_cart/View/Screens/Auth/login.dart';
+import 'package:big_cart/View/Screens/Users_View/Auth/login.dart';
 import 'package:big_cart/View/Screens/Users_View/search.dart';
-import 'package:big_cart/View/Screens/Auth/signup.dart';
+import 'package:big_cart/View/Screens/Users_View/Auth/signup.dart';
 
 List<GetPage<dynamic>>? route = [
   //==================Auth-User===============================

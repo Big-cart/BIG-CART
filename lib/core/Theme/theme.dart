@@ -47,9 +47,7 @@ class AppThemes {
 
 //!cardCOLOR
 
-
     textTheme: TextTheme(
-      
       // titleMedium: const GoogleFonts.poppins(color: Colors.black),
       displayLarge: TextStyle(
         fontFamily: "Almarai",
@@ -80,10 +78,12 @@ class AppThemes {
       labelMedium: TextStyle(
           fontFamily: "Almarai", color: Colors.white, fontSize: 18.sp),
       titleLarge: TextStyle(
-          fontFamily: "Almarai", color: Colors.white, fontSize: 22.sp),
+          fontWeight: FontWeight.w600,
+          fontFamily: "Almarai",
+          color: Colors.white,
+          fontSize: 20.sp),
       titleSmall: const TextStyle(fontFamily: "Almarai", color: Colors.black),
-      titleMedium:
-          const TextStyle(fontFamily: "Almarai", color: Colors.white70),
+      titleMedium: TextStyle(fontFamily: "Almarai", color: Colors.white70),
     ),
 
     bottomNavigationBarTheme: BottomNavigationBarThemeData(

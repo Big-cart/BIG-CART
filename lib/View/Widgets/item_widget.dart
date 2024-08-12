@@ -56,10 +56,10 @@ class ItemWidget extends StatelessWidget {
               child: Image.asset(
                 "assets/images/grape$index.png",
                 fit: BoxFit.cover,
-                height: 110.h,
+                height: 85.h,
               ),
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 5.h),
 
             // const Spacer(),
             Row(

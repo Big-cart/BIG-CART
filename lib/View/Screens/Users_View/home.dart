@@ -17,6 +17,14 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     // BottomNavigationControllerImp controllerImp =
     //     Get.put(BottomNavigationControllerImp());
+    final List<String> grapes = <String>[
+      'عناب خارجي',
+      'عناب عامري',
+      'عناب أسود',
+      'عناب أحمر',
+      'عناب زاقي',
+      'عناب عامري',
+    ];
     return AppScaffold(
         isPadding: false,
         drawer: const Drawer(
@@ -94,9 +102,9 @@ class Home extends StatelessWidget {
                   SizedBox(
                     height: 20.h,
                   ),
-                  const ItemWidgetList(
+                  ItemWidgetList(
                       index: 5,
-                      itemName: "itemName",
+                      itemName: grapes,
                       itemImage: "assets/images/grape.png"),
                   SizedBox(height: 40.h)
                 ],

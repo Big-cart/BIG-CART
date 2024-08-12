@@ -38,4 +38,23 @@ class Crud {
       return const Left(StatusRequest.serverfailure);
     }
   }
+
+  Future<Either<StatusRequest, Map>> getData(String linkurl) async {
+    // if (await chickIntrnet()) {
+    var response = await http.get(
+      Uri.parse(linkurl),
+      headers: {
+        HttpHeaders.authorizationHeader: sharedPref.getString('token') ?? ""
+      },
+    );
+    if (response.statusCode == 200 || response.statusCode == 404) {
+      var responsebody = await jsonDecode(response.body);
+      return Right(responsebody);
+    } else {
+      return left(StatusRequest.serverfailure);
+    }
+    // } else {
+    //   return left(StatusRucust.offlinefaliure);
+    // }
+  }
 }
