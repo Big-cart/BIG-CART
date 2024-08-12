@@ -4,7 +4,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../../../../controller/users/address_controller.dart';
 import '../../../../core/Functions/button_sheet_adress.dart';
-import '../../../widget/user/address/custom_text_form_filed.dart';
+import '../../../widget/user/address/custom_container_new_address.dart';
+import '../../../widget/user/address/custom_container_saved_address.dart';
 
 class ChooseAddress extends StatelessWidget {
   const ChooseAddress({super.key});
@@ -27,7 +28,7 @@ class ChooseAddress extends StatelessWidget {
       drawer: const Drawer(),
       body: Column(
         children: [
-          Text("قم بتحديد موقعك على الخريطة"),
+          Text("قم بتحديد موقعك على الخريطة\n اوقم باختيار عنوان محفوظ مسبقا"),
           GetBuilder<ChooseAddressControllerImp>(
             builder: (controller) => Container(
               child: controller.kGooglePlex == null
@@ -63,53 +64,74 @@ class ChooseAddress extends StatelessWidget {
           onPressed: () {
             showMyBottomSheet(
                 context,
-                Container(
-                  height: MediaQuery.of(context).size.width,
-                  width: MediaQuery.of(context).size.width,
-                  padding: const EdgeInsets.all(32.0),
-                  decoration: const BoxDecoration(
-                    color: Color(0xffE8F2E0),
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(100),
-                      topRight: Radius.circular(100),
-                    ),
-                  ),
-                  child:  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'تفاصيل الموقــع ',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 12.0),
-                      CustomTextFormFieldAddress(hintText: 'الاسم', icon: Icon(Icons.place_outlined),),
-                      SizedBox(height: 6,),
-                      CustomTextFormFieldAddress(hintText: 'المدينة', icon: Icon(Icons.location_city_outlined),),
-                      SizedBox(height: 6,),
-                      CustomTextFormFieldAddress(hintText: 'وصف الموقع', icon: Icon(Icons.description_outlined),),
-                      SizedBox(height: 16,),
-                      Center(
-                        child: MaterialButton(
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
-                          minWidth: MediaQuery.of(context).size.width * 0.5,
-                          height: MediaQuery.of(context).size.width * 0.1,
-                          color: const Color(0xffC2DEA8),
-                          onPressed: () {},
-                          child:  FittedBox(
-                              child: Text(
-                                "تأكيد",
-                                style: const TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
-                              )),
-                        ),
-                      )
-                      // Add more widgets as needed
-                    ],
-                  ),
-                ));
+                GetBuilder<ChooseAddressControllerImp>(
+                    builder: (controller) => Container(
+                          height: MediaQuery.of(context).size.width,
+                          width: MediaQuery.of(context).size.width,
+                          padding: const EdgeInsets.all(32.0),
+                          child: SingleChildScrollView(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () {
+                                        controller.isSelected = true;
+                                        controller.getAddress();
+                                        controller.update();
+                                      },
+                                      child: Text(
+                                        "العناوين المحفوظة",
+                                        style: TextStyle(
+                                          color: controller.isSelected
+                                              ? Colors.green
+                                              : Colors.grey,
+                                          fontSize: 20,
+                                          fontWeight: controller.isSelected
+                                              ? FontWeight.bold
+                                              : FontWeight.normal,
+                                          decoration: controller.isSelected
+                                              ? TextDecoration.underline
+                                              : TextDecoration.none,
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 20),
+                                    GestureDetector(
+                                      child: Text(
+                                        "عنوان جديد",
+                                        style: TextStyle(
+                                          color: controller.isSelected
+                                              ? Colors.grey
+                                              : Colors.green,
+                                          fontSize: 20,
+                                          fontWeight: controller.isSelected
+                                              ? FontWeight.normal
+                                              : FontWeight.bold,
+                                          decoration: controller.isSelected
+                                              ? TextDecoration.none
+                                              : TextDecoration.underline,
+                                        ),
+                                      ),
+                                      onTap: () {
+                                        controller.isSelected = false;
+                                        controller.update();
+                                      },
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 20),
+                                if (controller.isSelected)
+                                  CustomContainerSavedAddress()
+                                else
+                                  CustomContainerNewAddress(),
+                              ],
+                            ),
+                          ),
+                        )));
+
           },
           child: const FittedBox(
               child: Text(

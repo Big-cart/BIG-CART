@@ -1,7 +1,12 @@
 import 'dart:convert';
 
 import 'package:big_cart/Bindings/intial_bindings.dart';
+
 import 'package:big_cart/View/Screens/Users_View/Auth/login.dart';
+
+import 'package:big_cart/View/Screens/Auth/login.dart';
+import 'package:big_cart/View/Screens/Driver_View/track.dart';
+
 import 'package:big_cart/View/Screens/Users_View/aboutme.dart';
 import 'package:big_cart/View/Screens/Users_View/cart.dart';
 import 'package:big_cart/View/Screens/Users_View/home.dart';
@@ -24,6 +29,11 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get.dart';
+
+import 'View/Screens/Driver_View/order_details.dart';
+import 'View/Screens/Users_View/accept_order.dart';
+import 'View/Screens/Users_View/address/choose_address.dart';
+import 'View/Screens/Users_View/list_of_orders.dart';
 
 late SharedPreferences sharedPref;
 
@@ -81,7 +91,11 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
+// <<<<<<< main
       child: const Home(),
+// =======
+//       child: const AcceptOrder(),
+// >>>>>>> main
 
 //       child: const Onboarding(),
     );
@@ -91,3 +105,8 @@ class MyApp extends StatelessWidget {
     // );
   }
 }
+
+
+
+
+

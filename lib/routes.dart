@@ -7,6 +7,8 @@ import 'package:big_cart/View/Screens/Driver_View/auth/login_driver.dart';
 import 'package:big_cart/View/Screens/Driver_View/auth/reset_password.dart';
 import 'package:big_cart/View/Screens/Driver_View/auth/success_reset_pass_screen.dart';
 import 'package:big_cart/View/Screens/Driver_View/order.dart';
+import 'package:big_cart/View/Screens/Driver_View/order_details.dart';
+import 'package:big_cart/View/Screens/Driver_View/track.dart';
 import 'package:big_cart/View/Screens/Users_View/aboutme.dart';
 import 'package:big_cart/View/Screens/Users_View/main_user_screen.dart';
 import 'package:big_cart/View/Screens/Users_View/select_category_screen.dart';
@@ -27,6 +29,11 @@ import 'package:big_cart/View/Screens/Users_View/home.dart';
 import 'package:big_cart/View/Screens/Users_View/Auth/login.dart';
 import 'package:big_cart/View/Screens/Users_View/search.dart';
 import 'package:big_cart/View/Screens/Users_View/Auth/signup.dart';
+
+import 'View/Screens/Driver_View/google_map.dart';
+import 'View/Screens/Users_View/accept_order.dart';
+import 'View/Screens/Users_View/cart.dart';
+import 'View/Screens/Users_View/cow_screen.dart';
 
 List<GetPage<dynamic>>? route = [
   //==================Auth-User===============================
@@ -116,6 +123,15 @@ List<GetPage<dynamic>>? route = [
   GetPage(
     name: AppRoute.aboutMe,
     page: () => const AboutMe(),
+  ), GetPage(
+    name: AppRoute.acceptOrder,
+    page: () => const AcceptOrder(),
+  ),GetPage(
+    name: AppRoute.cart,
+    page: () => const Cart(),
+  ),GetPage(
+    name: AppRoute.cowScreen,
+    page: () => const CowScreen(),
   ),
 
 //====================Driver-Route===============================
@@ -140,5 +156,17 @@ List<GetPage<dynamic>>? route = [
   GetPage(
     name: AppRoute.driverOrder,
     page: () => const Order(),
+  ),
+  GetPage(
+    name: AppRoute.track,
+    page: () => const Track(),
+  ),
+  GetPage(
+    name: AppRoute.orderDetails,
+    page: () => const OrderDetails(),
+  ),
+  GetPage(
+    name: AppRoute.googleMapScreen,
+    page: () => const GoogleMapScreen(),
   ),
 ];

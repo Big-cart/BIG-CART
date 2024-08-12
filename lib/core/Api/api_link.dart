@@ -10,4 +10,7 @@ class AppLink {
 static const String linkAllProducts = "$linkServerName/api/products/";
 static const String linkSingleCategoryProducts = "$linkServerName/api/products/category/";
 
+  static const String linkCategories = "$linkServerName/api/categories";
+  //==============================address==============================//
+  static const String addressApi = "$linkServerName/api/addresses";
 }

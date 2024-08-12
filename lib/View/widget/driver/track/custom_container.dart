@@ -4,9 +4,10 @@ class CustomContainer extends StatelessWidget {
   final String text;
   final IconData icon;
   final bool? last;
+  final bool? check;
 
   const CustomContainer(
-      {super.key, required this.text, required this.icon, this.last = false});
+      {super.key, required this.text, required this.icon, this.last = false, this.check=true});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class CustomContainer extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.5),
-                  color: last == true
+                  color: check == false
                       ? const Color(0xffF0F0F0)
                       : const Color(0xffA7CA9A),
                 ),
@@ -29,7 +30,7 @@ class CustomContainer extends StatelessWidget {
                 width: 61.0,
                 child: Icon(
                   icon,
-                  color: last == true ? const Color(0xffA7CA9A) : Colors.white,
+                  color: check == false ? const Color(0xffA7CA9A) : Colors.white,
                 ),
               ),
               const SizedBox(
