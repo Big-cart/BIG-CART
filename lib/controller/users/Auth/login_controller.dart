@@ -36,11 +36,6 @@ class LoginControllerImp extends LoginController {
   loginWithEmail(
     BuildContext context,
   ) async {
-    update();
-    statusRequest = StatusRequest.loading;
-
-    //! Wait to the receive the response
-
     Get.defaultDialog(
       titleStyle: TextStyle(color: Colors.black, fontFamily: "Almarai"),
       title: "يرحى الانتظار",
@@ -48,6 +43,9 @@ class LoginControllerImp extends LoginController {
         color: AppColors.profileColor,
       ),
     );
+    statusRequest = StatusRequest.loading;
+
+    //! Wait to the receive the response
 
     // var formdata = formkey.currentState;
     // if (formdata!.validate()) {
@@ -81,6 +79,7 @@ class LoginControllerImp extends LoginController {
 
           sharedPref.setString(
               "token", "Bearer ${response['token']}".toString());
+          update();
 
           // Get.defaultDialog(
           //   titleStyle:
@@ -90,7 +89,7 @@ class LoginControllerImp extends LoginController {
           // );
 
           //navigate to the next page
-          Get.offAllNamed(AppRoute.selectCategoryScreen);
+          Get.offAllNamed(AppRoute.home);
 
           //!</ accept case>
         } else {

@@ -6,6 +6,8 @@ import 'package:image_pixels/image_pixels.dart';
 class ItemWidget extends StatelessWidget {
   final int index;
   final String itemName;
+  final String itemPrice;
+
   final bool? isFavorite;
   final String imageName;
 
@@ -14,7 +16,7 @@ class ItemWidget extends StatelessWidget {
       required this.index,
       this.isFavorite,
       required this.itemName,
-      required this.imageName});
+      required this.imageName, required this.itemPrice});
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -76,7 +78,7 @@ class ItemWidget extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                     Text(
-                      " 4000 الف ريال ",
+                      " $itemPrice الف ريال ",
                       style: Theme.of(context).textTheme.titleMedium,
                     )
                   ],

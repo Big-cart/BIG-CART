@@ -1,6 +1,8 @@
 import 'package:big_cart/View/Widgets/category_widget.dart';
 import 'package:big_cart/controller/users/category_controller.dart';
 import 'package:big_cart/controller/users/products_controller.dart';
+import 'package:big_cart/core/Widgets/handling_data_view.dart';
+import 'package:big_cart/core/enum/status_request.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -10,21 +12,25 @@ class SelectCategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ProductsControllerImp productsControllerImp =
-        Get.put(ProductsControllerImp());
+    // CategoryControllerImp categoryControllerImp =
+    //     Get.put(CategoryControllerImp());
 
+    // ProductsControllerImp productsControllerImp =
+    //     Get.put(ProductsControllerImp());
     final List<String> categoryImage = <String>[
       "assets/images/vegetables.png",
       "assets/images/grains.png",
       "assets/images/fruits.png",
       "assets/images/cheicken.png",
     ];
+
     final List<String> categoryName = <String>[
       'خضروات',
       'حبوب',
       'فواكة',
       ' المواشي\n والدواجن',
     ];
+
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -40,34 +46,49 @@ class SelectCategoryScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 140.h),
+            SizedBox(height: 120.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.0.w),
               child: GetBuilder<CategoryControllerImp>(
                 init: CategoryControllerImp(),
+                initState: (_) {},
                 builder: (controller) {
-                  controller.showAllCategories(context);
-                  return GridView.count(
-                    shrinkWrap: true,
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 20.0.w,
-                    mainAxisSpacing: 20.0.h,
-                    childAspectRatio: 0.88.h,
-                    children: [
-                      ...List.generate(
-                        4,
-                        // controller.data.length,
-                        (index) {
-                          return CategoryWidget(
-                              onTap: () {
-                                productsControllerImp.showCategoriesProduct(
-                                    context, "$index");
-                              },
-                              categoryName: controller.data[index]["name"],
-                              categoryImage: categoryImage[index]);
-                        },
-                      )
-                    ],
+                  // controller.showAllCategories(context);
+                  // controller.statusRequest;
+                  return HandlingDataView(
+                    acontext: context,
+                    statusRequest: controller.statusRequest,
+                    widget: GridView.builder(
+                      itemCount: controller.data.length ?? 4,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 20.0.w,
+                        mainAxisSpacing: 20.0.h,
+                        childAspectRatio: 0.88.h,
+                      ),
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        return CategoryWidget(
+                            onTap: () {
+                              controller.index = index;
+                              // productsControllerImp.showCategoriesProduct(
+                              //     context, "");
+                            },
+                            categoryName: controller.data[index]["name"] ??
+                                categoryName[index],
+                            categoryImage: categoryImage[index]);
+                      },
+                      // children: [
+                      //   ...List.generate(
+                      //     // 4,
+                      //     categoryControllerImp.data.length,
+                      //     (index) {
+                      //       print(categoryControllerImp.data);
+                      //       return
+                      //     },
+                      //   )
+                      // ],
+                    ),
                   );
                 },
               ),

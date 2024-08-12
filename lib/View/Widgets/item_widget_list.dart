@@ -29,6 +29,7 @@ class ItemWidgetList extends StatelessWidget {
         children: [
           ...List.generate(index, (i) {
             return ItemWidget(
+              itemPrice: " 5000 الف ريال ",
               index: i,
               itemName: itemName[i],
               imageName: "assets/images/grape$i.png",

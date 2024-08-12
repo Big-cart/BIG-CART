@@ -9,9 +9,9 @@ class CategoryData {
     this.crud,
   );
   getdata() async {
-    // print(AppLink.linkLogin);
+    print(AppLink.linkLogin);
     var response = await crud.getData(
-      AppLink.linkLogin,
+      AppLink.linkAllCategories,
     );
     return response.fold(
       (l) => l,

@@ -1,4 +1,7 @@
+import 'package:big_cart/View/Widgets/item_widget.dart';
+import 'package:big_cart/controller/users/products_controller.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
+import 'package:big_cart/core/Widgets/handling_data_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -102,10 +105,36 @@ class Home extends StatelessWidget {
                   SizedBox(
                     height: 20.h,
                   ),
-                  ItemWidgetList(
-                      index: 5,
-                      itemName: grapes,
-                      itemImage: "assets/images/grape.png"),
+                  GetBuilder<ProductsControllerImp>(
+                    init: ProductsControllerImp(),
+                    builder: (controller) {
+                      return HandlingDataView(
+                          statusRequest: controller.statusRequest,
+                          acontext: context,
+                          widget: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: GridView.count(
+                              physics: NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              semanticChildCount: 2,
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 15.0.w,
+                              mainAxisSpacing: 26.0.h,
+                              childAspectRatio: 0.75,
+                              children: [
+                                ...List.generate(controller.data.length, (i) {
+                                  return ItemWidget(
+                                    index: i,
+                                    itemPrice: controller.data[i]["prais"],
+                                    itemName: controller.data[i]["name"],
+                                    imageName: "assets/images/grape$i.png",
+                                  );
+                                })
+                              ],
+                            ),
+                          ));
+                    },
+                  ),
                   SizedBox(height: 40.h)
                 ],
               ),

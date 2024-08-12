@@ -7,9 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class CategoryController extends GetxController {
-  showAllCategories(
-    BuildContext context,
-  );
+  showAllCategories();
   goToSelectedCategory();
 }
 
@@ -17,66 +15,49 @@ class CategoryControllerImp extends CategoryController {
   CategoryData categoryData = CategoryData(Get.find());
 
   StatusRequest statusRequest = StatusRequest.loading;
+  late int index;
+  List<dynamic> data = [];
 
-  List<Map<String, dynamic>> data = [];
-
-    // ! <login with Mysql>
+  // ! <login with Mysql>
   @override
-  showAllCategories(BuildContext context) async {
+  showAllCategories() async {
     update();
-    Get.defaultDialog(
-      titleStyle: TextStyle(color: Colors.black, fontFamily: "Almarai"),
-      title: "يرحى الانتظار",
-      content: CircularProgressIndicator(
-        color: AppColors.profileColor,
-      ),
-    );
-    statusRequest = StatusRequest.loading;
 
     // var formdata = formkey.currentState;
     // if (formdata!.validate()) {
-    // wariningDialog(context, 20, statusRequest);
+    // wariningDialog(_, 20, statusRequest);
+    print("$statusRequest");
 
     var response = await categoryData.getdata();
-
+    statusRequest = StatusRequest.loading;
+    print(response);
     statusRequest = handlingData(response);
-    // print("$statusRequest");
+    print("$statusRequest");
+    data.addAll(response);
     if (statusRequest == StatusRequest.succses) {
-      Get.back();
+      // Get.back();
       //?fetch data success than store user data and login
-      if (response['id'] != null) {
+      if (response[0]['id'] != null) {
         // print(response['role_id']);
         // if (response['role_id'] == 1) {
-        data = response;
         // print("${response['token']}");
-
-        Get.defaultDialog(
-          titleStyle:
-              TextStyle(color: Theme.of(context).textTheme.bodyMedium!.color),
-          title: "تحذير",
-          // middleText: response['message'],
-        );
-        Get.offAllNamed(AppRoute.home);
-      } else if (response['message'] != null) {
-        Get.defaultDialog(
-          titleStyle:
-              TextStyle(color: Theme.of(context).textTheme.bodyMedium!.color),
-          title: "تحذير",
-          middleText: response['message'],
-        );
-      }
+        print(data);
+        // Get.offAllNamed(AppRoute.home);
+      } else if (response['message'] != null) {}
     } else {
-      Get.defaultDialog(
-        titleStyle:
-            TextStyle(color: Theme.of(context).textTheme.bodyMedium!.color),
-        title: "تحذير",
-        middleText: "يرجئ التحقق من جودة اتصال الانترنت",
-      );
+      print("object");
     }
 
     update();
   }
+
 //! </login with Mysql>
+  @override
+  void onInit() {
+    showAllCategories();
+
+    super.onInit();
+  }
 
   @override
   goToSelectedCategory() {}
