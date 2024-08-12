@@ -25,6 +25,9 @@ class AppRoute {
   static const String emptyCart = "/emptycart";
   static const String catogerProdact = "/catogerprodact";
   static const String aboutMe = "/aboutme";
+  static const String acceptOrder = "/acceptOrder";
+  static const String cart = "/cart";
+  static const String cowScreen = "/cowScreen";
 
 //====================Auth-Driver===============================
 
@@ -35,4 +38,8 @@ class AppRoute {
 //====================Driver-Screens===============================
 
   static const String driverOrder = "/driverOrder";
+  static const String track = "/track";
+  static const String orderDetails = "/orderDetails";
+  static const String googleMapScreen = "/googleMapScreen";
+
 }

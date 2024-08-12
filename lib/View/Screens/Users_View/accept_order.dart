@@ -1,0 +1,90 @@
+import 'package:flutter/material.dart';
+
+import '../../widget/driver/track/custom_container.dart';
+
+class AcceptOrder extends StatelessWidget {
+  const AcceptOrder({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey[200],
+      body: Container(
+        clipBehavior: Clip.none,
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              "assets/images/background.png",
+            ),
+            fit: BoxFit.fitWidth,
+          ),
+        ),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            clipBehavior: Clip.none,
+            child: Column(
+              children: [
+                AppBar(
+                  actions: const [
+                    Icon(
+                      Icons.arrow_forward_rounded,
+                      color: Colors.black,
+                    )
+                  ],
+                  centerTitle: true,
+                  backgroundColor: Colors.transparent,
+                  elevation: 0.0,
+                  title: const Text("قبول الطلب "),
+                ),
+                Card(
+                  color: Colors.white,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 22.0, vertical: 8.0),
+                    child: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CustomContainer(
+                          icon: Icons.person_outline_outlined,
+                          text: 'اسم الموصل',
+                        ),
+                        CustomContainer(
+                          icon: Icons.hexagon_outlined,
+                          text: 'من المزرعة ',
+                        ),
+                        CustomContainer(
+                          icon: Icons.library_add_check_outlined,
+                          text: 'تأكيد الطلب',
+                        ),
+                        CustomContainer(
+                          icon: Icons.fire_truck,
+                          text: 'تم الشحن',
+                        ),
+                        const CustomContainer(
+                          icon: Icons.trending_up_sharp,
+                          text: 'خارج  لتوصيل ',
+                          check: false,
+                        ),
+                        const CustomContainer(
+                          icon: Icons.check_circle_outline,
+                          text: 'تسليم الطلب',
+                          last: true,
+                          check: false,
+                        ),
+                        SizedBox(
+                          height: 16.0,
+                        )
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
