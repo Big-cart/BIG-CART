@@ -26,9 +26,9 @@ class LoginDriver extends StatelessWidget {
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),
-                Image.asset(
-                  "assets/images/logo.png",
-                ),
+                // Image.asset(
+                //   "assets/images/logo.png",
+                // ),
                 SizedBox(
                   height: 20.0.h,
                 ),
