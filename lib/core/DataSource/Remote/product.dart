@@ -24,16 +24,16 @@ class ProductData {
     );
   }
 
-  // // getSingleProductData(String productIdQueryParameter) async {
-  // //   print("${AppLink.linkSingleCategoryProducts}$productIdQueryParameter");
-  // //   var response = await crud.getData(
-  // //     "${AppLink.linkLogin}$productIdQueryParameter",
-  // //   );
-  // //   return response.fold(
-  // //     (l) => l,
-  // //     (r) => r,
-  // //   );
-  // // }
+  getSingleProductData(String productIdQueryParameter) async {
+    print("${AppLink.linkAllProducts}$productIdQueryParameter");
+    var response = await crud.getProductData(
+      "${AppLink.linkAllProducts}$productIdQueryParameter",
+    );
+    return response.fold(
+      (l) => l,
+      (r) => r,
+    );
+  }
 
   // // getCategoryProductData(String categoryIdQueryParameter) async {
   // //   print("${AppLink.linkSingleCategoryProducts}$categoryIdQueryParameter");

@@ -11,6 +11,7 @@ import 'package:big_cart/View/Screens/Driver_View/order_details.dart';
 import 'package:big_cart/View/Screens/Driver_View/track.dart';
 import 'package:big_cart/View/Screens/Users_View/aboutme.dart';
 import 'package:big_cart/View/Screens/Users_View/main_user_screen.dart';
+import 'package:big_cart/View/Screens/Users_View/product.dart';
 import 'package:big_cart/View/Screens/Users_View/select_category_screen.dart';
 import 'package:big_cart/View/Screens/Users_View/empty_cart.dart';
 import 'package:big_cart/View/Screens/Users_View/invoice.dart';
@@ -112,10 +113,7 @@ List<GetPage<dynamic>>? route = [
     page: () => const Search(),
   ),
 
-  GetPage(
-    name: AppRoute.profile,
-    page: () => const Profile(),
-  ),
+  
   GetPage(
     name: AppRoute.profile,
     page: () => const Profile(),

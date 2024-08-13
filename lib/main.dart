@@ -4,7 +4,6 @@ import 'package:big_cart/Bindings/intial_bindings.dart';
 
 import 'package:big_cart/View/Screens/Users_View/Auth/login.dart';
 
-import 'package:big_cart/View/Screens/Auth/login.dart';
 import 'package:big_cart/View/Screens/Driver_View/track.dart';
 
 import 'package:big_cart/View/Screens/Users_View/aboutme.dart';
@@ -105,8 +104,3 @@ class MyApp extends StatelessWidget {
     // );
   }
 }
-
-
-
-
-

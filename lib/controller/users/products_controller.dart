@@ -1,3 +1,4 @@
+import 'package:big_cart/View/Screens/Users_View/product.dart';
 import 'package:big_cart/controller/users/category_controller.dart';
 import 'package:big_cart/core/DataSource/Remote/product.dart';
 import 'package:big_cart/core/Functions/handiling_data_controller.dart';
@@ -10,12 +11,14 @@ import 'package:get/get.dart';
 abstract class ProductsController extends GetxController {
   // showCategoriesProduct(BuildContext context, String selectedItemIndex);
   showAllProducts();
+
+  showSingleProducts(String queryParam);
 }
 
 class ProductsControllerImp extends ProductsController {
   // CategoryControllerImp categoryControllerImp =
   //     Get.put(CategoryControllerImp());
-  // final String productIdQueryParameter = '';
+  String productIdQueryParameter = '';
   // String categoryIdQueryParameter = '';
 
   ProductData productData = ProductData(Get.find());
@@ -24,7 +27,9 @@ class ProductsControllerImp extends ProductsController {
   StatusRequest statusRequest = StatusRequest.loading;
 
   var data = [];
-  int index=0;
+  Map<String, dynamic> singleProductData = {};
+
+  int index = 0;
 
   // ! <login with Mysql>
   @override
@@ -90,9 +95,40 @@ class ProductsControllerImp extends ProductsController {
     // var formdata = formkey.currentState;
     // if (formdata!.validate()) {
     // wariningDialog(_, 20, statusRequest);
-    print("$statusRequest");
+    // print("$statusRequest");
 
     var response = await productData.getAllProductData();
+    statusRequest = StatusRequest.loading;
+    // print(response);
+    statusRequest = handlingData(response);
+    // print("$statusRequest");
+    if (statusRequest == StatusRequest.succses) {
+      // Get.back();
+      //?fetch data success than store user data and login
+      if (response[0]['id'] != null) {
+        data.addAll(response);
+        // print(response['role_id']);
+        // if (response['role_id'] == 1) {
+        // print("${response['token']}");
+        // print(data);
+      } else if (response['message'] != null) {}
+    } else {
+      print("object");
+    }
+
+    update();
+  }
+
+  @override
+  showSingleProducts(String queryParam) async {
+    update();
+
+    // var formdata = formkey.currentState;
+    // if (formdata!.validate()) {
+    // wariningDialog(_, 20, statusRequest);
+    print("$statusRequest");
+
+    var response = await productData.getSingleProductData(queryParam);
     statusRequest = StatusRequest.loading;
     print(response);
     statusRequest = handlingData(response);
@@ -100,12 +136,21 @@ class ProductsControllerImp extends ProductsController {
     if (statusRequest == StatusRequest.succses) {
       // Get.back();
       //?fetch data success than store user data and login
-      if (response[0]['id'] != null) {
-    data.addAll(response);
+      if (response['id'] != null) {
+        singleProductData = response;
         // print(response['role_id']);
         // if (response['role_id'] == 1) {
         // print("${response['token']}");
-        print(data);
+        print(response['id']);
+        Get.to(
+          () => Product(
+              productName: singleProductData['name'],
+              quantity: response['quantity'],
+              price: response['prais'],
+              description: response['description']),
+        );
+        update();
+
         // Get.offAllNamed(AppRoute.home);
       } else if (response['message'] != null) {}
     } else {

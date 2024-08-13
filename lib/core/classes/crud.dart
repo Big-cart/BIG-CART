@@ -11,7 +11,8 @@ import 'package:dartz/dartz.dart';
 import 'package:http/http.dart' as http;
 
 class Crud {
-  Future<Either<StatusRequest, Map>> postData(String linkUrl, Map data,{String myToken=""}) async {
+  Future<Either<StatusRequest, Map>> postData(String linkUrl, Map data,
+      {String myToken = ""}) async {
     try {
       if (await checkInternet()) {
         var response = await http.post(
@@ -43,9 +44,6 @@ class Crud {
       return const Left(StatusRequest.serverfailure);
     }
   }
-
-
- 
 
 //   Future<Either<StatusRequest, Map>> getData(String linkUrl, {String myToken=""}) async {
 //     try {
@@ -83,27 +81,28 @@ class Crud {
 //     }
 //   }
 
-
-
-  Future<Either<StatusRequest, List<Map<String, dynamic>>>> getData(String linkUrl, {String myToken = ""}) async {
+  Future<Either<StatusRequest, List<Map<String, dynamic>>>> getData(
+      String linkUrl,
+      {String myToken = ""}) async {
     try {
       if (await checkInternet()) {
         var response = await http.get(
           Uri.parse(linkUrl),
           headers: {
-            HttpHeaders.authorizationHeader: sharedPref.getString('token') ?? myToken,
+            HttpHeaders.authorizationHeader:
+                sharedPref.getString('token') ?? myToken,
           },
         );
 
-        print("response Crud");
-        print(response.statusCode);
-        print(response.body.toString());
+        // print("response Crudget");
+        // print(response.statusCode);
+        // print(response.body.toString());
 
         if (response.statusCode >= 200 && response.statusCode < 300) {
           List<dynamic> responseBody = jsonDecode(response.body);
-          List<Map<String, dynamic>> data = List<Map<String, dynamic>>.from(responseBody);
+          List<Map<String, dynamic>> data =
+              List<Map<String, dynamic>>.from(responseBody);
           return Right(data);
-
         } else {
           return const Left(StatusRequest.serverfailure);
         }
@@ -111,7 +110,39 @@ class Crud {
         return const Left(StatusRequest.offlinefailure);
       }
     } catch (e) {
+      return const Left(StatusRequest.serverfailure);
+    }
+  }
 
+  Future<Either<StatusRequest, Map<String, dynamic>>> getProductData(
+      String linkUrl,
+      {String myToken = ""}) async {
+    try {
+      if (await checkInternet()) {
+        var response = await http.get(
+          Uri.parse(linkUrl),
+          headers: {
+            HttpHeaders.authorizationHeader:
+                "Bearer 111|8CSI1RTT2vk4tD0eSJXXE6C8xZG36vTFsb0dgQsicacecd31" ??
+                    myToken,
+          },
+        );
+
+        print("response Crud product");
+        print(response.statusCode);
+        print(response.body.toString());
+
+        if (response.statusCode >= 200 && response.statusCode < 300) {
+          dynamic responseBody = jsonDecode(response.body);
+          Map<String, dynamic> data = Map<String, dynamic>.from(responseBody);
+          return Right(data);
+        } else {
+          return const Left(StatusRequest.serverfailure);
+        }
+      } else {
+        return const Left(StatusRequest.offlinefailure);
+      }
+    } catch (e) {
       return const Left(StatusRequest.serverfailure);
     }
   }
@@ -175,3 +206,4 @@ class Crud {
 //     // }
 //   }
 // }
+
