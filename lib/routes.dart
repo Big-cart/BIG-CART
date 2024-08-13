@@ -1,7 +1,7 @@
-import 'package:big_cart/View/Screens/Auth/SelectionScreen.dart';
-import 'package:big_cart/View/Screens/Auth/compelet_pass.dart';
-import 'package:big_cart/View/Screens/Auth/forget_pass.dart';
-import 'package:big_cart/View/Screens/Auth/sure_psaa.dart';
+import 'package:big_cart/View/Screens/Users_View/Auth/SelectionScreen.dart';
+import 'package:big_cart/View/Screens/Users_View/Auth/compelet_pass.dart';
+import 'package:big_cart/View/Screens/Users_View/Auth/forget_pass.dart';
+import 'package:big_cart/View/Screens/Users_View/Auth/sure_psaa.dart';
 import 'package:big_cart/View/Screens/Driver_View/auth/forget_password.dart';
 import 'package:big_cart/View/Screens/Driver_View/auth/login_driver.dart';
 import 'package:big_cart/View/Screens/Driver_View/auth/reset_password.dart';
@@ -11,6 +11,7 @@ import 'package:big_cart/View/Screens/Driver_View/order_details.dart';
 import 'package:big_cart/View/Screens/Driver_View/track.dart';
 import 'package:big_cart/View/Screens/Users_View/aboutme.dart';
 import 'package:big_cart/View/Screens/Users_View/main_user_screen.dart';
+import 'package:big_cart/View/Screens/Users_View/product.dart';
 import 'package:big_cart/View/Screens/Users_View/select_category_screen.dart';
 import 'package:big_cart/View/Screens/Users_View/empty_cart.dart';
 import 'package:big_cart/View/Screens/Users_View/invoice.dart';
@@ -26,9 +27,9 @@ import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:get/get.dart';
 import 'package:big_cart/View/Screens/Users_View/favorite.dart';
 import 'package:big_cart/View/Screens/Users_View/home.dart';
-import 'package:big_cart/View/Screens/Auth/login.dart';
+import 'package:big_cart/View/Screens/Users_View/Auth/login.dart';
 import 'package:big_cart/View/Screens/Users_View/search.dart';
-import 'package:big_cart/View/Screens/Auth/signup.dart';
+import 'package:big_cart/View/Screens/Users_View/Auth/signup.dart';
 
 import 'View/Screens/Driver_View/google_map.dart';
 import 'View/Screens/Users_View/accept_order.dart';
@@ -95,7 +96,7 @@ List<GetPage<dynamic>>? route = [
     page: () => const EmptyCart(),
   ),
   GetPage(
-    name: AppRoute.catogerProdact,
+    name: AppRoute.selectCategoryScreen,
     page: () => const SelectCategoryScreen(),
   ),
   GetPage(
@@ -112,10 +113,7 @@ List<GetPage<dynamic>>? route = [
     page: () => const Search(),
   ),
 
-  GetPage(
-    name: AppRoute.profile,
-    page: () => const Profile(),
-  ),
+  
   GetPage(
     name: AppRoute.profile,
     page: () => const Profile(),

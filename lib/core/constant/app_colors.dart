@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 class AppColors {
   static final Color bottomNavBarColor = HexColor.fromHex('#84B853');
   static final Color profileColor = HexColor.fromHex('#D5ECBD');
+  static final Color searchColor = HexColor.fromHex('##EEF9E4');
+
   static final Color spalshScreenColor = HexColor.fromHex('#A7CA9A');
   static final Color forgetpass = HexColor.fromHex('#8cf2ab');
   static final Color productColor = HexColor.fromHex("#AEDC81");

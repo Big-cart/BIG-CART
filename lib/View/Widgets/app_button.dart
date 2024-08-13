@@ -3,16 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppButton extends StatelessWidget {
-  final Widget child;
+  final Widget? child;
+  final String? title;
+
   final Gradient? buttonColor;
   final double? width;
   final void Function()? onPressed;
   const AppButton(
       {super.key,
-      required this.child,
+      this.child,
       this.onPressed,
       this.width,
-      this.buttonColor});
+      this.buttonColor,
+      this.title});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,12 +32,17 @@ class AppButton extends StatelessWidget {
           // color: Colors.white,
           gradient: buttonColor ?? AppColors.buttonGradientColor),
       child: MaterialButton(
-        textColor: Colors.grey.shade400,
+        textColor: Colors.black45,
         height: 65.h,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.r)),
         minWidth: double.infinity,
         onPressed: onPressed,
-        child: child,
+        child: title == null
+            ? child
+            : Text(
+                title!,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
       ),
     );
   }

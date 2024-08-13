@@ -31,12 +31,11 @@ class LoginControllerImp extends LoginController {
     Get.offAllNamed(AppRoute.userSignup);
   }
 
+  // ! <login with Mysql email>
   @override
   loginWithEmail(
     BuildContext context,
   ) async {
-    update();
-    statusRequest = StatusRequest.loading;
     Get.defaultDialog(
       titleStyle: TextStyle(color: Colors.black, fontFamily: "Almarai"),
       title: "يرحى الانتظار",
@@ -44,18 +43,22 @@ class LoginControllerImp extends LoginController {
         color: AppColors.profileColor,
       ),
     );
+    statusRequest = StatusRequest.loading;
+
+    //! Wait to the receive the response
 
     // var formdata = formkey.currentState;
     // if (formdata!.validate()) {
     // wariningDialog(context, 20, statusRequest);
 
-    // ! <login with Mysql>
     var response = await loginData.postdata(
       password.text,
       email.text,
     );
 
     statusRequest = handlingData(response);
+    //!  </ Wait to the receive the response>
+
     print("$statusRequest");
     if (statusRequest == StatusRequest.succses) {
       Get.back();
@@ -64,18 +67,31 @@ class LoginControllerImp extends LoginController {
       if (response['success'] == true) {
         print(response['role_id']);
         if (response['role_id'] == 1) {
+          //!< accept case>
+
+          // store received data
           data = response['user'];
+          // make sure that you have token
+
           print("${response['token']}");
+
+          // store token
+
           sharedPref.setString(
               "token", "Bearer ${response['token']}".toString());
+          update();
 
-          Get.defaultDialog(
-            titleStyle:
-                TextStyle(color: Theme.of(context).textTheme.bodyMedium!.color),
-            title: "تحذير",
-            // middleText: response['message'],
-          );
+          // Get.defaultDialog(
+          //   titleStyle:
+          //       TextStyle(color: Theme.of(context).textTheme.bodyMedium!.color),
+          //   title: "تحذير",
+          //   // middleText: response['message'],
+          // );
+
+          //navigate to the next page
           Get.offAllNamed(AppRoute.home);
+
+          //!</ accept case>
         } else {
           Get.defaultDialog(
             titleStyle:

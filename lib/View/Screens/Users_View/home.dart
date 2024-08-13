@@ -1,4 +1,9 @@
+import 'package:big_cart/View/Screens/Users_View/product.dart';
+import 'package:big_cart/View/Widgets/item_widget.dart';
+import 'package:big_cart/controller/users/products_controller.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
+import 'package:big_cart/core/Widgets/handling_data_view.dart';
+import 'package:big_cart/core/enum/status_request.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,6 +22,14 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     // BottomNavigationControllerImp controllerImp =
     //     Get.put(BottomNavigationControllerImp());
+    final List<String> grapes = <String>[
+      'عناب خارجي',
+      'عناب عامري',
+      'عناب أسود',
+      'عناب أحمر',
+      'عناب زاقي',
+      'عناب عامري',
+    ];
     return AppScaffold(
         isPadding: false,
         drawer: const Drawer(
@@ -94,10 +107,41 @@ class Home extends StatelessWidget {
                   SizedBox(
                     height: 20.h,
                   ),
-                  const ItemWidgetList(
-                      index: 5,
-                      itemName: "itemName",
-                      itemImage: "assets/images/grape.png"),
+                  GetBuilder<ProductsControllerImp>(
+                    init: ProductsControllerImp(),
+                    builder: (controller) {
+                      return HandlingDataView(
+                          statusRequest: controller.statusRequest,
+                          acontext: context,
+                          widget: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: GridView.count(
+                              physics: NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              semanticChildCount: 2,
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 15.0.w,
+                              mainAxisSpacing: 26.0.h,
+                              childAspectRatio: 0.75,
+                              children: [
+                                ...List.generate(controller.data.length, (i) {
+                                  return ItemWidget(
+                                    onTap: () {
+                                      i++;
+                                      String queryParam = i.toString();
+                                      controller.showSingleProducts(queryParam);
+                                    },
+                                    index: i,
+                                    itemPrice: controller.data[i]["prais"],
+                                    itemName: controller.data[i]["name"],
+                                    imageName: "assets/images/grape$i.png",
+                                  );
+                                })
+                              ],
+                            ),
+                          ));
+                    },
+                  ),
                   SizedBox(height: 40.h)
                 ],
               ),

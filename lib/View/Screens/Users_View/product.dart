@@ -1,6 +1,8 @@
+import 'package:big_cart/controller/users/products_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:image_pixels/image_pixels.dart';
 
 import 'package:big_cart/View/Widgets/Auth/app_text_form_field.dart';
@@ -10,11 +12,20 @@ import 'package:big_cart/core/Widgets/app_auth_scaffold.dart';
 import 'package:big_cart/core/constant/app_colors.dart';
 
 class Product extends StatelessWidget {
-  const Product({super.key});
+  final String productName;
+  final int quantity;
+  final String price;
+  final String description;
+
+  const Product(
+      {super.key,
+      required this.productName,
+      required this.quantity,
+      required this.price,
+      required this.description});
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-
     return AppAuthScaffold(
       bottomSheet: Container(
         padding: EdgeInsets.zero,
@@ -43,7 +54,7 @@ class Product extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text(" السعر 1000 للكيلو"),
+                            Text("ريال سعودي $price السغر للكيلو"),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: List.generate(5, (index) {
@@ -60,9 +71,9 @@ class Product extends StatelessWidget {
                           height: 15.h,
                         ),
                         Text(
-                          'تاريخ الحصاد: 2000812\n\n'
+                          'الكمية: $quantity\n\n'
                           'قطوف عنب أخضر بشكلها المميز الطازج وطعمها اللذيذ وهذا بجانب احتوائها على العديد من الفيتامينات والعناصر المغذية لصحة الجسم والبشرة.\n\n'
-                          'السعرات الحرارية: 76.72 سعره حرارية لكل 100 جرام\n',
+                          ' الوصف:$description\n',
                           style: Theme.of(context).textTheme.bodySmall,
                         ),
                       ],
@@ -140,7 +151,7 @@ class Product extends StatelessWidget {
       ),
       // ! end of bottom sheet design with positioned leaf
 
-      title: "اسم المنتج",
+      title: productName,
       actionButton: [
         IconButton(
             onPressed: () {},

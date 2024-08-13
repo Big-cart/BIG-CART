@@ -1,4 +1,5 @@
 import 'package:big_cart/View/Widgets/item_widget.dart';
+import 'package:big_cart/View/Widgets/item_widget_list.dart';
 import 'package:big_cart/core/Widgets/search_bar_widget.dart';
 import 'package:big_cart/core/Widgets/app_scaffold.dart';
 // import 'package:big_cart/view/Screens/home.dart';
@@ -47,22 +48,11 @@ class Favorite extends StatelessWidget {
                 height: 12.h,
               ),
               Expanded(
-                child: GridView.builder(
-                  clipBehavior: Clip.none,
-                  shrinkWrap: true,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 5.w,
-                    mainAxisSpacing: 10.h,
-                    childAspectRatio: 0.75.h,
-                  ),
-                  itemCount: grapes.length,
-                  itemBuilder: (ctx, i) => ItemWidget(
-                    imageName: "assets/images/grape$i.png",
-                    index: i,
-                    itemName: grapes[i],
-                  ),
-                ),
+                child: ItemWidgetList(
+                    scrollPhysics: AlwaysScrollableScrollPhysics(),
+                    index: grapes.length,
+                    itemName: grapes,
+                    itemImage: "assets/images/grape.png"),
               ),
             ],
           ),

@@ -1,6 +1,8 @@
+import 'package:big_cart/View/Screens/Driver_View/order.dart';
 import 'package:big_cart/View/Screens/Users_View/cart.dart';
 import 'package:big_cart/View/Screens/Users_View/favorite.dart';
 import 'package:big_cart/View/Screens/Users_View/home.dart';
+import 'package:big_cart/View/Screens/Users_View/list_of_orders.dart';
 import 'package:big_cart/View/Screens/Users_View/profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +18,7 @@ class BottomNavigationControllerImp extends BottomNavigationController {
     const Home(),
     const Favorite(),
     const Cart(),
-    const Cart(),
+    const ListOfOrders(),
     const Profile()
   ];
   List<Icon> icons = <Icon>[

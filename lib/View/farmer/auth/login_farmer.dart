@@ -16,7 +16,7 @@ class LoginFarmer extends StatelessWidget {
         Get.put(LoginControllerDriverImp());
     return AppScaffold(
       isPadding: false,
-      backColor: const Color(0xffEEF9E4),
+      backColor: Colors.white,
       child: SafeArea(
         child: Stack(
           children: [

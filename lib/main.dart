@@ -1,20 +1,26 @@
+import 'dart:convert';
+
 import 'package:big_cart/Bindings/intial_bindings.dart';
-import 'package:big_cart/View/Screens/Auth/login.dart';
+
+import 'package:big_cart/View/Screens/Users_View/Auth/login.dart';
+
 import 'package:big_cart/View/Screens/Driver_View/track.dart';
+
 import 'package:big_cart/View/Screens/Users_View/aboutme.dart';
 import 'package:big_cart/View/Screens/Users_View/cart.dart';
+import 'package:big_cart/View/Screens/Users_View/home.dart';
 import 'package:big_cart/View/Screens/Users_View/invoice.dart';
+import 'package:big_cart/View/Screens/Users_View/list_of_orders.dart';
+import 'package:big_cart/View/Screens/Users_View/search.dart';
 import 'package:big_cart/View/Screens/Users_View/select_category_screen.dart';
 import 'package:big_cart/View/Screens/Users_View/main_user_screen.dart';
 import 'package:big_cart/View/Widgets/splash_category_screen.dart';
+import 'package:big_cart/View/farmer/Sections.dart';
+import 'package:http/http.dart' as http;
 
 import 'package:big_cart/core/Theme/theme.dart';
 import 'package:big_cart/routes.dart';
-import 'package:big_cart/view/Screens/Driver_View/auth/login_driver.dart';
-import 'package:big_cart/view/farmer/Comments.dart';
-import 'package:big_cart/view/farmer/Sections.dart';
-import 'package:big_cart/view/farmer/added_prodact.dart';
-import 'package:big_cart/view/farmer/auth/login_farmer.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:flutter/material.dart';
@@ -84,7 +90,11 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child: const AcceptOrder(),
+// <<<<<<< main
+      child: const Home(),
+// =======
+//       child: const AcceptOrder(),
+// >>>>>>> main
 
 //       child: const Onboarding(),
     );
@@ -94,8 +104,3 @@ class MyApp extends StatelessWidget {
     // );
   }
 }
-
-
-
-
-
