@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AddedProduct extends StatefulWidget {
-  const AddedProduct({super.key});
+class AddedOffer extends StatefulWidget {
+  const AddedOffer({super.key});
 
   @override
-  _AddedProductState createState() => _AddedProductState();
+  AddedOfferState createState() => AddedOfferState();
 }
 
-class _AddedProductState extends State<AddedProduct> {
+class AddedOfferState extends State<AddedOffer> {
   bool isAdding = false;
 
   @override
@@ -18,7 +18,7 @@ class _AddedProductState extends State<AddedProduct> {
         elevation: 0,
         centerTitle: true,
         title: const Text(
-          "إضافة منتجات",
+          "إضافة عرض",
           style: TextStyle(color: Colors.black),
         ),
         leading: Builder(
@@ -211,6 +211,15 @@ class _AddedProductState extends State<AddedProduct> {
                       TextField(
                         decoration: InputDecoration(
                           labelText: 'وصف المنتج',
+                          filled: true,
+                          fillColor: Colors.green[100],
+                          suffixIcon: const Icon(Icons.edit),
+                        ),
+                      ),
+                       const SizedBox(height: 10),
+                      TextField(
+                        decoration: InputDecoration(
+                          labelText: 'عرض اليوم',
                           filled: true,
                           fillColor: Colors.green[100],
                           suffixIcon: const Icon(Icons.edit),

@@ -1,8 +1,6 @@
-import 'package:big_cart/View/widget/auth/login/custom_button.dart';
-import 'package:big_cart/View/widget/auth/login/custom_container_login.dart';
-import 'package:big_cart/View/widget/auth/login/custom_text_form_field.dart';
-import 'package:big_cart/controller/driver/Auth/login_controller.dart';
-import 'package:big_cart/core/Widgets/app_scaffold.dart';
+import 'package:big_cart/controller/users/Auth/login_controller.dart';
+import 'package:big_cart/view/Widgets/Auth/app_text_form_field.dart';
+import 'package:big_cart/view/Widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -12,87 +10,82 @@ class LoginFarmer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    LoginControllerDriverImp controllerDriverImp =
-        Get.put(LoginControllerDriverImp());
-    return AppScaffold(
-      isPadding: false,
-      backColor: Colors.white,
-      child: SafeArea(
-        child: Stack(
-          children: [
-            // Positioned.fill(
-            //   child: Image.asset(
-            //     'assets/images/background.png', // الخلفية
-            //     fit: BoxFit.cover,
-            //   ),
-            // ),
-            SingleChildScrollView(
+    LoginControllerImp controllerImp = Get.put(LoginControllerImp());
+    return Scaffold(
+      body: Stack(
+        children: [
+          Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/bacfarmlog.png"),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Center(
+            child: SingleChildScrollView(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(height: 40.0.h), // مسافة من الأعلى
-                  Center(
-                    child: Image.asset(
-                      "assets/images/farmerlog.png", // الصورة الصغيرة
-                      width: 300.0.w,
-                      height: 300.0.h,
+                  SizedBox(height: 100.h),
+                  Text(
+                    'تسجيل دخول',
+                    style: TextStyle(
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
                     ),
                   ),
-                  SizedBox(
-                    height: 20.0.h,
+                  SizedBox(height: 30.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    child: AppTextFormField(
+                      controller: controllerImp.email,
+                      hintText: "البريد الإلكتروني",
+                      icon: const Icon(Icons.mail),
+                      obscureText: false,
+                    ),
                   ),
-                  CustomContainerLogin(
-                    child: Column(
-                      children: [
-                        const Text("تسجيل الدخول"),
-                        SizedBox(
-                          height: 20.0.h,
-                        ),
-                        Form(
-                          child: Column(
-                            children: [
-                              CustomTextFormFieldDriver(
-                                controller: controllerDriverImp.email,
-                                hintText: 'إسم المستخدم',
-                                icon: const Icon(Icons.person_pin),
-                              ),
-                              SizedBox(
-                                height: 16.0.h,
-                              ),
-                              CustomTextFormFieldDriver(
-                                controller: controllerDriverImp.password,
-                                hintText: 'كلمة المرور',
-                                icon: const Icon(Icons.lock),
-                                isPass: true,
-                              ),
-                            ],
+                  SizedBox(height: 15.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    child: AppTextFormField(
+                      controller: controllerImp.password,
+                      hintText: "كلمة السر",
+                      suffixIcon: const Icon(Icons.remove_red_eye_outlined),
+                      obscureText: true,
+                      icon: const Icon(Icons.lock),
+                    ),
+                  ),
+                  SizedBox(height: 50.h),
+                  GetBuilder<LoginControllerImp>(
+                    init: LoginControllerImp(),
+                    builder: (controllerImp) {
+                      return Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 60.w),
+                        child: AppButton(
+                          child: Text(
+                            "تسجيل الدخول",
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelMedium
+                                ?.copyWith(fontSize: 18.sp),
                           ),
+                          onPressed: () {
+                            controllerImp.loginWithEmail(context);
+                          },
                         ),
-                        SizedBox(
-                          height: 20.0.h,
-                        ),
-                        const Text("هل نسيت كلمة المرور؟"),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 24.0.h,
-                  ),
-                  GetBuilder<LoginControllerDriverImp>(
-                    init: LoginControllerDriverImp(),
-                    builder: (controller) {
-                      return CustomButton(
-                        onPressed: () {
-                          controller.loginWithEmail(context);
-                        },
-                        text: 'تسجيل دخول',
                       );
                     },
                   ),
+                  SizedBox(height: 50.h),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
