@@ -1,34 +1,44 @@
-import 'package:big_cart/View/widget/auth/login/custom_button.dart';
-import 'package:big_cart/View/widget/auth/login/custom_success_container.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
-class SuccessResetPassScreenDriver extends StatelessWidget {
-  const SuccessResetPassScreenDriver({super.key});
+import 'package:big_cart/View/Screens/Users_View/home.dart';
+import 'package:big_cart/View/Widgets/app_button.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class SuccessResetPassScreenFarmer extends StatelessWidget {
+  const SuccessResetPassScreenFarmer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xffEEF9E4),
-        body: SafeArea(
-          child:SizedBox(
-            width: MediaQuery.of(context).size.width,
-            child: Column(
-            children: [
-              const Spacer(),
-              Image.asset("assets/images/logo.png"),
-              const SizedBox(
-                height: 20.0,
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/susscsbacg.png"),
+            fit: BoxFit.fitWidth,
+          ),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // الصورة الصغيرة في الوسط
+            const SizedBox(height: 600),
+            Padding(
+              padding: const EdgeInsets.all(22.0),
+              child: AppButton(
+                child: Text(
+                  "تم",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
+                onPressed: () {
+                  Get.to(Home());
+                },
               ),
-              const CustomSuccessContainer(),
-              const Spacer(),
-              CustomButton(
-                onPressed: () {},
-                text: "تم",
-              ),
-              const Spacer(),
-            ],
-          ),),
-        ));
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

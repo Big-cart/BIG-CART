@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AddedProduct extends StatefulWidget {
-  const AddedProduct({super.key});
+class AllProdact extends StatefulWidget {
+  const AllProdact({super.key});
 
   @override
-  _AddedProductState createState() => _AddedProductState();
+  AllProdactState createState() => AllProdactState();
 }
 
-class _AddedProductState extends State<AddedProduct> {
+class AllProdactState extends State<AllProdact> {
   bool isAdding = false;
 
   @override
@@ -18,7 +18,7 @@ class _AddedProductState extends State<AddedProduct> {
         elevation: 0,
         centerTitle: true,
         title: const Text(
-          "إضافة منتجات",
+          "إضافة عرض",
           style: TextStyle(color: Colors.black),
         ),
         leading: Builder(
@@ -177,74 +177,8 @@ class _AddedProductState extends State<AddedProduct> {
                   },
                 ),
               ),
-              if (isAdding)
-                Container(
-                  padding: const EdgeInsets.all(16.0),
-                  color: Colors.white,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'إدراج منتج جديد',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 10),
-                      TextField(
-                        decoration: InputDecoration(
-                          labelText: 'اسم المزرعة',
-                          filled: true,
-                          fillColor: Colors.green[100],
-                          suffixIcon: const Icon(Icons.edit),
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      TextField(
-                        decoration: InputDecoration(
-                          labelText: 'اليوم / التاريخ / السنة',
-                          filled: true,
-                          fillColor: Colors.green[100],
-                          suffixIcon: const Icon(Icons.edit),
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      TextField(
-                        decoration: InputDecoration(
-                          labelText: 'وصف المنتج',
-                          filled: true,
-                          fillColor: Colors.green[100],
-                          suffixIcon: const Icon(Icons.edit),
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          FloatingActionButton(
-                            mini: true,
-                            onPressed: () {},
-                            child: const Icon(Icons.camera_alt),
-                            backgroundColor: const Color.fromARGB(255, 64, 216, 87),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: FloatingActionButton(
-                  onPressed: () {
-                    setState(() {
-                      isAdding = !isAdding;
-                    });
-                  },
-                  child: isAdding
-                      ? const Icon(Icons.close)
-                      : const Icon(Icons.add),
-                  backgroundColor: const Color.fromARGB(255, 61, 207, 127),
-                ),
-              ),
+
+
             ],
           ),
         ],

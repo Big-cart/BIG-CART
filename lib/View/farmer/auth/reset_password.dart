@@ -1,68 +1,108 @@
-import 'package:big_cart/View/widget/auth/login/custom_button.dart';
-import 'package:big_cart/View/widget/auth/login/custom_container_login.dart';
-import 'package:big_cart/View/widget/auth/login/custom_text_form_field.dart';
+
+import 'package:big_cart/View/Widgets/app_button.dart';
+import 'package:big_cart/view/Screens/Users_View/Auth/compelet_pass.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
-
-class ResetPasswordDriver extends StatelessWidget {
-  const ResetPasswordDriver({super.key});
+class ResetPasswordFarmer extends StatelessWidget {
+  const ResetPasswordFarmer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xffEEF9E4),
-        body: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Image.asset("assets/images/forgetpassDriver.png"),
-                Image.asset("assets/images/logo.png"),
-                const SizedBox(
-                  height: 20.0,
-                ),
-                const CustomContainerLogin(
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/forgpassfarmer.png"),
+            fit: BoxFit.fitWidth,
+          ),
+        ),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return Center(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(),
+                child: IntrinsicHeight(
+                  child: SingleChildScrollView(
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("ادخل كلمة المرور الجديدة"),
-                        SizedBox(
-                          height: 2.0,
+                        SizedBox(height: 370.h), // مسافة من الأعلى
+
+                        // نص ادخل كلمة المرور الجديدة
+                        const Text(
+                          'ادخل كلمة المرور الجديدة',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
                         ),
-                        SizedBox(
-                          height: 20.0,
-                        ),
-                        Form(
-                            child: Column(
-                              children: [
-                                CustomTextFormFieldDriver(
+                        SizedBox(height: 20.h),
+
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 35),
+                          child: Column(
+                            children: [
+                              // حقل إدخال كلمة المرور الجديدة
+                              TextField(
+                                obscureText: true,
+                                decoration: InputDecoration(
                                   hintText: 'أدخل كلمة المرور الجديدة',
-                                  icon: Icon(Icons.lock),
-                                  isPass: true,
+                                  prefixIcon: Icon(Icons.lock),
+                                  filled: true,
+                                  fillColor: Colors.white,
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                    borderSide: BorderSide.none,
+                                  ),
                                 ),
-                                SizedBox(
-                                  height: 16.0,
+                              ),
+                             SizedBox(height: 20.h),
+
+                              // حقل تأكيد كلمة المرور
+                              TextField(
+                                obscureText: true,
+                                decoration: InputDecoration(
+                                  hintText: 'تأكيد كلمة المرور',
+                                  prefixIcon: Icon(Icons.lock),
+                                  filled: true,
+                                  fillColor: Colors.white,
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                    borderSide: BorderSide.none,
+                                  ),
                                 ),
-                                CustomTextFormFieldDriver(
-                                  hintText: 'تأكيد كلمة المرور ',
-                                  icon: Icon(Icons.lock),
-                                  isPass: true,
-                                ),
-                              ],
-                            )),
-                        SizedBox(
-                          height: 20.0,
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 80.h),
+                        Padding(
+                          padding: const EdgeInsets.all(22.0),
+                          child: AppButton(
+                            child: Text(
+                              "تأكيد",
+                              style: Theme.of(context).textTheme.labelMedium,
+                            ),
+                            onPressed: () {
+                              Get.to(Completpass());
+                            },
+                          ),
                         ),
                       ],
-                    )),
-                const SizedBox(
-                  height: 24.0,
+                    ),
+                  ),
                 ),
-                CustomButton(
-                  onPressed: () {},
-                  text: "تاكيد",
-                )
-              ],
-            ),
-          ),
-        ));
+              ),
+            );
+          },
+        ),
+      ),
+    );
   }
 }
