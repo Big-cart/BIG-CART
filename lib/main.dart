@@ -13,8 +13,15 @@ import 'package:big_cart/routes.dart';
 import 'package:big_cart/view/Screens/Driver_View/auth/login_driver.dart';
 import 'package:big_cart/view/farmer/Comments.dart';
 import 'package:big_cart/view/farmer/Sections.dart';
+import 'package:big_cart/view/farmer/trak_order.dart';
+import 'package:big_cart/view/farmer/added_offer.dart';
 import 'package:big_cart/view/farmer/added_prodact.dart';
+import 'package:big_cart/view/farmer/allprodact.dart';
+import 'package:big_cart/view/farmer/auth/bigin_screen.dart';
+import 'package:big_cart/view/farmer/auth/forget_password.dart';
 import 'package:big_cart/view/farmer/auth/login_farmer.dart';
+import 'package:big_cart/view/farmer/auth/reset_password.dart';
+import 'package:big_cart/view/farmer/auth/success_reset_pass_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:flutter/material.dart';
@@ -84,7 +91,8 @@ class MyApp extends StatelessWidget {
             //  ),
             );
       },
-      child: const AcceptOrder(),
+
+      child: const TrackOrder(),
 
 //       child: const Onboarding(),
     );
@@ -94,8 +102,3 @@ class MyApp extends StatelessWidget {
     // );
   }
 }
-
-
-
-
-

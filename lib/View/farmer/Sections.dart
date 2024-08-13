@@ -10,13 +10,23 @@ class Sections extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScaffold(
       isPadding: false,
-            appBar: AppBar(
+      appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
         title: const Text(
-          'جميع الأقسام',
+          " الأقسام",
           style: TextStyle(color: Colors.black),
+        ),
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              icon: const Icon(Icons.menu, color: Colors.black),
+              onPressed: () {
+                Scaffold.of(context).openDrawer(); // فتح الـ Drawer
+              },
+            );
+          },
         ),
         actions: [
           IconButton(
@@ -24,10 +34,52 @@ class Sections extends StatelessWidget {
               angle: 3.14,
               child: const Icon(Icons.arrow_back, color: Colors.black),
             ),
-            onPressed: () {},
+            onPressed: () {
+              // العودة للخلف
+            },
           ),
         ],
       ),
+      drawer: Drawer(
+        child: Container(
+          color: Colors.green[100],
+          child: Column(
+            children: [
+              UserAccountsDrawerHeader(
+                accountName: const Text('اسم المزارع'),
+                accountEmail: const Text('username@gmail.com'),
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: const Color.fromARGB(255, 73, 62, 62),
+                  child: Icon(Icons.account_circle, size: 40, color: Colors.green),
+                ),
+              ),
+              ListTile(
+                leading: const Icon(Icons.info),
+                title: const Text('نبذة عني'),
+                onTap: () {
+                  // تنفيذ كود عند الضغط
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.location_on),
+                title: const Text('الموقع'),
+                onTap: () {
+                  // تنفيذ كود عند الضغط
+                },
+              ),
+              const Divider(),
+              ListTile(
+                leading: const Icon(Icons.exit_to_app),
+                title: const Text('تسجيل الخروج'),
+                onTap: () {
+                  // تنفيذ كود عند الضغط
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+      
       child: Container(
         width: double.infinity,
         height: double.infinity,

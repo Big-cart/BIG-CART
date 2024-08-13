@@ -6,14 +6,14 @@ class Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color.fromARGB(255, 49, 153, 52),
+      color: const Color.fromARGB(255, 88, 217, 92),
       child: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             const SizedBox(height: 2),
             Image.asset(
-              'assets/images/big_cart_1.png',
+              'assets/images/bigin_screen.png',
               width: 350,
               height: 400,
             ),
