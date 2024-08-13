@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
-class Page1 extends StatelessWidget {
-  const Page1({super.key});
+import 'package:get/get.dart';
+
+import '../../../controller/users/splash_screen_controller.dart';
+
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
+    SplashScreenControllerImp controller = Get.put(SplashScreenControllerImp());
+    return Container(
         width: double.infinity,
         height: double.infinity,
         decoration: const BoxDecoration(
@@ -31,7 +35,6 @@ class Page1 extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }

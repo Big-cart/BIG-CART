@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomContainer extends StatelessWidget {
   final String text;
@@ -7,12 +8,16 @@ class CustomContainer extends StatelessWidget {
   final bool? check;
 
   const CustomContainer(
-      {super.key, required this.text, required this.icon, this.last = false, this.check=true});
+      {super.key,
+      required this.text,
+      required this.icon,
+      this.last = false,
+      this.check = true});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width - 95,
+      width: MediaQuery.of(context).size.width - 100.w,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -21,32 +26,33 @@ class CustomContainer extends StatelessWidget {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30.5),
+                  borderRadius: BorderRadius.circular(40.r),
                   color: check == false
                       ? const Color(0xffF0F0F0)
                       : const Color(0xffA7CA9A),
                 ),
-                height: 61.0,
-                width: 61.0,
+                height: 65.0.h,
+                width: 65.0.w,
                 child: Icon(
                   icon,
-                  color: check == false ? const Color(0xffA7CA9A) : Colors.white,
+                  color:
+                      check == false ? const Color(0xffA7CA9A) : Colors.white,
                 ),
               ),
-              const SizedBox(
-                width: 20,
+              SizedBox(
+                width: 25.w,
               ),
               Text(
                 text,
-                style: const TextStyle(color: Colors.black, fontSize: 22.0),
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
             ],
           ),
           if (last == false)
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 29.5),
-              width: 1.0,
-              height: MediaQuery.of(context).size.width * 0.20,
+              margin: EdgeInsets.symmetric(horizontal: 29.5.w),
+              width: 1.0.w,
+              height: MediaQuery.of(context).size.height * 0.08.h,
               color: Colors.black,
             )
         ],
