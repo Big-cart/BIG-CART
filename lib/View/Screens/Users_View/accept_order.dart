@@ -1,4 +1,6 @@
+import 'package:big_cart/View/Screens/Users_View/home.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../widget/driver/track/custom_container.dart';
 
@@ -41,9 +43,9 @@ class AcceptOrder extends StatelessWidget {
                 Card(
                   color: Colors.white,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 22.0, vertical: 8.0),
-                    child: const Column(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: 24.0.w, vertical: 8.0.h),
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomContainer(
@@ -62,19 +64,19 @@ class AcceptOrder extends StatelessWidget {
                           icon: Icons.fire_truck,
                           text: 'تم الشحن',
                         ),
-                        const CustomContainer(
+                        CustomContainer(
                           icon: Icons.trending_up_sharp,
                           text: 'خارج  لتوصيل ',
                           check: false,
                         ),
-                        const CustomContainer(
+                        CustomContainer(
                           icon: Icons.check_circle_outline,
                           text: 'تسليم الطلب',
                           last: true,
                           check: false,
                         ),
                         SizedBox(
-                          height: 16.0,
+                          height: 16.0.h,
                         )
                       ],
                     ),

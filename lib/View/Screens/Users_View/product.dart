@@ -54,7 +54,7 @@ class Product extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("ريال سعودي $price السغر للكيلو"),
+                            Text(" السغر للكيلو $price "),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: List.generate(5, (index) {

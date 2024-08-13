@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gif_view/gif_view.dart';
 
 class Page2 extends StatelessWidget {
   const Page2({super.key});
@@ -12,7 +13,7 @@ class Page2 extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/bacg2.png"),
-            fit: BoxFit.fitWidth,
+            fit: BoxFit.cover,
           ),
         ),
         child: Column(
@@ -24,8 +25,9 @@ class Page2 extends StatelessWidget {
               height: 100,
             ),
             const SizedBox(height: 30),
-            Image.asset(
-              "assets/images/onbo2.png",
+            GifView.asset(
+              "assets/images/onbo2.gif",
+              frameRate: 30,
               width: 300,
               height: 300,
             ),

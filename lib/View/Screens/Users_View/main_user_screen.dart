@@ -1,4 +1,4 @@
-import 'package:big_cart/View/Screens/app_bottom_navigation.dart';
+import 'package:big_cart/View/Widgets/app_bottom_navigation.dart';
 import 'package:big_cart/controller/home/bottom_navigation_controller.dart';
 import 'package:big_cart/core/Widgets/app_scaffold.dart';
 import 'package:flutter/material.dart';

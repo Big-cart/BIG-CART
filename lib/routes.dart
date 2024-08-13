@@ -1,4 +1,4 @@
-import 'package:big_cart/View/Screens/Users_View/Auth/SelectionScreen.dart';
+import 'package:big_cart/View/Screens/onBorading/selection_screen.dart';
 import 'package:big_cart/View/Screens/Users_View/Auth/compelet_pass.dart';
 import 'package:big_cart/View/Screens/Users_View/Auth/forget_pass.dart';
 import 'package:big_cart/View/Screens/Users_View/Auth/sure_psaa.dart';
@@ -17,12 +17,23 @@ import 'package:big_cart/View/Screens/Users_View/empty_cart.dart';
 import 'package:big_cart/View/Screens/Users_View/invoice.dart';
 import 'package:big_cart/View/Screens/Users_View/list_of_orders.dart';
 import 'package:big_cart/View/Screens/Users_View/profile.dart';
-import 'package:big_cart/View/Screens/onBorading/onboarding.dart';
-import 'package:big_cart/View/Screens/onBorading/page_1.dart';
+import 'package:big_cart/View/Screens/onBorading/onborading_page_view.dart';
+
 import 'package:big_cart/View/Screens/onBorading/page_2.dart';
 import 'package:big_cart/View/Screens/onBorading/page_3.dart';
 import 'package:big_cart/View/Screens/onBorading/page_4.dart';
 import 'package:big_cart/core/Routes/app_routes.dart';
+import 'package:big_cart/view/farmer/Comments.dart';
+import 'package:big_cart/view/farmer/Sections.dart';
+import 'package:big_cart/view/farmer/added_offer.dart';
+import 'package:big_cart/view/farmer/added_prodact.dart';
+import 'package:big_cart/view/farmer/allprodact.dart';
+import 'package:big_cart/view/farmer/auth/bigin_screen.dart';
+import 'package:big_cart/view/farmer/auth/forget_password.dart';
+import 'package:big_cart/view/farmer/auth/login_farmer.dart';
+import 'package:big_cart/view/farmer/auth/reset_password.dart';
+import 'package:big_cart/view/farmer/auth/success_reset_pass_screen.dart';
+import 'package:big_cart/view/farmer/trak_order.dart';
 
 import 'package:get/get.dart';
 import 'package:big_cart/View/Screens/Users_View/favorite.dart';
@@ -75,10 +86,10 @@ List<GetPage<dynamic>>? route = [
     name: AppRoute.onboarding,
     page: () => const Onboarding(),
   ),
-  GetPage(
-    name: AppRoute.page1,
-    page: () => const Page1(),
-  ),
+  // GetPage(
+  //   name: AppRoute.page1,
+  //   page: () => const Page1(),
+  // ),
   GetPage(
     name: AppRoute.page2,
     page: () => const Page2(),
@@ -166,5 +177,52 @@ List<GetPage<dynamic>>? route = [
   GetPage(
     name: AppRoute.googleMapScreen,
     page: () => const GoogleMapScreen(),
+  ),
+  //====================Farmer-Route===============================
+  //====================Auth-Farmar===============================
+  GetPage(
+    name: AppRoute.BiginScreenFarmer,
+    page: () => const BiginScreenFarmer(),
+  ),
+  GetPage(
+    name: AppRoute.ForgetPassFarmer,
+    page: () => const ForgetPassFarmer(),
+  ),
+  GetPage(
+    name: AppRoute.LoginFarmer,
+    page: () => const LoginFarmer(),
+  ),
+  GetPage(
+    name: AppRoute.ResetPasswordFarmer,
+    page: () => const ResetPasswordFarmer(),
+  ),
+    GetPage(
+    name: AppRoute.SuccessResetPassScreenFarmer,
+    page: () => const SuccessResetPassScreenFarmer(),
+  ),
+  //====================Farmer-Screens===============================
+  GetPage(
+    name: AppRoute.AddedOffer,
+    page: () => const AddedOffer(),
+  ),
+  GetPage(
+    name: AppRoute.AddedProduct,
+    page: () => const AddedProduct(),
+  ),
+  GetPage(
+    name: AppRoute.AllProdact,
+    page: () => const AllProdact(),
+  ),
+  GetPage(
+    name: AppRoute.Comments,
+    page: () => const Comments(),
+  ),
+    GetPage(
+    name: AppRoute.Sections,
+    page: () => const Sections(),
+  ),
+  GetPage(
+    name: AppRoute.TrackOrder,
+    page: () => const TrackOrder(),
   ),
 ];
