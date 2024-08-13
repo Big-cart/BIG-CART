@@ -1,4 +1,4 @@
-import 'package:big_cart/View/Screens/Users_View/Auth/SelectionScreen.dart';
+import 'package:big_cart/View/Screens/onBorading/selection_screen.dart';
 import 'package:big_cart/View/Screens/Users_View/Auth/compelet_pass.dart';
 import 'package:big_cart/View/Screens/Users_View/Auth/forget_pass.dart';
 import 'package:big_cart/View/Screens/Users_View/Auth/sure_psaa.dart';
@@ -17,8 +17,8 @@ import 'package:big_cart/View/Screens/Users_View/empty_cart.dart';
 import 'package:big_cart/View/Screens/Users_View/invoice.dart';
 import 'package:big_cart/View/Screens/Users_View/list_of_orders.dart';
 import 'package:big_cart/View/Screens/Users_View/profile.dart';
-import 'package:big_cart/View/Screens/onBorading/onboarding.dart';
-import 'package:big_cart/View/Screens/onBorading/page_1.dart';
+import 'package:big_cart/View/Screens/onBorading/onborading_page_view.dart';
+
 import 'package:big_cart/View/Screens/onBorading/page_2.dart';
 import 'package:big_cart/View/Screens/onBorading/page_3.dart';
 import 'package:big_cart/View/Screens/onBorading/page_4.dart';
@@ -75,10 +75,10 @@ List<GetPage<dynamic>>? route = [
     name: AppRoute.onboarding,
     page: () => const Onboarding(),
   ),
-  GetPage(
-    name: AppRoute.page1,
-    page: () => const Page1(),
-  ),
+  // GetPage(
+  //   name: AppRoute.page1,
+  //   page: () => const Page1(),
+  // ),
   GetPage(
     name: AppRoute.page2,
     page: () => const Page2(),

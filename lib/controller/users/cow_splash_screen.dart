@@ -1,14 +1,14 @@
 import 'package:big_cart/View/Screens/Users_View/Auth/login.dart';
+import 'package:big_cart/View/Screens/Users_View/home.dart';
 import 'package:big_cart/View/Screens/onBorading/onborading_page_view.dart';
 // import 'package:big_cart/View/Screens/login.dart';
 import 'package:get/get.dart';
 
-abstract class SplashScreenController extends GetxController{
+abstract class CowSplashScreen extends GetxController {
   goToHome();
-
 }
-class SplashScreenControllerImp extends SplashScreenController{
-  
+
+class CowSplashScreenImp extends CowSplashScreen {
   @override
   void onInit() {
     super.onInit();
@@ -16,11 +16,9 @@ class SplashScreenControllerImp extends SplashScreenController{
   }
 
   @override
-  goToHome()async {
-  
-    Future.delayed( const Duration(milliseconds:900)).then((value) async {
-      Get.to(const Onboarding());
-
+  goToHome() async {
+    Future.delayed(const Duration(milliseconds: 900)).then((value) async {
+      Get.to(const Home());
     });
   }
 }
