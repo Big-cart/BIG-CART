@@ -61,7 +61,8 @@ class Login extends StatelessWidget {
                     ),
                   ],
                 ),
-                const InkWell(
+                InkWell(
+                  onTap: controllerImp.goToResetPassword,
                   child: Text(
                     "نسيت كلمة المرور",
                     style: TextStyle(color: Colors.white),
@@ -94,9 +95,7 @@ class Login extends StatelessWidget {
                   style: Theme.of(context).textTheme.labelMedium,
                 ),
                 InkWell(
-                  onTap: () {
-                    Get.toNamed(AppRoute.userSignup);
-                  },
+                  onTap: controllerImp.goToSignUp,
                   child: const Text(
                     " \tأنشاء حساب ",
                   ),

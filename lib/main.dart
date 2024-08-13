@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:big_cart/View/Screens/Users_View/cow_screen.dart';
 import 'package:big_cart/View/Screens/Users_View/payment.dart';
+import 'package:big_cart/View/Screens/Users_View/profile.dart';
+import 'package:big_cart/View/Screens/Users_View/rate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -90,7 +92,7 @@ class MyApp extends StatelessWidget {
             );
       },
 // <<<<<<< main
-      child: const MainUserScreen(),
+      child: const SelectCategoryScreen(),
 // =======
 //       child: const AcceptOrder(),
 // >>>>>>> main

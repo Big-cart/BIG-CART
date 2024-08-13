@@ -16,7 +16,7 @@ class CategoryControllerImp extends CategoryController {
 
   StatusRequest statusRequest = StatusRequest.loading;
   late int index;
-  List<dynamic> data = [];
+  var data = [];
 
   // ! <login with Mysql>
   @override
@@ -29,8 +29,8 @@ class CategoryControllerImp extends CategoryController {
     print("$statusRequest");
 
     var response = await categoryData.getdata();
-    statusRequest = StatusRequest.loading;
     print(response);
+    statusRequest = StatusRequest.loading;
     statusRequest = handlingData(response);
     print("$statusRequest");
     data.addAll(response);

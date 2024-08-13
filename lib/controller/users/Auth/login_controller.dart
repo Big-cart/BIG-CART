@@ -12,6 +12,7 @@ abstract class LoginController extends GetxController {
   loginWithEmail(
     BuildContext context,
   );
+  goToResetPassword();
 }
 
 class LoginControllerImp extends LoginController {
@@ -131,6 +132,11 @@ class LoginControllerImp extends LoginController {
     }
 //! </login with Mysql>
     update();
+  }
+
+  @override
+  goToResetPassword() {
+    Get.offAllNamed(AppRoute.userResetPass);
   }
 
   @override

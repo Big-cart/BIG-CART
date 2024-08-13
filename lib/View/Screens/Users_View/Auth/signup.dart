@@ -100,9 +100,7 @@ class Signup extends StatelessWidget {
                           style: Theme.of(context).textTheme.labelMedium,
                         ),
                         TextButton(
-                          onPressed: () {
-                            Get.toNamed(AppRoute.userLogin);
-                          },
+                          onPressed:controllerImp.goToLogIn,
                           child: Text('تسجيل',
                               style: Theme.of(context).textTheme.bodyLarge),
                         ),

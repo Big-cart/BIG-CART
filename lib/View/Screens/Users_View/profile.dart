@@ -157,7 +157,7 @@ class Profile extends StatelessWidget {
                     itemCount: 6,
                     itemBuilder: (context, index) {
                       return ListTile(
-                        onTap: () {},
+                        onTap: controllerImp.tileNavigare[index],
                         contentPadding: EdgeInsets.symmetric(
                           horizontal: 24.w,
                         ),

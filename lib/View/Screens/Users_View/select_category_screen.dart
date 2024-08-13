@@ -1,6 +1,7 @@
 import 'package:big_cart/View/Widgets/category_widget.dart';
 import 'package:big_cart/controller/users/category_controller.dart';
 import 'package:big_cart/controller/users/products_controller.dart';
+import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:big_cart/core/Widgets/handling_data_view.dart';
 import 'package:big_cart/core/enum/status_request.dart';
 import 'package:flutter/material.dart';
@@ -70,7 +71,10 @@ class SelectCategoryScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return CategoryWidget(
                             onTap: () {
-                              controller.index = index;
+                              // controller.index = index;
+                              if (index == 3) {
+                                Get.toNamed(AppRoute.cowScreen);
+                              }
                               // productsControllerImp.showCategoriesProduct(
                               //     context, "");
                             },

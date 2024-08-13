@@ -94,9 +94,9 @@ class Crud {
           },
         );
 
-        // print("response Crudget");
-        // print(response.statusCode);
-        // print(response.body.toString());
+        print("response Crudget");
+        print(response.statusCode);
+        print(response.body.toString());
 
         if (response.statusCode >= 200 && response.statusCode < 300) {
           List<dynamic> responseBody = jsonDecode(response.body);
