@@ -1,4 +1,4 @@
-import 'package:big_cart/View/Screens/Auth/login.dart';
+import 'package:big_cart/View/Screens/Users_View/Auth/login.dart';
 // import 'package:big_cart/View/Screens/login.dart';
 import 'package:get/get.dart';
 

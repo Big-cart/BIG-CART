@@ -23,7 +23,7 @@ class AppRoute {
   static const String page3 = "/page3";
   static const String page4 = "/page4";
   static const String emptyCart = "/emptycart";
-  static const String catogerProdact = "/catogerprodact";
+  static const String selectCategoryScreen = "/selectCategoryScreen";
   static const String aboutMe = "/aboutme";
   static const String acceptOrder = "/acceptOrder";
   static const String cart = "/cart";

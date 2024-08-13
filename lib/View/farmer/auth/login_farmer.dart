@@ -68,7 +68,10 @@ class LoginFarmer extends StatelessWidget {
                         child: AppButton(
                           child: Text(
                             "تسجيل الدخول",
-                            style: Theme.of(context).textTheme.labelMedium?.copyWith(fontSize: 18.sp),
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelMedium
+                                ?.copyWith(fontSize: 18.sp),
                           ),
                           onPressed: () {
                             controllerImp.loginWithEmail(context);

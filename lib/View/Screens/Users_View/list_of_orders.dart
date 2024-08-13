@@ -1,19 +1,24 @@
+import 'package:big_cart/View/Widgets/app_button.dart';
+import 'package:big_cart/main.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ListOfOrders extends StatefulWidget {
   const ListOfOrders({super.key});
 
   @override
-  _ListOfOrdersState createState() => _ListOfOrdersState();
+  ListOfOrdersState createState() => ListOfOrdersState();
 }
 
-class _ListOfOrdersState extends State<ListOfOrders> with SingleTickerProviderStateMixin {
+class ListOfOrdersState extends State<ListOfOrders>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
-
+  int initialIndex = 0;
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController =
+        TabController(length: 2, vsync: this, initialIndex: initialIndex);
   }
 
   @override
@@ -54,15 +59,15 @@ class _ListOfOrdersState extends State<ListOfOrders> with SingleTickerProviderSt
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/list_of_order.png"),
-            fit: BoxFit.fitWidth,
+            fit: BoxFit.cover,
           ),
         ),
         child: Column(
           children: [
-            const SizedBox(height: 270),
+            SizedBox(height: 300.h),
             Center(
               child: Container(
-                width: 350,
+                width: 380.w,
                 decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(12),
@@ -71,15 +76,23 @@ class _ListOfOrdersState extends State<ListOfOrders> with SingleTickerProviderSt
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
-                      margin: const EdgeInsets.all(16.0),
+                      margin: EdgeInsets.symmetric(
+                          horizontal: 18.0.w, vertical: 30.h),
                       decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 86, 94, 86).withOpacity(0.1),
+                        color: const Color.fromARGB(255, 86, 94, 86)
+                            .withOpacity(0.1),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: TabBar(
+                        onTap: (value) {
+                          setState(() {
+                            initialIndex = value;
+                          });
+                        },
                         controller: _tabController,
                         labelColor: Colors.white,
                         unselectedLabelColor: Colors.green,
+                        indicatorPadding: EdgeInsets.symmetric(horizontal: -50),
                         indicator: BoxDecoration(
                           color: Colors.green,
                           borderRadius: BorderRadius.circular(10),
@@ -91,7 +104,7 @@ class _ListOfOrdersState extends State<ListOfOrders> with SingleTickerProviderSt
                       ),
                     ),
                     SizedBox(
-                      height: 380,
+                      height: 300.h,
                       child: TabBarView(
                         controller: _tabController,
                         children: [
@@ -129,6 +142,18 @@ class _ListOfOrdersState extends State<ListOfOrders> with SingleTickerProviderSt
                         ],
                       ),
                     ),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    initialIndex == 1
+                        ? Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 80.0),
+                            child: AppButton(title: 'تاكيد'),
+                          )
+                        : Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 80.0),
+                            child: AppButton(title: 'التالي'),
+                          )
                   ],
                 ),
               ),
@@ -148,6 +173,7 @@ class OrderCard extends StatelessWidget {
   final bool showCancelButton; // خاصية جديدة للتحكم في إظهار زر الإلغاء
 
   const OrderCard({
+    super.key,
     required this.invoiceNumber,
     required this.deliveryLocation,
     required this.totalAmount,
@@ -170,16 +196,23 @@ class OrderCard extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
-                    Text('رقم الفاتورة', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-                    Text('توصيل إلى', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-                    Text('الإجمالي', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                    Text('رقم الفاتورة',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15)),
+                    Text('توصيل إلى',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15)),
+                    Text('الإجمالي',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15)),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(invoiceNumber, style: const TextStyle(fontSize: 13)),
-                    Text(deliveryLocation, style: const TextStyle(fontSize: 13)),
+                    Text(deliveryLocation,
+                        style: const TextStyle(fontSize: 13)),
                     Text(totalAmount, style: const TextStyle(fontSize: 13)),
                   ],
                 ),
@@ -187,12 +220,13 @@ class OrderCard extends StatelessWidget {
             ),
           ),
         ),
-        if (showCancelButton) 
+        if (showCancelButton)
           Positioned(
             top: -10,
             right: 294,
             child: IconButton(
-              icon: const Icon(Icons.cancel, color: Color.fromARGB(255, 29, 183, 67)),
+              icon: const Icon(Icons.cancel,
+                  color: Color.fromARGB(255, 29, 183, 67)),
               onPressed: () {},
             ),
           ),

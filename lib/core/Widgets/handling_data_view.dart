@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 
 class HandlingDataView extends StatelessWidget {
   final StatusRequest statusRequest;
-  final Widget? widget;
+  final Widget widget;
   final BuildContext acontext;
   final void Function()? onTap;
   const HandlingDataView({
-    Key? key,
+    super.key,
     required this.statusRequest,
-    this.widget,
+    required this.widget,
     required this.acontext,
     this.onTap,
-  }) : super(key: key);
+  });
   @override
   Widget build(BuildContext context) {
     return statusRequest == StatusRequest.loading
@@ -23,8 +23,6 @@ class HandlingDataView extends StatelessWidget {
                 child: Center(
                   child: Text(
                     "offline",
-                    style: TextStyle(
-                        color: Theme.of(acontext).textTheme.bodyMedium!.color),
                   ),
                 ),
               )
@@ -34,9 +32,6 @@ class HandlingDataView extends StatelessWidget {
                     child: Center(
                       child: Text(
                         "serverfailure",
-                        style: TextStyle(
-                            color:
-                                Theme.of(acontext).textTheme.bodyMedium!.color),
                       ),
                     ),
                   )
@@ -46,14 +41,9 @@ class HandlingDataView extends StatelessWidget {
                         child: Center(
                           child: Text(
                             "No Data",
-                            style: TextStyle(
-                                color: Theme.of(acontext)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .color),
                           ),
                         ),
                       )
-                    : widget!;
+                    : widget;
   }
 }
