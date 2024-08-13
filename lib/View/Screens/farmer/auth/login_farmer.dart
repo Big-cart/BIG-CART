@@ -1,7 +1,7 @@
 import 'package:big_cart/View/Widgets/Auth/app_text_form_field.dart';
 import 'package:big_cart/View/Widgets/app_button.dart';
 import 'package:big_cart/controller/users/Auth/login_controller.dart';
-
+import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -30,7 +30,7 @@ class LoginFarmer extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(height: 100.h),
+                  SizedBox(height: 200.h),
                   Text(
                     'تسجيل دخول',
                     style: TextStyle(
@@ -60,7 +60,26 @@ class LoginFarmer extends StatelessWidget {
                       icon: const Icon(Icons.lock),
                     ),
                   ),
-                  SizedBox(height: 50.h),
+                  SizedBox(height: 10.h),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.w),
+                      child: TextButton(
+                        onPressed: () {
+                         Get.toNamed(AppRoute.forgetPassFarmer);
+                        },
+                        child: Text(
+                          'نسيت كلمة السر؟',
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 30.h),
                   GetBuilder<LoginControllerImp>(
                     init: LoginControllerImp(),
                     builder: (controllerImp) {

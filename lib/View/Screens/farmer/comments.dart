@@ -1,4 +1,7 @@
+import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class Comments extends StatelessWidget {
   const Comments({super.key});
@@ -31,7 +34,7 @@ class Comments extends StatelessWidget {
               child: const Icon(Icons.arrow_back, color: Colors.black),
             ),
             onPressed: () {
-              // العودة للخلف
+              Get.toNamed(AppRoute.sections);
             },
           ),
         ],
@@ -54,7 +57,7 @@ class Comments extends StatelessWidget {
                 leading: const Icon(Icons.info),
                 title: const Text('نبذة عني'),
                 onTap: () {
-                  // تنفيذ كود عند الضغط
+                  Get.toNamed(AppRoute.aboutMe);
                 },
               ),
               ListTile(
@@ -69,7 +72,7 @@ class Comments extends StatelessWidget {
                 leading: const Icon(Icons.exit_to_app),
                 title: const Text('تسجيل الخروج'),
                 onTap: () {
-                  // تنفيذ كود عند الضغط
+                  Get.toNamed(AppRoute.loginFarmer);
                 },
               ),
             ],
