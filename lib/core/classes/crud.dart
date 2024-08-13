@@ -81,28 +81,28 @@ class Crud {
 //     }
 //   }
 
-  Future<Either<StatusRequest, List<Map<String, dynamic>>>> getData(
-      String linkUrl,
+  Future<Either<StatusRequest, List<dynamic>>> getData(String linkUrl,
       {String myToken = ""}) async {
     try {
       if (await checkInternet()) {
         var response = await http.get(
           Uri.parse(linkUrl),
           headers: {
+            HttpHeaders.acceptHeader: '*/*',
             HttpHeaders.authorizationHeader:
-                sharedPref.getString('token') ?? myToken,
+                "Bearer 111|8CSI1RTT2vk4tD0eSJXXE6C8xZG36vTFsb0dgQsicacecd31"
+            // ?? myToken,
           },
         );
 
-        print("response Crudget");
+        print("response Crud get");
         print(response.statusCode);
         print(response.body.toString());
 
-        if (response.statusCode >= 200 && response.statusCode < 300) {
+        if (response.statusCode >= 200 && response.statusCode < 406) {
           List<dynamic> responseBody = jsonDecode(response.body);
-          List<Map<String, dynamic>> data =
-              List<Map<String, dynamic>>.from(responseBody);
-          return Right(data);
+
+          return Right(responseBody);
         } else {
           return const Left(StatusRequest.serverfailure);
         }

@@ -17,24 +17,45 @@ class CategoryControllerImp extends CategoryController {
   StatusRequest statusRequest = StatusRequest.loading;
   late int index;
   var data = [];
+  final List<String> categoryImage = <String>[
+    "assets/images/vegetables.png",
+    "assets/images/grains.png",
+    "assets/images/fruits.png",
+    "assets/images/cheicken.png",
+  ];
 
+  final List<String> categoryName = <String>[
+    'خضروات',
+    'حبوب',
+    'فواكة',
+    ' المواشي\n والدواجن',
+  ];
+  final List<void Function()> categoryNavigate = <void Function()>[
+    () {},
+    () {},
+    () {},
+    () {
+      Get.toNamed(AppRoute.cowScreen);
+    },
+  ];
   // ! <login with Mysql>
   @override
   showAllCategories() async {
-    update();
-
     // var formdata = formkey.currentState;
     // if (formdata!.validate()) {
     // wariningDialog(_, 20, statusRequest);
     print("$statusRequest");
 
-    var response = await categoryData.getdata();
-    print(response);
     statusRequest = StatusRequest.loading;
+
+    var response = await categoryData.getdata();
+    print("======getdatafac${categoryData.getdata()}");
     statusRequest = handlingData(response);
     print("$statusRequest");
     data.addAll(response);
+    update();
     if (statusRequest == StatusRequest.succses) {
+    update();
       // Get.back();
       //?fetch data success than store user data and login
       if (response[0]['id'] != null) {
@@ -45,10 +66,12 @@ class CategoryControllerImp extends CategoryController {
         // Get.offAllNamed(AppRoute.home);
       } else if (response['message'] != null) {}
     } else {
+    update();
+
       print("object");
     }
 
-    update();
+    // update();
   }
 
 //! </login with Mysql>

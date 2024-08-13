@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:big_cart/View/Screens/Users_View/cow_screen.dart';
+import 'package:big_cart/View/Screens/Users_View/favorite.dart';
 import 'package:big_cart/View/Screens/Users_View/payment.dart';
 import 'package:big_cart/View/Screens/Users_View/profile.dart';
 import 'package:big_cart/View/Screens/Users_View/rate.dart';
@@ -92,7 +93,7 @@ class MyApp extends StatelessWidget {
             );
       },
 // <<<<<<< main
-      child: const SelectCategoryScreen(),
+      child: const MainUserScreen(),
 // =======
 //       child: const AcceptOrder(),
 // >>>>>>> main

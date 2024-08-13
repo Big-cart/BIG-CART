@@ -30,8 +30,9 @@ class Favorite extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0.w),
+          padding: EdgeInsets.symmetric(horizontal: 12.0.w),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               AppBar(
                 centerTitle: true,
