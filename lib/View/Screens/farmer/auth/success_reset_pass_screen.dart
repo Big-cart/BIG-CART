@@ -1,6 +1,7 @@
 
 import 'package:big_cart/View/Screens/Users_View/home.dart';
 import 'package:big_cart/View/Widgets/app_button.dart';
+import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -32,7 +33,7 @@ class SuccessResetPassScreenFarmer extends StatelessWidget {
                   style: Theme.of(context).textTheme.labelMedium,
                 ),
                 onPressed: () {
-                  Get.to(Home());
+                 Get.toNamed(AppRoute.sections);
                 },
               ),
             ),

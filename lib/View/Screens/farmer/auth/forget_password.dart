@@ -1,6 +1,7 @@
 
 import 'package:big_cart/View/Screens/Users_View/Auth/sure_psaa.dart';
 import 'package:big_cart/View/Widgets/app_button.dart';
+import 'package:big_cart/core/Routes/app_routes.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -79,7 +80,9 @@ class ForgetPassFarmer extends StatelessWidget {
                         style: Theme.of(context).textTheme.labelMedium,
                       ),
                       onPressed: () {
-                        Get.to(const SurePass());
+                        
+                        Get.toNamed(AppRoute.resetPasswordFarmer);
+
                       },
                     ),
                   ),

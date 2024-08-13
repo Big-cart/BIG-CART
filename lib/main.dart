@@ -1,4 +1,5 @@
 
+import 'package:big_cart/view/Screens/farmer/auth/login_farmer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -69,7 +70,7 @@ class MyApp extends StatelessWidget {
             );
       },
 // <<<<<<< main
-      child: const Favorite(),
+      child: const LoginFarmer(),
 // =======
 //       child: const AcceptOrder(),
 // >>>>>>> main

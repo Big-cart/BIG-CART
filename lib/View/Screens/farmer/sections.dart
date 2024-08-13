@@ -1,7 +1,10 @@
+import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:big_cart/core/Widgets/app_scaffold.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class Sections extends StatelessWidget {
   const Sections({super.key});
@@ -35,7 +38,7 @@ class Sections extends StatelessWidget {
               child: const Icon(Icons.arrow_back, color: Colors.black),
             ),
             onPressed: () {
-              // العودة للخلف
+             
             },
           ),
         ],
@@ -57,7 +60,7 @@ class Sections extends StatelessWidget {
                 leading: const Icon(Icons.info),
                 title: const Text('نبذة عني'),
                 onTap: () {
-                  // تنفيذ كود عند الضغط
+                  Get.toNamed(AppRoute.aboutMe);
                 },
               ),
               ListTile(
@@ -72,7 +75,7 @@ class Sections extends StatelessWidget {
                 leading: const Icon(Icons.exit_to_app),
                 title: const Text('تسجيل الخروج'),
                 onTap: () {
-                  // تنفيذ كود عند الضغط
+                  Get.toNamed(AppRoute.loginFarmer);
                 },
               ),
             ],
@@ -100,13 +103,13 @@ class Sections extends StatelessWidget {
                   CustomCard(
                     imagePath: "assets/images/sec2.png",
                     title: 'العروض',
-                    onTap: () {},
+                    onTap: () {Get.toNamed(AppRoute.addedOffer);},
                   ),
                   SizedBox(width: 20.w),
                   CustomCard(
                     imagePath: 'assets/images/sec1.png',
                     title: 'عرض المنتجات',
-                    onTap: () {},
+                    onTap: () {Get.toNamed(AppRoute.allProdact);},
                   ),
                 ],
               ),
@@ -117,13 +120,13 @@ class Sections extends StatelessWidget {
                   CustomCard(
                     imagePath: "assets/images/sec4.png",
                     title: 'تعليقات المستخدمين',
-                    onTap: () {},
+                    onTap: () {Get.toNamed(AppRoute.comments);},
                   ),
                   SizedBox(width: 20.w),
                   CustomCard(
                     imagePath: 'assets/images/sec3.png',
                     title: 'إضافة المنتجات',
-                    onTap: () {},
+                    onTap: () {Get.toNamed(AppRoute.addedProduct);},
                   ),
                 ],
               ),
@@ -131,7 +134,7 @@ class Sections extends StatelessWidget {
               CustomCard(
                 imagePath: 'assets/images/sec5.png',
                 title: 'تتبع طلبات العملاء',
-                onTap: () {},
+                onTap: () {Get.toNamed(AppRoute.track);},
               ),
               const Spacer(),
             ],
