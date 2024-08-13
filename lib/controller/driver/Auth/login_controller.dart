@@ -55,13 +55,10 @@ class LoginControllerDriverImp extends LoginControllerDriver {
     );
 
     statusRequest = handlingData(response);
-    print("$statusRequest");
     if (statusRequest == StatusRequest.succses) {
       Get.back();
       //?fetch data success than store user data and login
-      print("Sucsses");
       if (response['success'] == true) {
-        print(response['role_id']);
         if (response['role_id'] == 2) {
           //!< accept case>
 
@@ -69,7 +66,6 @@ class LoginControllerDriverImp extends LoginControllerDriver {
           data = response['user'];
           // make sure that you have token
 
-          print("${response['token']}");
 
           // store token
 

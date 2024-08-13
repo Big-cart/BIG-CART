@@ -54,7 +54,8 @@ class AddedOfferState extends State<AddedOffer> {
                 accountEmail: const Text('username@gmail.com'),
                 currentAccountPicture: CircleAvatar(
                   backgroundColor: const Color.fromARGB(255, 73, 62, 62),
-                  child: Icon(Icons.account_circle, size: 40, color: Colors.green),
+                  child:
+                      Icon(Icons.account_circle, size: 40, color: Colors.green),
                 ),
               ),
               ListTile(
@@ -116,15 +117,16 @@ class AddedOfferState extends State<AddedOffer> {
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
+                                children: const [
                                   Row(
-                                    children: const [
+                                    children: [
                                       Text(
                                         'تفاح أحمر',
                                         style: TextStyle(
                                             fontSize: 16,
                                             fontWeight: FontWeight.bold,
-                                            color: Color.fromARGB(255, 35, 32, 29)),
+                                            color: Color.fromARGB(
+                                                255, 35, 32, 29)),
                                       ),
                                       Spacer(),
                                       Text(
@@ -134,20 +136,20 @@ class AddedOfferState extends State<AddedOffer> {
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(height: 8),
-                                  const Text(
+                                  SizedBox(height: 8),
+                                  Text(
                                     'مزرعة محمد علي',
                                     style: TextStyle(
                                         fontSize: 14, color: Colors.grey),
                                   ),
-                                  const SizedBox(height: 4),
-                                  const Text(
+                                  SizedBox(height: 4),
+                                  Text(
                                     'تاريخ الحصاد: 2024/5/2',
                                     style: TextStyle(
                                         fontSize: 14, color: Colors.grey),
                                   ),
-                                  const SizedBox(height: 8),
-                                  const Text(
+                                  SizedBox(height: 8),
+                                  Text(
                                     'قـطوف التفـاح بشكلهـا المميـز الطـازج وطعمهـا اللذيـذ. وهـذا بجـانب احتوائهـا علـى العديـد مـن الفيتاميـنات والعناصـر المغذيـة لصحـة الجسـم.',
                                     style: TextStyle(
                                         fontSize: 12, color: Colors.grey),
@@ -216,7 +218,7 @@ class AddedOfferState extends State<AddedOffer> {
                           suffixIcon: const Icon(Icons.edit),
                         ),
                       ),
-                       const SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       TextField(
                         decoration: InputDecoration(
                           labelText: 'عرض اليوم',
@@ -232,8 +234,9 @@ class AddedOfferState extends State<AddedOffer> {
                           FloatingActionButton(
                             mini: true,
                             onPressed: () {},
+                            backgroundColor:
+                                const Color.fromARGB(255, 64, 216, 87),
                             child: const Icon(Icons.camera_alt),
-                            backgroundColor: const Color.fromARGB(255, 64, 216, 87),
                           ),
                         ],
                       ),
@@ -248,10 +251,10 @@ class AddedOfferState extends State<AddedOffer> {
                       isAdding = !isAdding;
                     });
                   },
+                  backgroundColor: const Color.fromARGB(255, 61, 207, 127),
                   child: isAdding
                       ? const Icon(Icons.close)
                       : const Icon(Icons.add),
-                  backgroundColor: const Color.fromARGB(255, 61, 207, 127),
                 ),
               ),
             ],

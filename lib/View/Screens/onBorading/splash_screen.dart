@@ -9,7 +9,7 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SplashScreenControllerImp controller = Get.put(SplashScreenControllerImp());
+    Get.put(SplashScreenControllerImp());
     return Container(
         width: double.infinity,
         height: double.infinity,

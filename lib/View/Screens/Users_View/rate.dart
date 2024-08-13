@@ -57,7 +57,6 @@ class Rate extends StatelessWidget {
                       ),
                       onPressed: () {
                         // Handle rating update here
-                        print('Rating: ${index + 1}');
                       },
                     );
                   }),

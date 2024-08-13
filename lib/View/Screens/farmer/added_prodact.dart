@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AllProdact extends StatefulWidget {
-  const AllProdact({super.key});
+class AddedProduct extends StatefulWidget {
+  const AddedProduct({super.key});
 
   @override
-  AllProdactState createState() => AllProdactState();
+  _AddedProductState createState() => _AddedProductState();
 }
 
-class AllProdactState extends State<AllProdact> {
+class _AddedProductState extends State<AddedProduct> {
   bool isAdding = false;
 
   @override
@@ -18,7 +18,7 @@ class AllProdactState extends State<AllProdact> {
         elevation: 0,
         centerTitle: true,
         title: const Text(
-          "إضافة عرض",
+          "إضافة منتجات",
           style: TextStyle(color: Colors.black),
         ),
         leading: Builder(
@@ -54,7 +54,8 @@ class AllProdactState extends State<AllProdact> {
                 accountEmail: const Text('username@gmail.com'),
                 currentAccountPicture: CircleAvatar(
                   backgroundColor: const Color.fromARGB(255, 73, 62, 62),
-                  child: Icon(Icons.account_circle, size: 40, color: Colors.green),
+                  child:
+                      Icon(Icons.account_circle, size: 40, color: Colors.green),
                 ),
               ),
               ListTile(
@@ -116,15 +117,16 @@ class AllProdactState extends State<AllProdact> {
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
+                                children: const [
                                   Row(
-                                    children: const [
+                                    children: [
                                       Text(
                                         'تفاح أحمر',
                                         style: TextStyle(
                                             fontSize: 16,
                                             fontWeight: FontWeight.bold,
-                                            color: Color.fromARGB(255, 35, 32, 29)),
+                                            color: Color.fromARGB(
+                                                255, 35, 32, 29)),
                                       ),
                                       Spacer(),
                                       Text(
@@ -134,20 +136,20 @@ class AllProdactState extends State<AllProdact> {
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(height: 8),
-                                  const Text(
+                                  SizedBox(height: 8),
+                                  Text(
                                     'مزرعة محمد علي',
                                     style: TextStyle(
                                         fontSize: 14, color: Colors.grey),
                                   ),
-                                  const SizedBox(height: 4),
-                                  const Text(
+                                  SizedBox(height: 4),
+                                  Text(
                                     'تاريخ الحصاد: 2024/5/2',
                                     style: TextStyle(
                                         fontSize: 14, color: Colors.grey),
                                   ),
-                                  const SizedBox(height: 8),
-                                  const Text(
+                                  SizedBox(height: 8),
+                                  Text(
                                     'قـطوف التفـاح بشكلهـا المميـز الطـازج وطعمهـا اللذيـذ. وهـذا بجـانب احتوائهـا علـى العديـد مـن الفيتاميـنات والعناصـر المغذيـة لصحـة الجسـم.',
                                     style: TextStyle(
                                         fontSize: 12, color: Colors.grey),
@@ -177,8 +179,75 @@ class AllProdactState extends State<AllProdact> {
                   },
                 ),
               ),
-
-
+              if (isAdding)
+                Container(
+                  padding: const EdgeInsets.all(16.0),
+                  color: Colors.white,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'إدراج منتج جديد',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(height: 10),
+                      TextField(
+                        decoration: InputDecoration(
+                          labelText: 'اسم المزرعة',
+                          filled: true,
+                          fillColor: Colors.green[100],
+                          suffixIcon: const Icon(Icons.edit),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      TextField(
+                        decoration: InputDecoration(
+                          labelText: 'اليوم / التاريخ / السنة',
+                          filled: true,
+                          fillColor: Colors.green[100],
+                          suffixIcon: const Icon(Icons.edit),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      TextField(
+                        decoration: InputDecoration(
+                          labelText: 'وصف المنتج',
+                          filled: true,
+                          fillColor: Colors.green[100],
+                          suffixIcon: const Icon(Icons.edit),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          FloatingActionButton(
+                            mini: true,
+                            onPressed: () {},
+                            backgroundColor:
+                                const Color.fromARGB(255, 64, 216, 87),
+                            child: const Icon(Icons.camera_alt),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: FloatingActionButton(
+                  onPressed: () {
+                    setState(() {
+                      isAdding = !isAdding;
+                    });
+                  },
+                  backgroundColor: const Color.fromARGB(255, 61, 207, 127),
+                  child: isAdding
+                      ? const Icon(Icons.close)
+                      : const Icon(Icons.add),
+                ),
+              ),
             ],
           ),
         ],

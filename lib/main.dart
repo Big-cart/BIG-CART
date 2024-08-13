@@ -1,49 +1,16 @@
-import 'dart:convert';
 
-import 'package:big_cart/View/Screens/Users_View/cow_screen.dart';
-import 'package:big_cart/View/Screens/Users_View/payment.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:big_cart/Bindings/intial_bindings.dart';
-import 'package:big_cart/View/Screens/Driver_View/track.dart';
-import 'package:big_cart/View/Screens/Users_View/Auth/login.dart';
-import 'package:big_cart/View/Screens/Users_View/aboutme.dart';
-import 'package:big_cart/View/Screens/Users_View/cart.dart';
-import 'package:big_cart/View/Screens/Users_View/home.dart';
-import 'package:big_cart/View/Screens/Users_View/invoice.dart';
-import 'package:big_cart/View/Screens/Users_View/list_of_orders.dart';
-import 'package:big_cart/View/Screens/Users_View/main_user_screen.dart';
-import 'package:big_cart/View/Screens/Users_View/search.dart';
-import 'package:big_cart/View/Screens/Users_View/select_category_screen.dart';
-import 'package:big_cart/View/Screens/onBorading/onborading_page_view.dart';
-import 'package:big_cart/View/Screens/onBorading/splash_screen.dart';
-import 'package:big_cart/View/Widgets/splash_category_screen.dart';
-import 'package:big_cart/View/farmer/Sections.dart';
+import 'package:big_cart/View/Screens/Users_View/favorite.dart';
 import 'package:big_cart/core/Theme/theme.dart';
 import 'package:big_cart/routes.dart';
-import 'package:big_cart/view/Screens/Driver_View/auth/login_driver.dart';
-import 'package:big_cart/view/farmer/Comments.dart';
-import 'package:big_cart/view/farmer/Sections.dart';
-import 'package:big_cart/view/farmer/trak_order.dart';
-import 'package:big_cart/view/farmer/added_offer.dart';
-import 'package:big_cart/view/farmer/added_prodact.dart';
-import 'package:big_cart/view/farmer/allprodact.dart';
-import 'package:big_cart/view/farmer/auth/bigin_screen.dart';
-import 'package:big_cart/view/farmer/auth/forget_password.dart';
-import 'package:big_cart/view/farmer/auth/login_farmer.dart';
-import 'package:big_cart/view/farmer/auth/reset_password.dart';
-import 'package:big_cart/view/farmer/auth/success_reset_pass_screen.dart';
 
-import 'View/Screens/Driver_View/order_details.dart';
-import 'View/Screens/Users_View/accept_order.dart';
-import 'View/Screens/Users_View/address/choose_address.dart';
-import 'View/Screens/Users_View/list_of_orders.dart';
 
 late SharedPreferences sharedPref;
 
@@ -102,7 +69,7 @@ class MyApp extends StatelessWidget {
             );
       },
 // <<<<<<< main
-      child: const MainUserScreen(),
+      child: const Favorite(),
 // =======
 //       child: const AcceptOrder(),
 // >>>>>>> main

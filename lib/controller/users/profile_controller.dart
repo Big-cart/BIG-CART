@@ -1,3 +1,4 @@
+import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -19,5 +20,19 @@ class ProfileControllerImp extends ProfileController {
     CupertinoIcons.lock,
     CupertinoIcons.placemark_fill,
     CupertinoIcons.arrow_left_circle,
+  ];
+  List<void Function()> tileNavigare = <void Function()>[
+    () {
+      Get.toNamed(AppRoute.aboutMe);
+    },
+    () {
+      Get.toNamed(AppRoute.listOfOrders);
+    },
+    () {},
+    () {},
+    () {},
+    () {
+      Get.toNamed(AppRoute.selectionScreen);
+    },
   ];
 }

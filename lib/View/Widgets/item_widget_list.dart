@@ -16,27 +16,24 @@ class ItemWidgetList extends StatelessWidget {
       this.scrollPhysics});
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: GridView.count(
-        physics: scrollPhysics ?? NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        semanticChildCount: 2,
-        crossAxisCount: 2,
-        crossAxisSpacing: 15.0.w,
-        mainAxisSpacing: 26.0.h,
-        childAspectRatio: 0.75,
-        children: [
-          ...List.generate(index, (i) {
-            return ItemWidget(
-              itemPrice: " 5000 الف ريال ",
-              index: i,
-              itemName: itemName[i],
-              imageName: "assets/images/grape$i.png",
-            );
-          })
-        ],
-      ),
+    return GridView.count(
+      physics: scrollPhysics ?? NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+      semanticChildCount: 2,
+      crossAxisCount: 2,
+      crossAxisSpacing: 8.0.w,
+      mainAxisSpacing: 26.0.h,
+      childAspectRatio: 0.75,
+      children: [
+        ...List.generate(index, (i) {
+          return ItemWidget(
+            itemPrice: " 5000 الف ريال ",
+            index: i,
+            itemName: itemName[i],
+            imageName: "assets/images/grape$i.png",
+          );
+        })
+      ],
     );
   }
 }

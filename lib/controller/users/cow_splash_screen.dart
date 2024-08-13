@@ -1,5 +1,6 @@
 import 'package:big_cart/View/Screens/Users_View/Auth/login.dart';
 import 'package:big_cart/View/Screens/Users_View/home.dart';
+import 'package:big_cart/View/Screens/Users_View/main_user_screen.dart';
 import 'package:big_cart/View/Screens/onBorading/onborading_page_view.dart';
 // import 'package:big_cart/View/Screens/login.dart';
 import 'package:get/get.dart';
@@ -18,7 +19,7 @@ class CowSplashScreenImp extends CowSplashScreen {
   @override
   goToHome() async {
     Future.delayed(const Duration(milliseconds: 900)).then((value) async {
-      Get.to(const Home());
+      Get.to(const MainUserScreen());
     });
   }
 }

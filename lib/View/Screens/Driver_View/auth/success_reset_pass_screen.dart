@@ -1,7 +1,7 @@
+import 'package:flutter/material.dart';
+
 import 'package:big_cart/View/widget/auth/login/custom_button.dart';
 import 'package:big_cart/View/widget/auth/login/custom_success_container.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class SuccessResetPassScreenDriver extends StatelessWidget {
   const SuccessResetPassScreenDriver({super.key});

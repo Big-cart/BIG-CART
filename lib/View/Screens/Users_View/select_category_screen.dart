@@ -1,11 +1,10 @@
-import 'package:big_cart/View/Widgets/category_widget.dart';
-import 'package:big_cart/controller/users/category_controller.dart';
-import 'package:big_cart/controller/users/products_controller.dart';
-import 'package:big_cart/core/Widgets/handling_data_view.dart';
-import 'package:big_cart/core/enum/status_request.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+import 'package:big_cart/View/Widgets/category_widget.dart';
+import 'package:big_cart/controller/users/category_controller.dart';
+import 'package:big_cart/core/Widgets/handling_data_view.dart';
 
 class SelectCategoryScreen extends StatelessWidget {
   const SelectCategoryScreen({super.key});
@@ -17,19 +16,7 @@ class SelectCategoryScreen extends StatelessWidget {
 
     // ProductsControllerImp productsControllerImp =
     //     Get.put(ProductsControllerImp());
-    final List<String> categoryImage = <String>[
-      "assets/images/vegetables.png",
-      "assets/images/grains.png",
-      "assets/images/fruits.png",
-      "assets/images/cheicken.png",
-    ];
-
-    final List<String> categoryName = <String>[
-      'خضروات',
-      'حبوب',
-      'فواكة',
-      ' المواشي\n والدواجن',
-    ];
+ 
 
     return Scaffold(
       body: Container(
@@ -69,14 +56,10 @@ class SelectCategoryScreen extends StatelessWidget {
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
                         return CategoryWidget(
-                            onTap: () {
-                              controller.index = index;
-                              // productsControllerImp.showCategoriesProduct(
-                              //     context, "");
-                            },
+                            onTap:controller.categoryNavigate[index],
                             categoryName: controller.data[index]["name"] ??
-                                categoryName[index],
-                            categoryImage: categoryImage[index]);
+                               controller. categoryName[index],
+                            categoryImage:controller. categoryImage[index]);
                       },
                       // children: [
                       //   ...List.generate(

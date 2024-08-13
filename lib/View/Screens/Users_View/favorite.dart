@@ -1,10 +1,9 @@
-import 'package:big_cart/View/Widgets/item_widget.dart';
-import 'package:big_cart/View/Widgets/item_widget_list.dart';
-import 'package:big_cart/core/Widgets/search_bar_widget.dart';
-import 'package:big_cart/core/Widgets/app_scaffold.dart';
-// import 'package:big_cart/view/Screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'package:big_cart/View/Widgets/item_widget_list.dart';
+import 'package:big_cart/core/Widgets/app_scaffold.dart';
+import 'package:big_cart/core/Widgets/search_bar_widget.dart';
 
 class Favorite extends StatelessWidget {
   static String routeName = '/favorite';
@@ -30,8 +29,9 @@ class Favorite extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0.w),
+          padding: EdgeInsets.symmetric(horizontal: 12.0.w),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               AppBar(
                 centerTitle: true,

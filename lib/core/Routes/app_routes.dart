@@ -43,19 +43,19 @@ class AppRoute {
   static const String googleMapScreen = "/googleMapScreen";
 //====================Auth-Farmer===============================
 
-  static const String BiginScreenFarmer = "/biginscreenfarmer";
-  static const String ForgetPassFarmer = "/forgetpassfarmer";
-  static const String LoginFarmer = "/LoginFarmer";
-  static const String ResetPasswordFarmer = "/ResetPasswordFarmer";
-  static const String SuccessResetPassScreenFarmer = "/SuccessResetPassScreenFarmer";
+  static const String biginScreenFarmer = "/biginscreenfarmer";
+  static const String forgetPassFarmer = "/forgetpassfarmer";
+  static const String loginFarmer = "/LoginFarmer";
+  static const String resetPasswordFarmer = "/ResetPasswordFarmer";
+  static const String successResetPassScreenFarmer = "/SuccessResetPassScreenFarmer";
 
 //====================Farmer-Screens===============================
 
-  static const String AddedOffer = "/AddedOffer";
-  static const String AddedProduct = "/AddedProduct";
-  static const String AllProdact = "/AllProdact";
-  static const String Comments = "/Comments";
-  static const String Sections = "/Sections";
-  static const String TrackOrder = "/TrackOrder";
+  static const String addedOffer = "/AddedOffer";
+  static const String addedProduct = "/AddedProduct";
+  static const String allProdact = "/AllProdact";
+  static const String comments = "/Comments";
+  static const String sections = "/Sections";
+  static const String trackOrder = "/TrackOrder";
 
 }

@@ -1,10 +1,10 @@
-import 'package:big_cart/controller/users/profile_controller.dart';
-import 'package:big_cart/core/Widgets/app_scaffold.dart';
-import 'package:big_cart/core/constant/app_colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+import 'package:big_cart/controller/users/profile_controller.dart';
+import 'package:big_cart/core/Widgets/app_scaffold.dart';
+import 'package:big_cart/core/constant/app_colors.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -157,7 +157,7 @@ class Profile extends StatelessWidget {
                     itemCount: 6,
                     itemBuilder: (context, index) {
                       return ListTile(
-                        onTap: () {},
+                        onTap: controllerImp.tileNavigare[index],
                         contentPadding: EdgeInsets.symmetric(
                           horizontal: 24.w,
                         ),

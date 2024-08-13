@@ -1,19 +1,16 @@
-import 'package:big_cart/View/Screens/Users_View/product.dart';
-import 'package:big_cart/View/Widgets/item_widget.dart';
-import 'package:big_cart/controller/users/products_controller.dart';
-import 'package:big_cart/core/Routes/app_routes.dart';
-import 'package:big_cart/core/Widgets/handling_data_view.dart';
-import 'package:big_cart/core/enum/status_request.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import 'package:big_cart/View/Widgets/card_widget.dart';
 import 'package:big_cart/View/Widgets/food_type.dart';
-import 'package:big_cart/View/Widgets/item_widget_list.dart';
+import 'package:big_cart/View/Widgets/item_widget.dart';
+import 'package:big_cart/controller/users/products_controller.dart';
+import 'package:big_cart/core/Routes/app_routes.dart';
 import 'package:big_cart/core/Widgets/app_scaffold.dart';
+import 'package:big_cart/core/Widgets/handling_data_view.dart';
 import 'package:big_cart/core/Widgets/search_bar_widget.dart';
-import 'package:get/get.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
