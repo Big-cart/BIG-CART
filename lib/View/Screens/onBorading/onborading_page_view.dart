@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import 'package:big_cart/View/Screens/Users_View/home.dart';
 import 'package:big_cart/View/Screens/onBorading/page_2.dart';
 import 'package:big_cart/View/Screens/onBorading/page_3.dart';
 import 'package:big_cart/View/Screens/onBorading/page_4.dart';

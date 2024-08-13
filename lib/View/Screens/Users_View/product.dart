@@ -1,8 +1,6 @@
-import 'package:big_cart/controller/users/products_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:image_pixels/image_pixels.dart';
 
 import 'package:big_cart/View/Widgets/Auth/app_text_form_field.dart';

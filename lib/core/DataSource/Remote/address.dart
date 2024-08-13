@@ -27,8 +27,6 @@ class AddressData {
   getData(
       ) async {
     var response = await crud.getData(AppLink.addressApi,myToken: "Bearer 64|OQwm7rpOVcSFc4HHjWFzWhYZ7dVIUD8XhkzKevt45420630b");
-    print("response from");
-    print(response);
     return response.fold(
           (l) => l,
           (r) => r,

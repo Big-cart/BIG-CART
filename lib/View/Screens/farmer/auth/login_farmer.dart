@@ -1,6 +1,7 @@
+import 'package:big_cart/View/Widgets/Auth/app_text_form_field.dart';
+import 'package:big_cart/View/Widgets/app_button.dart';
 import 'package:big_cart/controller/users/Auth/login_controller.dart';
-import 'package:big_cart/view/Widgets/Auth/app_text_form_field.dart';
-import 'package:big_cart/view/Widgets/app_button.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';

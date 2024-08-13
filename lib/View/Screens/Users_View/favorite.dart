@@ -1,10 +1,9 @@
-import 'package:big_cart/View/Widgets/item_widget.dart';
-import 'package:big_cart/View/Widgets/item_widget_list.dart';
-import 'package:big_cart/core/Widgets/search_bar_widget.dart';
-import 'package:big_cart/core/Widgets/app_scaffold.dart';
-// import 'package:big_cart/view/Screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'package:big_cart/View/Widgets/item_widget_list.dart';
+import 'package:big_cart/core/Widgets/app_scaffold.dart';
+import 'package:big_cart/core/Widgets/search_bar_widget.dart';
 
 class Favorite extends StatelessWidget {
   static String routeName = '/favorite';

@@ -1,6 +1,5 @@
+import 'package:big_cart/View/widget/driver/track/custom_container.dart';
 import 'package:flutter/material.dart';
-
-import '../../view/widget/driver/track/custom_container.dart';
 
 class TrackOrder extends StatelessWidget {
   const TrackOrder({super.key});
@@ -92,13 +91,12 @@ class TrackOrder extends StatelessWidget {
         child: SafeArea(
           child: SingleChildScrollView(
             child: Column(
-              children: [
+              children: const [
                 Card(
                   color: Colors.white,
-                  margin: const EdgeInsets.all(
-                      16.0), // Adding margin around the card
+                  margin: EdgeInsets.all(16.0), // Adding margin around the card
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
+                    padding: EdgeInsets.symmetric(
                         horizontal: 16.0,
                         vertical: 12.0), // Adjust padding for spacing
                     child: Column(
@@ -108,36 +106,35 @@ class TrackOrder extends StatelessWidget {
                           icon: Icons.person_outline_outlined,
                           text: 'اسم الموصل',
                         ),
-                        const SizedBox(
-                            height: 1.0), // Reduced spacing between items
+                        SizedBox(height: 1.0), // Reduced spacing between items
                         CustomContainer(
                           icon: Icons.hexagon_outlined,
                           text: 'من المزرعة',
                         ),
-                        const SizedBox(height: 1.0),
+                        SizedBox(height: 1.0),
                         CustomContainer(
                           icon: Icons.library_add_check_outlined,
                           text: 'تأكيد الطلب',
                         ),
-                        const SizedBox(height: 1.0),
+                        SizedBox(height: 1.0),
                         CustomContainer(
                           icon: Icons.fire_truck,
                           text: 'تم الشحن',
                         ),
-                        const SizedBox(height: 1.0),
-                        const CustomContainer(
+                        SizedBox(height: 1.0),
+                        CustomContainer(
                           icon: Icons.trending_up_sharp,
                           text: 'خارج  لتوصيل',
                           check: false,
                         ),
-                        const SizedBox(height: 1.0),
-                        const CustomContainer(
+                        SizedBox(height: 1.0),
+                        CustomContainer(
                           icon: Icons.check_circle_outline,
                           text: 'تسليم الطلب',
                           last: true,
                           check: false,
                         ),
-                        const SizedBox(
+                        SizedBox(
                             height:
                                 10.0), // Increased space at the bottom of the card
                       ],
